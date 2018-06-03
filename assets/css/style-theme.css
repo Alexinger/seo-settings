@@ -1,0 +1,10 @@
+@import "stripped-down-bootstrap.css";
+.sidebar-section-right{
+    border: 5px dotted red !important;
+}
+#billing_billing{
+     display: none;
+}
+.woocommerce form .form-row textarea{
+    height: 250px !important;
+}
