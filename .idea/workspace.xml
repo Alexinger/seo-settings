@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7977f44-841c-4d49-a4ff-01d8ef82018b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/stripped-down-bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/style-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/added-button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/edit-plugins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/script-theme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/shortcode-cron.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/add-field-woo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/add-tabs-woo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/data/dbConnect.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/home-last.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-extra-cron.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-extra-field-order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-extra-shortcode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-extra-style-theme.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-extra-tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-home-image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-home-left-menu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-home-settings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-home-site.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-home-template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-tab-delivery-garant-bay.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-tab-help.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tabs-tab-plugins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tag-param/shortcode-param.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/tinymce/added-button.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seo-settings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/page-tmp_1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zip-archive.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +16,38 @@
     <drupalPath />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="add-tabs-woo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tabs-tab-plugins.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/tabs-tab-plugins.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="51">
+                <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +57,7 @@
       <list>
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -147,29 +146,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528029468983</updated>
-      <workItem from="1528029471523" duration="4692000" />
+      <workItem from="1528029471523" duration="5460000" />
     </task>
+    <task id="LOCAL-00001" summary="New files plugins">
+      <created>1528052946022</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528052946022</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4692000" />
+    <option name="totallyTimeSpent" value="5460000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="4" visible="true" weight="0.16580977" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3292683" />
+      <window_info anchor="bottom" id="Messages" weight="0.6233062" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" weight="0.3292683" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.398374" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="4" visible="true" weight="0.16580977" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -181,8 +199,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New files plugins" />
+    <option name="LAST_COMMIT_MESSAGE" value="New files plugins" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>D:\OSPanel\domains\wp-test</wordpressPath>
@@ -197,6 +245,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/tabs-tab-plugins.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="51">
+            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
