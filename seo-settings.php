@@ -342,8 +342,6 @@ function create_shortcode_callback() {
 	wp_die();
 }
 
-include_once  'zip-archive.php';
-
 
 
 
