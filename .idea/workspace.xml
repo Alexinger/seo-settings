@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7977f44-841c-4d49-a4ff-01d8ef82018b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seo-settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/seo-settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/update.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="seo-settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seo-settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state>
               <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
             </state>
           </provider>
@@ -39,8 +37,8 @@
       <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="95" column="79" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
+            <state relative-caret-position="113">
+              <caret line="96" column="18" lean-forward="true" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -189,7 +187,7 @@
       <workItem from="1528144744554" duration="2524000" />
       <workItem from="1528261436204" duration="6743000" />
       <workItem from="1528381156054" duration="89000" />
-      <workItem from="1528437377378" duration="11914000" />
+      <workItem from="1528437377378" duration="12237000" />
     </task>
     <task id="LOCAL-00001" summary="New files plugins">
       <created>1528052946022</created>
@@ -202,7 +200,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28250000" />
+    <option name="totallyTimeSpent" value="28573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,15 +461,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seo-settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state>
           <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="95" column="79" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
+        <state relative-caret-position="113">
+          <caret line="96" column="18" lean-forward="true" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
         </state>
       </provider>
     </entry>

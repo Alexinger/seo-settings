@@ -38,7 +38,7 @@ class Smashing_Updater {
                 $response = current( $response ); // Get the first item
             }
             if( $this->authorize_token ) { // Is there an access token?
-                $response['seo_settings'] = add_query_arg( 'access_token', $this->authorize_token, $response['seo_settings'] ); // Update our zip url with token
+                $response['zipball_url'] = add_query_arg( 'access_token', $this->authorize_token, $response['zipball_url'] ); // Update our zip url with token
             }
             $this->github_response = $response; // Set it to our property
         }
@@ -54,7 +54,7 @@ class Smashing_Updater {
                 $this->get_repository_info(); // Get the repo info
                 $out_of_date = version_compare( $this->github_response['tag_name'], $checked[ $this->basename ], 'gt' ); // Check if we're out of date
                 if( $out_of_date ) {
-                    $new_files = $this->github_response['seo_settings']; // Get the ZIP
+                    $new_files = $this->github_response['zipball_url']; // Get the ZIP
                     $slug = current( explode('/', $this->basename ) ); // Create valid slug
                     $plugin = array( // setup our plugin info
                         'url' => $this->plugin["PluginURI"],
@@ -75,12 +75,12 @@ class Smashing_Updater {
                 $this->get_repository_info(); // Get our repo info
                 // Set it to an array
                 $plugin = array(
-                    'name'				=> $this->plugin["Alexandr Moskalenko"],
+                    'name'				=> $this->plugin["Name"],
                     'slug'				=> $this->basename,
                     'requires'					=> '3.3',
                     'tested'						=> '4.4.1',
-                    'rating'						=> '75.0',
-                    'num_ratings'				=> '12',
+                    'rating'						=> '100.0',
+                    'num_ratings'				=> '10823',
                     'downloaded'				=> '14249',
                     'added'							=> '2016-01-05',
                     'version'			=> $this->github_response['tag_name'],
@@ -93,7 +93,7 @@ class Smashing_Updater {
                         'Description'	=> $this->plugin["Description"],
                         'Updates'		=> $this->github_response['body'],
                     ),
-                    'download_link'		=> $this->github_response['seo_settings']
+                    'download_link'		=> $this->github_response['zipball_url']
                 );
                 return (object) $plugin; // Return the data
             }
