@@ -26,20 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seo-settings.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="seo-settings.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seo-settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="136">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="92" column="72" lean-forward="true" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
+            <state relative-caret-position="215">
+              <caret line="85" column="74" lean-forward="true" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -74,8 +74,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/assets/js/added-button.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/seo-settings.php" />
         <option value="$PROJECT_DIR$/update.php" />
+        <option value="$PROJECT_DIR$/seo-settings.php" />
       </list>
     </option>
   </component>
@@ -188,7 +188,7 @@
       <workItem from="1528144744554" duration="2524000" />
       <workItem from="1528261436204" duration="6743000" />
       <workItem from="1528381156054" duration="89000" />
-      <workItem from="1528437377378" duration="13721000" />
+      <workItem from="1528437377378" duration="13860000" />
     </task>
     <task id="LOCAL-00001" summary="New files plugins">
       <created>1528052946022</created>
@@ -201,7 +201,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30057000" />
+    <option name="totallyTimeSpent" value="30196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,17 +465,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seo-settings.php">
+    <entry file="file://$PROJECT_DIR$/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="215">
+          <caret line="85" column="74" lean-forward="true" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update.php">
+    <entry file="file://$PROJECT_DIR$/seo-settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="92" column="72" lean-forward="true" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
