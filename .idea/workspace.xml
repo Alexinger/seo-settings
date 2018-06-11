@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c674dda8-bca2-4338-9350-9cb01dec7923" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/seo-settings.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f7977f44-841c-4d49-a4ff-01d8ef82018b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/seo-settings.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/github-seo-settings.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/added-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/added-button.js" afterDir="false" />
     </list>
-    <ignored mask="rest-client.private.env.json" />
-    <ignored mask="http-client.private.env.json" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,225 +23,49 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-  </component>
   <component name="DrupalConfiguration">
     <drupalPath />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="seo-settings" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="seo-settings.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/seo-settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="107" column="14" lean-forward="true" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home-last.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/home-last.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zip-archive.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zip-archive.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stripped-down-bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/stripped-down-bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file leaf-file-name="edit-plugins.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/edit-plugins.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
+            <state relative-caret-position="-714" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="added-button.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="added-button.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/added-button.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabs-home-image.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/tabs-home-image.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="43" selection-start-line="43" selection-end-line="43" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabs-home-left-menu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/tabs-home-left-menu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style-theme.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/style-theme.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="238">
+              <caret line="53" column="171" selection-start-line="53" selection-start-column="171" selection-end-line="53" selection-end-column="171" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="WordPress Main Plugin File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Приоритет</find>
-      <find>edit-style</find>
-      <find>bil-field-last-name</find>
-      <find>check-delivery</find>
-      <find>script.js</find>
-      <find />
-      <find>update</find>
-      <find>pr-3</find>
-      <find>style-the</find>
-      <find>mb-5</find>
-      <find>h1</find>
-      <find>.alert</find>
-      <find>added-button</find>
-      <find>.left</find>
-      <find>Шаблоны</find>
-      <find>Поля формы за</find>
-      <find>Поля формы зака</find>
-      <find>wp-cron-control</find>
-      <find>dbConne</find>
-      <find>wp-settings-1</find>
-      <find>add_options</find>
-      <find>parametr</find>
-      <find>Все измен</find>
-      <find>my-btn-save-field</find>
-      <find>save-plugin-alert</find>
-      <find>hidden</find>
-      <find>bootstrap</find>
-      <find>options_page_header</find>
-      <find>settings_header</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/includes/my-admin.php" />
-        <option value="$PROJECT_DIR$/includes/home.html" />
-        <option value="$PROJECT_DIR$/includes/data-site.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-home-image.php" />
-        <option value="$PROJECT_DIR$/includes/variables-tabs.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-extra-style-theme.php" />
-        <option value="$PROJECT_DIR$/includes/add-tabs-woo.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-tab-delivery-garant-bay.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-home-template.php" />
-        <option value="$PROJECT_DIR$/includes/template/tmp_1-page.php" />
-        <option value="$PROJECT_DIR$/template/page-tmp_1.php" />
-        <option value="$PROJECT_DIR$/includes/parametr/param-tab-plugins.php" />
-        <option value="$PROJECT_DIR$/includes/parameter/param-tab-plugins.php" />
-        <option value="$PROJECT_DIR$/includes/add-field-woo.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-extra-field-order.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-tab-plugins.php" />
-        <option value="$PROJECT_DIR$/includes/tinymce/added-button.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-home-left-menu.php" />
-        <option value="$PROJECT_DIR$/assets/js/script-theme.js" />
-        <option value="$PROJECT_DIR$/includes/tabs-home-site.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-tab-help.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-extra-cron.php" />
-        <option value="$PROJECT_DIR$/includes/home.php" />
-        <option value="$PROJECT_DIR$/includes/tabs-extra-tag.php" />
-        <option value="$PROJECT_DIR$/includes/functions.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-extra-cron.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-extra-settings.php" />
-        <option value="$PROJECT_DIR$/inc/tag-param/tag-param.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-extra-tag.php" />
-        <option value="$PROJECT_DIR$/assets/js/cron-task.js" />
-        <option value="$PROJECT_DIR$/assets/js/shortcode-cron.js" />
-        <option value="$PROJECT_DIR$/inc/tabs-extra-shortcode.php" />
-        <option value="$PROJECT_DIR$/data/dbConnect.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-home-site.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-tab-help.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-extra-field-order.php" />
-        <option value="$PROJECT_DIR$/assets/js/script.js" />
-        <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/inc/tag-param/shortcode-param.php" />
-        <option value="$PROJECT_DIR$/assets/js/edit-plugins.js" />
-        <option value="$PROJECT_DIR$/inc/home.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-home-left-menu.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-home-settings.php" />
-        <option value="$PROJECT_DIR$/inc/data/dbConnect.php" />
-        <option value="$PROJECT_DIR$/inc/tabs-tab-plugins.php" />
-        <option value="$PROJECT_DIR$/assets/css/style-theme.css" />
-        <option value="$PROJECT_DIR$/assets/css/stripped-down-bootstrap.css" />
+        <option value="$PROJECT_DIR$/test" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/assets/js/added-button.js" />
-        <option value="$PROJECT_DIR$/zip-archive.php" />
-        <option value="$PROJECT_DIR$/inc/home-last.php" />
-        <option value="$PROJECT_DIR$/seo-settings.php" />
       </list>
     </option>
   </component>
   <component name="JoomlaConfiguration">
     <joomlaConfigPath />
     <joomlaPath />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -255,18 +79,19 @@
   <component name="PhpServers">
     <servers />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2036" />
     <option name="y" value="-18" />
     <option name="width" value="1347" />
     <option name="height" value="724" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,37 +107,39 @@
             <path>
               <item name="seo-settings" type="b2602c69:ProjectViewProjectNode" />
               <item name="seo-settings" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="seo-settings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="seo-settings" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="inc" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="seo-settings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="seo-settings" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
-    <property name="http.client.ignore.private.env.files.were.configured" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../modules/php/PHP-5.6/php.exe" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="" />
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="settings.editor.splitter.proportion" value="0.35138705" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings\inc" />
-      <recent name="D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings" />
-      <recent name="D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings\includes" />
-      <recent name="D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings\assets\js" />
-      <recent name="D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings\assets" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="settings.php.frameworks" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -326,176 +153,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Alexinger\AppData\Roaming\Subversion</configuration>
+    <option name="sshConnectionType" value="PASSWORD" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c674dda8-bca2-4338-9350-9cb01dec7923" name="Default" comment="" />
-      <created>1517067928123</created>
+      <changelist id="f7977f44-841c-4d49-a4ff-01d8ef82018b" name="Default" comment="" />
+      <created>1528029468983</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1517067928123</updated>
-      <workItem from="1517067934756" duration="447000" />
-      <workItem from="1517068437746" duration="4286000" />
-      <workItem from="1518115260290" duration="36801000" />
-      <workItem from="1518347738338" duration="70363000" />
-      <workItem from="1518633974686" duration="614000" />
-      <workItem from="1518681379620" duration="13738000" />
-      <workItem from="1518857663995" duration="22154000" />
-      <workItem from="1519130454185" duration="29037000" />
-      <workItem from="1519285423375" duration="2991000" />
-      <workItem from="1519296575139" duration="6548000" />
-      <workItem from="1519314540997" duration="45268000" />
-      <workItem from="1519827453040" duration="10395000" />
-      <workItem from="1520103592980" duration="82186000" />
-      <workItem from="1521185541973" duration="6687000" />
-      <workItem from="1521283459665" duration="656000" />
-      <workItem from="1521301529998" duration="66456000" />
-      <workItem from="1521812398972" duration="19513000" />
-      <workItem from="1521972163971" duration="56856000" />
-      <workItem from="1522598954245" duration="4978000" />
-      <workItem from="1522688139196" duration="600000" />
-      <workItem from="1522788940469" duration="5013000" />
-      <workItem from="1523300084143" duration="2679000" />
-      <workItem from="1523304375123" duration="26104000" />
-      <workItem from="1523436433432" duration="839000" />
-      <workItem from="1523453614225" duration="940000" />
-      <workItem from="1523461632414" duration="719000" />
-      <workItem from="1523539916892" duration="13775000" />
-      <workItem from="1523605098496" duration="788000" />
-      <workItem from="1523682044958" duration="6772000" />
-      <workItem from="1523729558977" duration="601000" />
-      <workItem from="1523871000393" duration="25452000" />
-      <workItem from="1524242500135" duration="44255000" />
-      <workItem from="1524758060748" duration="655000" />
-      <workItem from="1524899287515" duration="2222000" />
-      <workItem from="1524933496202" duration="5686000" />
-      <workItem from="1525189874327" duration="19191000" />
-      <workItem from="1525532233732" duration="6950000" />
-      <workItem from="1525603965162" duration="37115000" />
-      <workItem from="1525707199124" duration="38211000" />
-      <workItem from="1525928573310" duration="20463000" />
-      <workItem from="1526042375509" duration="56000" />
-      <workItem from="1526184910328" duration="28929000" />
-      <workItem from="1526411065537" duration="11999000" />
-      <workItem from="1527057943253" duration="4150000" />
-      <workItem from="1527157902467" duration="6662000" />
-      <workItem from="1527613470317" duration="5950000" />
-      <workItem from="1527935170120" duration="5370000" />
+      <updated>1528029468983</updated>
+      <workItem from="1528029471523" duration="3602000" />
+      <workItem from="1528052248398" duration="693000" />
+      <workItem from="1528749771521" duration="89000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="802120000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="4384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" content_ui="combo" id="Project" order="5" visible="true" weight="0.16902314" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4969743" weight="0.16946308" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5030257" side_tool="true" weight="0.16798732" />
-      <window_info anchor="right" id="Database" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292683" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="4" weight="0.16966581" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.7154471" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21815719" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="JSON Utils" order="0" weight="0.32885906" />
-      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.14905149" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3292683" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,319 +205,19 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
-    <wordpressPath>D:\OSPanel\domains\wp-test\wp-content\plugins\seo-settings</wordpressPath>
+    <wordpressPath>D:\OSPanel\domains\wp-test</wordpressPath>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="129" selection-start-line="38" selection-start-column="129" selection-end-line="38" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seo-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="129" lean-forward="true" selection-start-line="38" selection-start-column="129" selection-end-line="38" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/form-data.php" />
-    <entry file="file://$PROJECT_DIR$/inc/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/tab-home.php" />
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/tab-tabs.php" />
-    <entry file="file://$PROJECT_DIR$/seo-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/tab-tabs.php" />
-    <entry file="file://$PROJECT_DIR$/includes/form-data.php" />
-    <entry file="file://$PROJECT_DIR$/includes/functions.php" />
-    <entry file="file://$PROJECT_DIR$/assets/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="3" column="31553" selection-start-line="3" selection-start-column="31553" selection-end-line="3" selection-end-column="31553" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/variables-tabs.php" />
-    <entry file="file://$PROJECT_DIR$/template/page-tmp_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/shortcode-cron.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tag-param/shortcode-param.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="27" column="46" lean-forward="true" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tinymce/added-button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/add-field-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/add-tabs-woo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-extra-cron.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-extra-field-order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-extra-shortcode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-extra-style-theme.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-extra-tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-home-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-home-site.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-home-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-tab-delivery-garant-bay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-tab-help.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="109" selection-start-line="41" selection-start-column="109" selection-end-line="41" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/data/dbConnect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-tab-plugins.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3111">
-          <caret line="183" column="2" selection-start-line="4" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/script-theme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style-theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-home-left-menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/tabs-home-image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="43" selection-start-line="43" selection-end-line="43" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$PROJECT_DIR$/assets/js/edit-plugins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
+        <state relative-caret-position="-714" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/added-button.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/stripped-down-bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zip-archive.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/home-last.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seo-settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="107" column="14" lean-forward="true" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
+        <state relative-caret-position="238">
+          <caret line="53" column="171" selection-start-line="53" selection-start-column="171" selection-end-line="53" selection-end-column="171" />
         </state>
       </provider>
     </entry>
