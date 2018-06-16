@@ -4,7 +4,7 @@ header('Content-Type: text/html; image/jpg; charset=utf-8');
 Plugin Name: Settings SEO
 Plugin URI: https://github.com/Alexinger/seo-settings
 Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и т.д.).
-Version: 0.8.1
+Version: 0.8.6
 Author: Alexinger
 Author URI: https://x-ali.ru
 License: A "Slug" license name e.g. GPL2
@@ -15,16 +15,15 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
-if( ! class_exists( 'Smashing_Updater' ) ){
-    include_once plugin_dir_path( __FILE__ ) . 'update.php';
-}
-$updater = new Smashing_Updater( __FILE__ );
-$updater->set_username( 'Alexinger' );
-$updater->set_repository( 'seo-settings' );
-/*
-	$updater->authorize( 'abcdefghijk1234567890' ); // Your auth code goes here for private repos
-*/
-$updater->initialize();
+//if( ! class_exists( 'Smashing_Updater' ) ){
+//    include_once plugin_dir_path( __FILE__ ) . 'update.php';
+//}
+//$updater = new Smashing_Updater( __FILE__ );
+//$updater->set_username( 'Alexinger' );
+//$updater->set_repository( 'seo-settings' );
+//$updater->initialize();
+
+include_once plugin_dir_path(__FILE__) . 'plugin.php';
 
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function my_scripts_method() {
