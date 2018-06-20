@@ -3,8 +3,8 @@ header('Content-Type: text/html; image/jpg; charset=utf-8');
 /*
 Plugin Name: Settings SEO
 Plugin URI: https://github.com/Alexinger/seo-settings
-Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и т.д.).
-Version: 0.8.8
+Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и оптимизация).
+Version: 0.8.9
 Author: Alexinger
 Author URI: https://x-ali.ru
 License: A "Slug" license name e.g. GPL2
