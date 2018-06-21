@@ -6,7 +6,7 @@
     /*margin-right: -15px;*/
     /*margin-left: -15px;*/
 }
-.row-x > div{
+.row-x [class*="col-"]{
     margin: 0 -15px;
 }
 .no-gutters > .col,
