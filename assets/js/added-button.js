@@ -14,7 +14,7 @@
                             ed.selection.setContent('<div class="row-x">' + ed.selection.getContent() + '</div>');
                         }
                     },{
-                        text: 'Ширина блоков [md2 lg2 sm12] - [md10 lg10 sm12]',
+                        text: 'Ширина блоков [2] - [10]',
                         onclick : function() {
                             ed.selection.setContent('<div class="row-x"><div class="col-lg-2 col-12">Левый блок - 2</div><div class="col-lg-10 col-12">Правый блок - 10</div></div>');
                         }
