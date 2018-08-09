@@ -1,5 +1,4 @@
->![alt-текст](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовка логотипа 1")
-# Название плагина - `Seo-settings`
+>![alt-текст](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовка логотипа 1") # Название плагина - `Seo-settings`
 
 ##### Что необходимо сделать:
 >1. Настроить автообновление плагина на все сайты, где он установлен
