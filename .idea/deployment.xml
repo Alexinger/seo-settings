@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
   <component name="PublishConfigData" autoUpload="On explicit save action" serverName="keratin-studio">
     <serverData>
       <paths name="keratin-studio">
-=======
-  <component name="PublishConfigData" serverName="x-ali.ru">
-    <serverData>
-      <paths name="x-ali.ru">
->>>>>>> refs/remotes/origin/master
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -16,9 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
-<<<<<<< HEAD
     <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
-=======
->>>>>>> refs/remotes/origin/master
   </component>
 </project>
