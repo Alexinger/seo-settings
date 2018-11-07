@@ -6,7 +6,7 @@
      display: none;
 }
 .woocommerce-Price-amount.amount{
-    display: none;
+    // display: none;
 }
 .woocommerce form .form-row textarea{
     height: 250px !important;
