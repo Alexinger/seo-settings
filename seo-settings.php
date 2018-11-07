@@ -15,6 +15,7 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
+
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function my_scripts_method() {
 	wp_deregister_script( 'jquery-core' );
@@ -84,6 +85,7 @@ add_action('wp_ajax_pluginajax', 'pluginajax_callback');
 function pluginajax_callback(){
 	parse_str($_POST['data'],$data);
 
+	var_dump($data);
 	global $wpdb;
 
 		$db_select_count_id = $wpdb->get_col($wpdb->prepare("SELECT id FROM wp_seo_creator_plugins"));

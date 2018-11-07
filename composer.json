@@ -1,0 +1,15 @@
+{
+    "name": "vendor/name",
+    "description": "leave empty",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexinger",
+            "email": "vanna.biz.ua@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "automattic/woocommerce": "2.0.1"
+    }
+}

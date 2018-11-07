@@ -5,6 +5,9 @@
 #billing_billing{
      display: none;
 }
+#shipping_method{
+    display: none;
+}
 .woocommerce form .form-row textarea{
     height: 250px !important;
 }
