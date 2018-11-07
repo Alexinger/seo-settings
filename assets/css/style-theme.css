@@ -5,7 +5,7 @@
 #billing_billing{
      display: none;
 }
-.woocommerce-Price-amount amount{
+.woocommerce-Price-amount .amount{
     display: none;
 }
 .woocommerce form .form-row textarea{
