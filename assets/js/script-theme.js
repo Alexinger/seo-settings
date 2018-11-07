@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
 
     setInterval(function () {
-        $('#shipping_method li>label[for="shipping_method_0_flat_rate2"]').text('Нужна доставка');
-        $('#shipping_method li>label[for="shipping_method_0_local_pickup1"]').text('Самовывоз');
+        $('#shipping_method li:first>label').text('Нужна доставка');
+        $('#shipping_method li:last>label').text('Самовывоз');
     }, 500);
 });
