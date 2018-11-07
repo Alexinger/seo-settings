@@ -69,6 +69,9 @@ function wptuts_scripts_basic()
 	// wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
 	wp_register_style( 'my_theme_style', plugins_url('/assets/css/style-theme.css', __FILE__) );
 	wp_enqueue_style( 'my_theme_style' );
+
+    wp_register_script( 'my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery') );
+    wp_enqueue_script( 'my_script' );
 	// wp_enqueue_script( 'bootstrap_js' );
 }
 add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );

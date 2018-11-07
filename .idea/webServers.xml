@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="c5027586-0503-4389-af72-b53b9d67ea24" name="x-ali.ru" url="http://alexing.ftp.tools">
+      <webServer id="e26f7818-903e-4030-ac61-e12b64a18c9d" name="keratin-studio" url="http://alexing.ftp.tools">
         <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
