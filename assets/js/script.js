@@ -82,5 +82,6 @@ jQuery(document).ready(function ($) {
         if(e.currentTarget.classList[1] == 'last-check' && e.target.checked){
             e.currentTarget.offsetParent.previousElementSibling.childNodes[0].checked = true;
         }
+        
     });
 });
