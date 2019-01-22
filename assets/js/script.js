@@ -83,6 +83,4 @@ jQuery(document).ready(function ($) {
             e.currentTarget.offsetParent.previousElementSibling.childNodes[0].checked = true;
         }
     });
-
-    v
 });
