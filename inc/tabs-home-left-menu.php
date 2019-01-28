@@ -4,30 +4,31 @@
 
 // $screen = get_current_screen();
 // echo '<pre>' . print_r($screen, TRUE) . '</pre>';
-echo "test text";
-
-require __DIR__ . '/../vendor/autoload.php';
-
-use Automattic\WooCommerce\Client;
-
-$woocommerce = new Client(
-    'https://x-ali.ru',
-    'ck_3d0cc3f75674e1dbff100f1bba79f152cefe0998',
-    'cs_a11376ef5c5cf0ae7c08f1150e1166afa71d6e49',
-    [
-        'wp_api' => true,
-        'version' => 'wc/v2',
-    ]
-);
-
-$data = [
-    'regular_price' => '1200'
-];
-
-echo "<pre>";
-print_r($woocommerce->put('products/275', $data));
-// print_r($woocommerce->post('products', $data));
-echo "</pre>";
+//echo "test text";
+//
+///*require __DIR__ . '/../vendor/autoload.php';*/
+//require __DIR__ . '/../vendor/autoload.php';
+//
+//// use Automattic\WooCommerce\Client;
+//
+//$woocommerce = new Client(
+//    'https://x-ali.ru',
+//    'ck_3d0cc3f75674e1dbff100f1bba79f152cefe0998',
+//    'cs_a11376ef5c5cf0ae7c08f1150e1166afa71d6e49',
+//    [
+//        'wp_api' => true,
+//        'version' => 'wc/v2',
+//    ]
+//);
+//
+//$data = [
+//    'regular_price' => '1200'
+//];
+//
+//echo "<pre>";
+//print_r($woocommerce->put('products/275', $data));
+//// print_r($woocommerce->post('products', $data));
+//echo "</pre>";
 
 
 //$data = [

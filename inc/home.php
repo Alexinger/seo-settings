@@ -8,19 +8,19 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active text-uppercase" data-toggle="tab" href="#home" role="tab">Главная</a>
+            <a class="nav-link active text-uppercase text-dark" data-toggle="tab" href="#home" role="tab">Главная</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase" data-toggle="tab" href="#shortcode" role="tab">Дополнительно</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#shortcode" role="tab">Дополнительно</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase" data-toggle="tab" href="#tabs" role="tab">Вкладки</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#tabs" role="tab">Вкладки</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase" data-toggle="tab" href="#plugins" role="tab">Плагины</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#plugins" role="tab">Плагины</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase" data-toggle="tab" href="#help" role="tab">Помощь</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#help" role="tab">Помощь</a>
         </li>
     </ul>
     <!-- Tab panes -->
@@ -28,19 +28,19 @@
         <div class="tab-pane active in" id="home" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item mx-1">
-                    <a class="nav-link" data-toggle="tab" href="#images" role="tab"><i class="fa fa-image mr-3"></i>Изображения</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#images" role="tab"><i class="fa fa-image mr-3"></i>Изображения</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-dashboard mr-3"></i>Mеню</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-dashboard mr-3"></i>Mеню</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab"><i class="fa fa-code-fork mr-3"></i>Настройки</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#settings" role="tab"><i class="fa fa-code-fork mr-3"></i>Настройки</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link active" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О сайте</a>
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О сайте</a>
                 </li>
             </ul>
 
@@ -80,19 +80,19 @@
         <div class="tab-pane fade" id="shortcode" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#category-fields" role="tab"><i class="fa fa-th-list mr-3"></i>Поля формы</a>
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#category-fields" role="tab"><i class="fa fa-th-list mr-3"></i>Поля формы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#category-tag" role="tab"><i class="fa fa-tag mr-3"></i>Метки</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#category-tag" role="tab"><i class="fa fa-tag mr-3"></i>Метки</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#category-cron" role="tab"><i class="fa fa-clock-o mr-3"></i>Cron</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#category-cron" role="tab"><i class="fa fa-clock-o mr-3"></i>Cron</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#category-shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#category-shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#category-style" role="tab"><i class="fa fa-tag mr-3"></i>Стили темы</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#category-style" role="tab"><i class="fa fa-tag mr-3"></i>Стили темы</a>
                 </li>
             </ul>
 
@@ -126,13 +126,13 @@
         <div class="tab-pane fade" id="tabs" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#delivery" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-delivery-name") !== ''){echo get_option("tabs-check-delivery-name");}else{ echo "Вкладка";}; ?></a>
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#delivery" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-delivery-name") !== ''){echo get_option("tabs-check-delivery-name");}else{ echo "Вкладка";}; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#garant" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-garant-name") !== ''){echo get_option("tabs-check-garant-name");}else{ echo "Вкладка";}; ?></a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#garant" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-garant-name") !== ''){echo get_option("tabs-check-garant-name");}else{ echo "Вкладка";}; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#bay" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-bay-name") !== ''){echo get_option("tabs-check-bay-name");}else{ echo "Вкладка";}; ?></a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#bay" role="tab"><i class="fa fa-folder-o mr-3"></i><?php if(get_option("tabs-check-bay-name") !== ''){echo get_option("tabs-check-bay-name");}else{ echo "Вкладка";}; ?></a>
                 </li>
             </ul>
 

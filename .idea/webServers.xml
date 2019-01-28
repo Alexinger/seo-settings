@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e26f7818-903e-4030-ac61-e12b64a18c9d" name="keratin-studio" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings">
+      <webServer id="105f5532-79ab-45da-84ac-d3c34c518e6e" name="x-ali" url="http://alexing.ftp.tools">
+        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings" password="df98dfdddf99dfdcdfc3df9edf9ddfd3" username="alexing_ftp">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

@@ -32,17 +32,32 @@ function my_script_css(){
 		// Максимальное значение ID в базе плагинов.
 		$results = $wpdb->get_var("SELECT Max(id) FROM wp_my_custom_plugins");
 
-		wp_enqueue_style( 'font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css' );
+		wp_enqueue_style( 'font_awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' );
+
+
 		wp_register_script( 'tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' );
 		wp_enqueue_script( 'tether' );
 
-		wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
+		wp_enqueue_style( 'bootstrap_css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css' );
+		wp_enqueue_script('bootstrap_css');
+
+		wp_enqueue_style( 'bootstrap_mdb', 'https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css' );
+		wp_enqueue_script('bootstrap_mdb');
 
 		wp_register_style( 'my_style', plugins_url('/assets/css/style.css', __FILE__) );
 		wp_enqueue_script( 'my_style' );
 
-		wp_register_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' );
-		wp_enqueue_script( 'bootstrap_js' );
+		wp_register_script( 'jquery_min_js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
+		wp_enqueue_script( 'jquery_min_js' );
+
+		wp_register_script( 'poper_min_js', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js' );
+		wp_enqueue_script( 'poper_min_js' );
+
+		wp_register_script( 'bootstrap_min_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' );
+		wp_enqueue_script( 'bootstrap_min_js' );
+
+		wp_register_script( 'mdb_min_js', 'https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js' );
+		wp_enqueue_script( 'mdb_min_js' );
 
 		wp_register_script( 'wcsf_example_ajax', plugins_url('/assets/js/script.js', __FILE__), array('jquery') );
 		wp_enqueue_script( 'wcsf_example_ajax' );
