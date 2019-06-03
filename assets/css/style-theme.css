@@ -17,8 +17,9 @@
 .price span.amount{
     margin-left: 5px;
 }
-.site-title.font-effect-emboss{
-    font-family: monospace !important;
-
-
+@media (max-width: 767px) {
+    #main-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
