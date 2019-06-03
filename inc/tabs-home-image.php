@@ -15,6 +15,16 @@ function get_image_sizes( $unset_disabled = true ) {
 
 	$sizes = array();
 
+    // Отключаем разметку srcset
+    add_filter('max_srcset_image_width', create_function('', 'return 1;'));
+
+// Отключаем создание 768px изображений
+    function unset_medium_large($sizes) {
+        unset($sizes['medium_large']);
+        return $sizes;
+    }
+    add_filter('intermediate_image_sizes_advanced', 'unset_medium_large');
+
 	foreach ( get_intermediate_image_sizes() as $_size ) {
 		if ( in_array( $_size, array('thumbnail', 'medium', 'medium_large', 'large') ) ) {
 			$sizes[ $_size ] = array(
