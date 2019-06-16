@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
 
 add_action('admin_menu', 'settings_header');
 function settings_header(){
-	add_menu_page('Настройка плагина Woocommerce', 'Расширение Woo', 8, 'settings_header', 'options_page_header', 'dashicons-forms');
+	add_menu_page('Настройка плагина Woocommerce', 'Расширение Woo', 'edit_pages', 'settings_header', 'options_page_header', 'dashicons-forms');
 //	add_options_page('Настройка плагина Woocommerce', '<div><i class="fa fa-gears mr-2 text-info"></i>Расширение Woo</div>', 8, 'settings_header', 'options_page_header');
 	// add_submenu_page( 'options_page_header', 'Управление содержимом', 'О плагине', 'settings_header', 'options_page_last');
 }
