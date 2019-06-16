@@ -5,6 +5,7 @@ $table_creator_plugins = $wpdb->get_blog_prefix() . 'seo_creator_plugins';
 $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} COLLATE {$wpdb->collate}";
 
 require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+
 // Таблица для рекомендованных плагинов
 $sql = "CREATE TABLE {$table_creator_plugins}(
 	id int(15) unsigned auto_increment,
@@ -16,6 +17,7 @@ $sql = "CREATE TABLE {$table_creator_plugins}(
 	PRIMARY KEY  (id),
 	KEY name_plugin (name_plugin)
 ) {$charset_collate};";
+
 dbDelta($sql);
 
 
