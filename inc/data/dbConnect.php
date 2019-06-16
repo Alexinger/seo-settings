@@ -1,6 +1,7 @@
 <?php
 global $wpdb;
 
+
 $table_creator_plugins = $wpdb->get_blog_prefix() . 'seo_creator_plugins';
 $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset} COLLATE {$wpdb->collate}";
 
@@ -16,6 +17,7 @@ $sql = "CREATE TABLE {$table_creator_plugins}(
 	PRIMARY KEY  (id),
 	KEY name_plugin (name_plugin)
 ) {$charset_collate};";
+
 dbDelta($sql);
 
 

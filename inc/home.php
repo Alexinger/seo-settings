@@ -143,7 +143,7 @@
         <div class="tab-pane fade" id="plugins" role="tabpanel">
 
             <!-- Контент Дочерние стили текущей темы -->
-		    <?php include_once 'tabs-tab-plugins.php'; ?>
+<!--		    --><?php //include_once 'tabs-tab-plugins.php'; ?>
 
         </div>
         <div class="tab-pane fade" id="help" role="tabpanel">
