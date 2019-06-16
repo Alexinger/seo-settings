@@ -99,7 +99,7 @@ function settings_header(){
 	// add_submenu_page( 'options_page_header', 'Управление содержимом', 'О плагине', 'settings_header', 'options_page_last');
 }
 
-//add_action('wp_ajax_pluginajax', 'pluginajax_callback');
+add_action('wp_ajax_pluginajax', 'pluginajax_callback');
 function pluginajax_callback(){
 	parse_str($_POST['data'],$data);
 
