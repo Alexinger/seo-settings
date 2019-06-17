@@ -18,6 +18,8 @@ $sql = "CREATE TABLE {$table_creator_plugins}(
 	KEY name_plugin (name_plugin)
 ) {$charset_collate};";
 
-dbDelta($sql);
+if ($sql == null){
+    dbDelta($sql);
+}
 
 

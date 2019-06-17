@@ -2,6 +2,27 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action">
     <serverData>
+      <paths name="avto-voda">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="dezinfekciya-yaroslavl">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="klopitarakan">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="x-ali">
         <serverdata>
           <mappings>

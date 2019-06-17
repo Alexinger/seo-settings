@@ -3,9 +3,33 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="105f5532-79ab-45da-84ac-d3c34c518e6e" name="x-ali" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings" password="df98dfdddf99dfdcdfc3df9edf9ddfd3" username="alexing_ftp">
+        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings" username="alexing_ftp" password="df98dfdddf99dfdcdfc3df9edf9ddfd3">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="41ee3cee-9a42-45c0-9491-8fded281d2e0" name="klopitarakan" url="http://148.251.7.151">
+        <fileTransfer host="148.251.7.151" port="21" rootFolder="/www/klopitarakan.ru/wp-content/plugins/seo-settings">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="4a9f84f2-51f2-421f-9d9f-e60054782646" name="dezinfekciya-yaroslavl" url="http://148.251.7.151">
+        <fileTransfer host="148.251.7.151" port="21" rootFolder="/www/dezinfekciya-yaroslavl.ru/wp-content/plugins/seo-settings">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8fa63a1c-c516-40ae-9817-7d9df22a0eef" name="avto-voda" url="http://144.76.102.16">
+        <fileTransfer host="144.76.102.16" port="21" rootFolder="/www/avto-voda.ru/wp-content/plugins/seo-settings">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>
