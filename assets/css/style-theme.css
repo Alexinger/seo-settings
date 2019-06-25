@@ -8,6 +8,12 @@
 .woocommerce-Price-amount.amount{
     /*display: none;*/
 }
+p.woocommerce-shipping-destination  {
+    display: none;
+}
+.woocommerce-shipping-calculator {
+    display: none;
+}
 .woocommerce form .form-row textarea{
     height: 250px !important;
 }
