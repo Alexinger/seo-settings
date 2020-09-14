@@ -26,8 +26,8 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
-      <webServer id="8fa63a1c-c516-40ae-9817-7d9df22a0eef" name="avto-voda" url="http://144.76.102.16">
-        <fileTransfer host="144.76.102.16" port="21" rootFolder="/www/avto-voda.ru/wp-content/plugins/seo-settings">
+      <webServer id="8fa63a1c-c516-40ae-9817-7d9df22a0eef" name="avto-voda" url="http://89.108.84.195">
+        <fileTransfer host="89.108.84.195" port="21" rootFolder="/www/avto-voda.ru/wp-content/plugins/seo-settings">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
@@ -104,6 +104,14 @@
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
           <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e92ef8d4-29bc-4a30-b5d2-84cb216f4fb8" name="test" url="http://147.78.65.76">
+        <fileTransfer host="147.78.65.76" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

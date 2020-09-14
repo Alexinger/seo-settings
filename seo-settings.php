@@ -15,14 +15,20 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
+include_once 'vars.php';
 
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function my_scripts_method() {
 	wp_deregister_script( 'jquery-core' );
 	wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
 	wp_enqueue_script( 'jquery' );
-}
 
+    wp_register_script( 'my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time() );
+    wp_enqueue_script( 'my_script' );
+
+    wp_register_style( 'my_theme_style', plugins_url('/assets/css/style-theme.css', __FILE__) );
+    wp_enqueue_style( 'my_theme_style' );
+}
 
 add_action( 'admin_menu', 'my_script_css' );
 function my_script_css(){
@@ -59,7 +65,7 @@ function my_script_css(){
 		wp_register_script( 'mdb_min_js', 'https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js' );
 		wp_enqueue_script( 'mdb_min_js' );
 
-		wp_register_script( 'wcsf_example_ajax', plugins_url('/assets/js/script.js', __FILE__), array('jquery') );
+		wp_register_script( 'wcsf_example_ajax', plugins_url('/assets/js/script.js', __FILE__), array('jquery'), time() );
 		wp_enqueue_script( 'wcsf_example_ajax' );
 
 		wp_register_script( 'cron-js', plugins_url('/assets/js/shortcode-cron.js', __FILE__), array('jquery') );
@@ -77,24 +83,12 @@ function my_script_css(){
 		wp_enqueue_script( 'my_script_plugins' );
 	}
 
-};
-
-function wptuts_scripts_basic()
-{
-	// wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
-	wp_register_style( 'my_theme_style', plugins_url('/assets/css/style-theme.css', __FILE__) );
-	wp_enqueue_style( 'my_theme_style' );
-
-    wp_register_script( 'my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery') );
-    wp_enqueue_script( 'my_script' );
-	// wp_enqueue_script( 'bootstrap_js' );
 }
-add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
 
 
 add_action('admin_menu', 'settings_header');
 function settings_header(){
-	add_menu_page('Настройка плагина Woocommerce', 'Расширение Woo', 'edit_pages', 'settings_header', 'options_page_header', 'dashicons-forms');
+	add_menu_page('Настройка оптимизации для сайта', 'Расширение WC', 'edit_pages', 'settings_header', 'options_page_header', 'dashicons-forms');
 //	add_options_page('Настройка плагина Woocommerce', '<div><i class="fa fa-gears mr-2 text-info"></i>Расширение Woo</div>', 8, 'settings_header', 'options_page_header');
 	// add_submenu_page( 'options_page_header', 'Управление содержимом', 'О плагине', 'settings_header', 'options_page_last');
 }
@@ -146,47 +140,47 @@ function update_row_plugin($id, $name, $path){
 	);
 }
 
-function remove_row(){
-	return;
-}
+//function remove_row(){
+//	return;
+//}
 
-add_action('wp_ajax_loadplaginajax', 'loadplaginajax_callback');
-function loadplaginajax_callback(){
-	global $wpdb;
-	parse_str($_POST['data'], $data);
-	if($data['plugin-check'] == 1 && get_option('check-update') == 0){
-		update_option('check-update', 1);
-		$set_default_plugin = [
-			1 => ['name' => 'a3 Lazy Load', 'path' => 'a3-lazy-load/a3-lazy-load.php'],
-			2 => ['name' => 'AdRotate', 'path' => 'adrotate/adrotate.php'],
-			3 => ['name' => 'Ajax Pagination and Infinite Scroll', 'path' => ''],
-			4 => ['name' => 'Cyr to Lat enhanced', 'path' => 'cyr3lat/cyr-to-lat.php'],
-			5 => ['name' => 'Disable All Wordpress Updates', 'path' => 'disable-wordpress-updates/disable-updates.php'],
-			6 => ['name' => 'DW Question Answer Pro', 'path' => 'dw-question-answer-pro/dw-question-answer.php'],
-			7 => ['name' => 'Galleries by Angie Makes', 'path' => ''],
-			8 => ['name' => 'Goods Catalog', 'path' => 'goods-catalog/goods-cat.php'],
-			9 => ['name' => 'Hierarchical HTML Sitemap', 'path' => 'hierarchical-html-sitemap/hierarchical-sitemap.php'],
-			10 => ['name' => 'Hyper Cache', 'path' => 'hyper-cache/advanced-cache.php' ],
-			11 => ['name' => 'kk Star Ratings', 'path' => 'kk-star-ratings/index.php'],
-			12 => ['name' => 'Lightbox', 'path' => ''],
-			13 => ['name' => 'Q2W3 Fixed Widget', 'path' => 'q2w3-fixed-widget/q2w3-fixed-widget.php'],
-			14 => ['name' => 'Related Posts', 'path' => ''],
-			15 => ['name' => 'Subscribe to Comments Reloaded', 'path' => 'subscribe-to-comments-reloaded/subscribe-to-comments-reloaded.php'],
-			16 => ['name' => 'Table Press', 'path' => 'tablepress/tablepress.php'],
-			17 => ['name' => 'Taxonomy Images', 'path' => 'taxonomy-images/taxonomy-images.php'],
-			18 => ['name' => 'TotalPoll Pro', 'path' => 'totalpool/totalpool.php'],
-			19 => ['name' => 'wBounce', 'path' => 'wbounce/wbounce.php'],
-			20 => ['name' => 'Webcraftic Clearfy', 'path' => ''],
-			21 => ['name' => 'Widget Context', 'path' => 'widget-context/widget-context.php'],
-			22 => ['name' => 'WP No External Links', 'path' => 'wp-noexternalinks/wp-noexternalinks.php'],
-			23 => ['name' => 'WP-Optimize', 'path' => 'wp-optimize/wp-optimize.php'],
-			24 => ['name' => 'WPSmart Mobile', 'path' => 'wpsmart-mobile/wpsmart.php']
-		];
-		foreach ($set_default_plugin as $item){
-				insert_row_plugin($item['name'], $item['path']);
-		}
-	}
-}
+//add_action('wp_ajax_loadplaginajax', 'loadplaginajax_callback');
+//function loadplaginajax_callback(){
+//	global $wpdb;
+//	parse_str($_POST['data'], $data);
+//	if($data['plugin-check'] == 1 && get_option('check-update') == 0){
+//		update_option('check-update', 1);
+//		$set_default_plugin = [
+//			1 => ['name' => 'a3 Lazy Load', 'path' => 'a3-lazy-load/a3-lazy-load.php'],
+//			2 => ['name' => 'AdRotate', 'path' => 'adrotate/adrotate.php'],
+//			3 => ['name' => 'Ajax Pagination and Infinite Scroll', 'path' => ''],
+//			4 => ['name' => 'Cyr to Lat enhanced', 'path' => 'cyr3lat/cyr-to-lat.php'],
+//			5 => ['name' => 'Disable All Wordpress Updates', 'path' => 'disable-wordpress-updates/disable-updates.php'],
+//			6 => ['name' => 'DW Question Answer Pro', 'path' => 'dw-question-answer-pro/dw-question-answer.php'],
+//			7 => ['name' => 'Galleries by Angie Makes', 'path' => ''],
+//			8 => ['name' => 'Goods Catalog', 'path' => 'goods-catalog/goods-cat.php'],
+//			9 => ['name' => 'Hierarchical HTML Sitemap', 'path' => 'hierarchical-html-sitemap/hierarchical-sitemap.php'],
+//			10 => ['name' => 'Hyper Cache', 'path' => 'hyper-cache/advanced-cache.php' ],
+//			11 => ['name' => 'kk Star Ratings', 'path' => 'kk-star-ratings/index.php'],
+//			12 => ['name' => 'Lightbox', 'path' => ''],
+//			13 => ['name' => 'Q2W3 Fixed Widget', 'path' => 'q2w3-fixed-widget/q2w3-fixed-widget.php'],
+//			14 => ['name' => 'Related Posts', 'path' => ''],
+//			15 => ['name' => 'Subscribe to Comments Reloaded', 'path' => 'subscribe-to-comments-reloaded/subscribe-to-comments-reloaded.php'],
+//			16 => ['name' => 'Table Press', 'path' => 'tablepress/tablepress.php'],
+//			17 => ['name' => 'Taxonomy Images', 'path' => 'taxonomy-images/taxonomy-images.php'],
+//			18 => ['name' => 'TotalPoll Pro', 'path' => 'totalpool/totalpool.php'],
+//			19 => ['name' => 'wBounce', 'path' => 'wbounce/wbounce.php'],
+//			20 => ['name' => 'Webcraftic Clearfy', 'path' => ''],
+//			21 => ['name' => 'Widget Context', 'path' => 'widget-context/widget-context.php'],
+//			22 => ['name' => 'WP No External Links', 'path' => 'wp-noexternalinks/wp-noexternalinks.php'],
+//			23 => ['name' => 'WP-Optimize', 'path' => 'wp-optimize/wp-optimize.php'],
+//			24 => ['name' => 'WPSmart Mobile', 'path' => 'wpsmart-mobile/wpsmart.php']
+//		];
+//		foreach ($set_default_plugin as $item){
+//				insert_row_plugin($item['name'], $item['path']);
+//		}
+//	}
+//}
 
 add_action('wp_ajax_myajax', 'myajax_callback');
 function myajax_callback(){
@@ -372,3 +366,34 @@ function inline_php($content){
     return $content;
 }
 add_filter('the_content', 'inline_php', 0);
+
+// Save counter yandex metrika and google analytics
+add_action('wp_ajax_save_yandex', 'save_yandex_count');
+// add_action('wp_ajax_nopriv_save_yandex', 'save_yandex_count');
+
+function save_yandex_count()
+{
+    $option = $_POST['option'];
+    $new_value = $_POST['new_value'];
+
+//    if (!isset($option) || $option == '' || !isset($new_value) || $new_value = '') {
+//        die(
+//        json_encode(
+//            array(
+//                'success' => false,
+//                'message' => 'Missing required information.'
+//            )
+//        )
+//        );
+//    }
+
+    update_option($option, $new_value);
+    die(
+    json_encode(
+        array(
+//            'success' => true,
+            'message' => 'Save counter yandex. Success!'
+        )
+    )
+    );
+}

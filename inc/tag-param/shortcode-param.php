@@ -2,6 +2,7 @@
 
 // Добавляет название записи, страницы, товава в нутрь контента.
 // Использовать нужно так [tov_title]
+
 add_shortcode(get_option('title-shortcode-1'), 'tovar_title');
 function tovar_title(){
 	$get_tovar_title = "<span class='tovar-title'> " . esc_html(get_the_title($post)) . " </span>";

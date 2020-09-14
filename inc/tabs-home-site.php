@@ -83,7 +83,7 @@ function get_totallinks() {
                         <tr>
                             <th scope="row" class="text-center">7</th>
                             <td>Какая тема используется?</td>
-                            <td><?php if(is_child_theme()){ echo "Дочерняя тема"; } echo "Основная тема"; ?></td>
+                            <td><?php if(is_child_theme()){ echo "Дочерняя тема"; } else {echo "Основная тема";} ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">8</th>

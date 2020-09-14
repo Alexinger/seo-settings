@@ -4,23 +4,20 @@
 </div>
 
 <div class="pr-3">
-    <h1 class="h1 text-center my-3 alert mb-5 text-info font-weight-normal">Настройки плагина WooCommerce</h1>
+    <h1 class="h1 text-center my-3 alert mb-5 text-info font-weight-normal">Настройки оптимизации сайта</h1>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs nav-justified" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active text-uppercase text-dark" data-toggle="tab" href="#home" role="tab">Главная</a>
+            <a class="nav-link active text-uppercase text-dark" data-toggle="tab" href="#home" role="tab"><i class="fa fa-home mr-3"></i>Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#shortcode" role="tab">Дополнительно</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-edit mr-3"></i>Edit</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#tabs" role="tab">Вкладки</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#tabs" role="tab"><i class="fa fa-clone mr-3"></i>Tabs</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#plugins" role="tab">Плагины</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#help" role="tab">Помощь</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О Сайте</a>
         </li>
     </ul>
     <!-- Tab panes -->
@@ -31,16 +28,16 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#images" role="tab"><i class="fa fa-image mr-3"></i>Изображения</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-dashboard mr-3"></i>Mеню</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-code-fork mr-3"></i>Тест</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#settings" role="tab"><i class="fa fa-code-fork mr-3"></i>Настройки</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#post-page" role="tab"><i class="fa fa-code-fork mr-3"></i>Post & Page</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-dashboard mr-3"></i>Счетчики</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link active text-dark" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О сайте</a>
                 </li>
             </ul>
 
@@ -57,10 +54,16 @@
 		            <?php include_once 'tabs-home-left-menu.php'; ?>
 
                 </div>
-                <div class="tab-pane fade" id="settings" role="tabpanel">
+                <div class="tab-pane fade" id="post-page" role="tabpanel">
+
+                    <!-- Контент Боковое меню -->
+                    <?php include_once 'tabs-home-post-page.php'; ?>
+
+                </div>
+                <div class="tab-pane active" id="counter" role="tabpanel">
 
                     <!-- Контент Настроек -->
-		            <?php include_once 'tabs-home-settings.php'; ?>
+		            <?php include_once 'tabs-home-counter.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="templates" role="tabpanel">
@@ -69,14 +72,16 @@
 		            <?php include_once 'tabs-home-template.php'; ?>
 
                 </div>
-                <div class="tab-pane in active" id="test" role="tabpanel">
-
-                    <!-- Контент Данные о сайте -->
-                    <?php include_once 'tabs-home-site.php'; ?>
-
-                </div>
             </div>
         </div>
+
+
+        <div class="tab-pane fade" id="test" role="tabpanel">
+            <!-- Контент Данные о сайте -->
+            <?php include_once 'tabs-home-site.php'; ?>
+        </div>
+
+
         <div class="tab-pane fade" id="shortcode" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item">
@@ -138,12 +143,6 @@
 
             <!-- Контент Дочерние стили текущей темы -->
 	        <?php include_once 'tabs-tab-delivery-garant-bay.php'; ?>
-
-        </div>
-        <div class="tab-pane fade" id="plugins" role="tabpanel">
-
-            <!-- Контент Дочерние стили текущей темы -->
-<!--		    --><?php //include_once 'tabs-tab-plugins.php'; ?>
 
         </div>
         <div class="tab-pane fade" id="help" role="tabpanel">

@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 
     var text = "Данные успешно сохраненны!";
 
-    $('#submit-btn').click(function(e) {
+    $('#submit-btn').click(function (e) {
         e.preventDefault();
         tinyMCE.triggerSave();
         var dataForm = $('#form-tabs').serialize();
@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    $('#table-field-submit-btn').click(function(e) {
+    $('#table-field-submit-btn').click(function (e) {
         e.preventDefault();
         var dataFormField = $('#table-field-submit').serialize();
         var data = {
@@ -29,7 +29,7 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    $('#style-submit-btn').click(function(e) {
+    $('#style-submit-btn').click(function (e) {
         e.preventDefault();
         tinyMCE.triggerSave();
         var dataFormStyle = $('#form-style').serializeArray();
@@ -49,39 +49,97 @@ jQuery(document).ready(function ($) {
     function eventMiniModal(formText) {
         $('.block-modal-alert .alert').addClass('d-flex');
         $('.block-modal-alert .alert').text(formText);
-        setTimeout(function () { $('.alert').removeClass('d-flex'); }, 3000);
+        setTimeout(function () {
+            $('.alert').removeClass('d-flex');
+        }, 3000);
     };
 
-    function clickChangeOn(e){
-        if($('.check-' + e).prop('checked')){
+    function clickChangeOn(e) {
+        if ($('.check-' + e).prop('checked')) {
             $('.tabs-check-' + e).removeClass('d-none');
             // $('.check-' + e).val('yes');
-        }else{
+        } else {
             $('.tabs-check-' + e).addClass('d-none');
             // $('.check-' + e).val('no');
         }
     }
+
     // Click element checkbox and show block tabs.
     function clickChange(event) {
-        if($('.check-' + event.data.name).prop('checked')){
+        if ($('.check-' + event.data.name).prop('checked')) {
             $('.tabs-check-' + event.data.name).removeClass('d-none');
-        }else{
+        } else {
             $('.tabs-check-' + event.data.name).addClass('d-none');
         }
 
     };
 
-    $('.check-garant').on('click', { name: "garant" }, clickChange);
-    $('.check-bay').on('click', { name: "bay" }, clickChange);
-    $('.check-delivery').on('click', { name: "delivery" }, clickChange);
+    $('.check-garant').on('click', {name: "garant"}, clickChange);
+    $('.check-bay').on('click', {name: "bay"}, clickChange);
+    $('.check-delivery').on('click', {name: "delivery"}, clickChange);
 
     $('.dropdown-toggle').dropdown('toggle');
 
 
     $('.last-check').change(function (e) {
-        if(e.currentTarget.classList[1] == 'last-check' && e.target.checked){
+        if (e.currentTarget.classList[1] == 'last-check' && e.target.checked) {
             e.currentTarget.offsetParent.previousElementSibling.childNodes[0].checked = true;
         }
-        
+
     });
+
+    // Remove counter yandex in sites
+    $('.removeCounter').click(function () {
+        $('.fieldCounter').removeClass('d-none');
+        $(this).addClass('d-none');
+    });
+
+    // Added option counter Yandex and Google tag
+    $(document).on( 'click','.btnSaveYandex', function (event) {
+        event.preventDefault();
+        let input_val = document.getElementById('countPutYandex').value;
+        let name_option = 'counter_code_yandex';
+        if(input_val) {
+            updateOptionWP(name_option, input_val);
+        }
+    });
+
+    function updateOptionWP($option, $new_value) {
+        var data = {
+            action: 'save_yandex',
+            option: $option,
+            new_value: $new_value
+        };
+
+        $.post(ajaxurl, data, function (response) {
+            alert('Код счетсчика успешно изменен!');
+            window.location.reload();
+        });
+    }
+
+
+
+    // function updateOptionWP($option, $new_value) {
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'https://x-ali.ru/wp-admin/admin-ajax.php',
+    //         data: {
+    //             action: 'save_yandex',
+    //             option: $option, // your option variable
+    //             new_value: $new_value // your new value variable
+    //         },
+    //         dataType: 'json'
+    //     }).done(function (json) {
+    //         alert("Ajax call succeeded, let's see what the response was.");
+    //         if (json.success) {
+    //             alert("Function executed successfully and returned: " + json.message);
+    //         } else if (!json.success) {
+    //             alert("Function failed and returned: " + json.message);
+    //         }
+    //     }).fail(function () {
+    //         alert("The Ajax call itself failed.");
+    //     }).always(function () {
+    //         alert("This message is always displayed, whether the call failed or succeeded.");
+    //     });
+    // }
 });
