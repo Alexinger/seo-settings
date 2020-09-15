@@ -475,8 +475,8 @@ add_action('init', 'mayak_button');
 
 function mayak_plugin($plugin_array)
 {
-    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js');
-    return $plugin_array;
+//    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js');
+//    return $plugin_array;
 }
 
 function mayak_register_button($buttons)
