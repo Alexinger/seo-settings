@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
         $(this).addClass('d-none');
     });
 
-    // Added option counter Yandex and Google tag
+    // Added option counter Yandex
     $(document).on( 'click','.btnSaveYandex', function (event) {
         event.preventDefault();
         let input_val = document.getElementById('countPutYandex').value;
@@ -116,30 +116,4 @@ jQuery(document).ready(function ($) {
             window.location.reload();
         });
     }
-
-
-
-    // function updateOptionWP($option, $new_value) {
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: 'https://x-ali.ru/wp-admin/admin-ajax.php',
-    //         data: {
-    //             action: 'save_yandex',
-    //             option: $option, // your option variable
-    //             new_value: $new_value // your new value variable
-    //         },
-    //         dataType: 'json'
-    //     }).done(function (json) {
-    //         alert("Ajax call succeeded, let's see what the response was.");
-    //         if (json.success) {
-    //             alert("Function executed successfully and returned: " + json.message);
-    //         } else if (!json.success) {
-    //             alert("Function failed and returned: " + json.message);
-    //         }
-    //     }).fail(function () {
-    //         alert("The Ajax call itself failed.");
-    //     }).always(function () {
-    //         alert("This message is always displayed, whether the call failed or succeeded.");
-    //     });
-    // }
 });

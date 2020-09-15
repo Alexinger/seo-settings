@@ -155,7 +155,6 @@ function update_row_plugin($id, $name, $path)
         array(
             'name_plugin' => $name,
             'path_plugin' => $path,
-            // 'active_plugin' => $active
         ),
         array(
             'id' => $id
@@ -164,10 +163,6 @@ function update_row_plugin($id, $name, $path)
         array('%d')
     );
 }
-
-//function remove_row(){
-//	return;
-//}
 
 //add_action('wp_ajax_loadplaginajax', 'loadplaginajax_callback');
 //function loadplaginajax_callback(){
@@ -282,7 +277,6 @@ function myajax_callback()
 
 // Подключаем табы в Woocommerce
 include_once 'inc/add-tabs-woo.php';
-
 include_once 'inc/add-field-woo.php';
 
 /*
@@ -429,20 +423,6 @@ function fieldajax_callback()
     wp_die();
 }
 
-add_action('wp_ajax_styleajax', 'styleajax_callback');
-function styleajax_callback()
-{
-
-//	$filename = 'https://x-ali.ru/wp-content/plugins/seo-settings/assets/css/style-theme.css';
-//	$f = fopen( $filename, 'w' );
-//	if(is_readable($filename)) {
-//		update_option( 'file-style', 'Файл доступен для записи! ' );
-//	}else{
-//		update_option( 'file-style', 'Файл не доступен для записи!!! ' . $filename);
-//	}
-//	wp_die();
-}
-
 // Добавляем путь к плагину в его описании
 add_filter('plugin_row_meta', 'true_echo_plugin_path', 10, 4);
 function true_echo_plugin_path($plugin_meta, $plugin_file, $plugin_data, $status)
@@ -475,8 +455,8 @@ add_action('init', 'mayak_button');
 
 function mayak_plugin($plugin_array)
 {
-//    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js');
-//    return $plugin_array;
+    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js');
+    return $plugin_array;
 }
 
 function mayak_register_button($buttons)
@@ -529,34 +509,18 @@ function inline_php($content)
     $content = preg_replace('/\[exeeec off\]((.|\n)*?)\[\/exeeec\]/', '$1', $content);
     return $content;
 }
-
 add_filter('the_content', 'inline_php', 0);
 
-// Save counter yandex metrika and google analytics
 add_action('wp_ajax_save_yandex', 'save_yandex_count');
-// add_action('wp_ajax_nopriv_save_yandex', 'save_yandex_count');
-
 function save_yandex_count()
 {
     $option = $_POST['option'];
     $new_value = $_POST['new_value'];
 
-//    if (!isset($option) || $option == '' || !isset($new_value) || $new_value = '') {
-//        die(
-//        json_encode(
-//            array(
-//                'success' => false,
-//                'message' => 'Missing required information.'
-//            )
-//        )
-//        );
-//    }
-
     update_option($option, $new_value);
     die(
     json_encode(
         array(
-//            'success' => true,
             'message' => 'Save counter yandex. Success!'
         )
     )

@@ -1,12 +1,3 @@
-<?php
-// add_option('counter_code_yandex', '31398333');
-// update_option('counter_code_yandex', '3139833');
-//    add_option('counter_code_google', '200');
-
-
-
-?>
-
 <div class="mt-4">
     <h2 class="text-center">Счетчики Яндекс метрики и Google Analytics</h2>
 
