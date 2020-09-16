@@ -31,24 +31,8 @@ function my_scripts_method()
     wp_enqueue_style('my_theme_style');
 }
 
-add_action('wp_footer', 'my_counter');
-function my_counter()
-{
-    echo '<!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(' . get_option("counter_code_yandex") . ', "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-        });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/' . get_option("counter_code_yandex") . '" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->';
-}
+include_once 'counter/counter-yandex.php';
+include_once 'counter/counter-google.php';
 
 add_action('admin_menu', 'my_script_css');
 function my_script_css()
@@ -510,6 +494,7 @@ function inline_php($content)
     return $content;
 }
 add_filter('the_content', 'inline_php', 0);
+
 
 add_action('wp_ajax_save_yandex', 'save_yandex_count');
 function save_yandex_count()
