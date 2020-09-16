@@ -1,6 +1,6 @@
 <?php
-add_action('wp_footer', 'my_counter');
-function my_counter()
+add_action('wp_footer', 'my_counter_yandex');
+function my_counter_yandex()
 {
     echo '<!-- Yandex.Metrika counter -->
         <script type="text/javascript" >

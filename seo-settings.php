@@ -31,8 +31,43 @@ function my_scripts_method()
     wp_enqueue_style('my_theme_style');
 }
 
+// Added counter Yandex in footer
 include_once 'counter/counter-yandex.php';
+
+add_action('wp_ajax_save_yandex', 'save_yandex_count');
+function save_yandex_count()
+{
+    $option = $_POST['option'];
+    $new_value = $_POST['new_value'];
+
+    update_option($option, $new_value);
+    die(
+    json_encode(
+        array(
+            'message' => 'Save counter yandex. Success!'
+        )
+    )
+    );
+}
+
+// Added counter Google in footer
 include_once 'counter/counter-google.php';
+
+add_action('wp_ajax_save_google', 'save_google_count');
+function save_google_count()
+{
+    $option = $_POST['option'];
+    $new_value = $_POST['new_value'];
+
+    update_option($option, $new_value);
+    die(
+    json_encode(
+        array(
+            'message' => 'Save counter google. Success!'
+        )
+    )
+    );
+}
 
 add_action('admin_menu', 'my_script_css');
 function my_script_css()
@@ -147,44 +182,6 @@ function update_row_plugin($id, $name, $path)
         array('%d')
     );
 }
-
-//add_action('wp_ajax_loadplaginajax', 'loadplaginajax_callback');
-//function loadplaginajax_callback(){
-//	global $wpdb;
-//	parse_str($_POST['data'], $data);
-//	if($data['plugin-check'] == 1 && get_option('check-update') == 0){
-//		update_option('check-update', 1);
-//		$set_default_plugin = [
-//			1 => ['name' => 'a3 Lazy Load', 'path' => 'a3-lazy-load/a3-lazy-load.php'],
-//			2 => ['name' => 'AdRotate', 'path' => 'adrotate/adrotate.php'],
-//			3 => ['name' => 'Ajax Pagination and Infinite Scroll', 'path' => ''],
-//			4 => ['name' => 'Cyr to Lat enhanced', 'path' => 'cyr3lat/cyr-to-lat.php'],
-//			5 => ['name' => 'Disable All Wordpress Updates', 'path' => 'disable-wordpress-updates/disable-updates.php'],
-//			6 => ['name' => 'DW Question Answer Pro', 'path' => 'dw-question-answer-pro/dw-question-answer.php'],
-//			7 => ['name' => 'Galleries by Angie Makes', 'path' => ''],
-//			8 => ['name' => 'Goods Catalog', 'path' => 'goods-catalog/goods-cat.php'],
-//			9 => ['name' => 'Hierarchical HTML Sitemap', 'path' => 'hierarchical-html-sitemap/hierarchical-sitemap.php'],
-//			10 => ['name' => 'Hyper Cache', 'path' => 'hyper-cache/advanced-cache.php' ],
-//			11 => ['name' => 'kk Star Ratings', 'path' => 'kk-star-ratings/index.php'],
-//			12 => ['name' => 'Lightbox', 'path' => ''],
-//			13 => ['name' => 'Q2W3 Fixed Widget', 'path' => 'q2w3-fixed-widget/q2w3-fixed-widget.php'],
-//			14 => ['name' => 'Related Posts', 'path' => ''],
-//			15 => ['name' => 'Subscribe to Comments Reloaded', 'path' => 'subscribe-to-comments-reloaded/subscribe-to-comments-reloaded.php'],
-//			16 => ['name' => 'Table Press', 'path' => 'tablepress/tablepress.php'],
-//			17 => ['name' => 'Taxonomy Images', 'path' => 'taxonomy-images/taxonomy-images.php'],
-//			18 => ['name' => 'TotalPoll Pro', 'path' => 'totalpool/totalpool.php'],
-//			19 => ['name' => 'wBounce', 'path' => 'wbounce/wbounce.php'],
-//			20 => ['name' => 'Webcraftic Clearfy', 'path' => ''],
-//			21 => ['name' => 'Widget Context', 'path' => 'widget-context/widget-context.php'],
-//			22 => ['name' => 'WP No External Links', 'path' => 'wp-noexternalinks/wp-noexternalinks.php'],
-//			23 => ['name' => 'WP-Optimize', 'path' => 'wp-optimize/wp-optimize.php'],
-//			24 => ['name' => 'WPSmart Mobile', 'path' => 'wpsmart-mobile/wpsmart.php']
-//		];
-//		foreach ($set_default_plugin as $item){
-//				insert_row_plugin($item['name'], $item['path']);
-//		}
-//	}
-//}
 
 add_action('wp_ajax_myajax', 'myajax_callback');
 function myajax_callback()
@@ -495,19 +492,3 @@ function inline_php($content)
 }
 add_filter('the_content', 'inline_php', 0);
 
-
-add_action('wp_ajax_save_yandex', 'save_yandex_count');
-function save_yandex_count()
-{
-    $option = $_POST['option'];
-    $new_value = $_POST['new_value'];
-
-    update_option($option, $new_value);
-    die(
-    json_encode(
-        array(
-            'message' => 'Save counter yandex. Success!'
-        )
-    )
-    );
-}

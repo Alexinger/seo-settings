@@ -89,8 +89,8 @@ jQuery(document).ready(function ($) {
     });
 
     // Remove counter yandex in sites
-    $('.removeCounter').click(function () {
-        $('.fieldCounter').removeClass('d-none');
+    $('.removeCounterYandex').click(function () {
+        $('.fieldCounterYandex').removeClass('d-none');
         $(this).addClass('d-none');
     });
 
@@ -100,11 +100,11 @@ jQuery(document).ready(function ($) {
         let input_val = document.getElementById('countPutYandex').value;
         let name_option = 'counter_code_yandex';
         if(input_val) {
-            updateOptionWP(name_option, input_val);
+            updateOptionYandex(name_option, input_val);
         }
     });
 
-    function updateOptionWP($option, $new_value) {
+    function updateOptionYandex($option, $new_value) {
         var data = {
             action: 'save_yandex',
             option: $option,
@@ -113,6 +113,35 @@ jQuery(document).ready(function ($) {
 
         $.post(ajaxurl, data, function (response) {
             alert('Код счетсчика успешно изменен!');
+            window.location.reload();
+        });
+    }
+
+    // Remove counter google in sites
+    $('.removeCounterGoogle').click(function () {
+        $('.fieldCounterGoogle').removeClass('d-none');
+        $('.removeCounterGoogle').addClass('d-none');
+    });
+
+    // Added option counter Google
+    $(document).on( 'click','.btnSaveGoogle', function (event) {
+        event.preventDefault();
+        let input_val = document.getElementById('countPutGoogle').value;
+        let name_option = 'counter_code_google';
+        if(input_val) {
+            updateOptionGoogle(name_option, input_val);
+        }
+    });
+
+    function updateOptionGoogle($option, $new_value) {
+        var data = {
+            action: 'save_google',
+            option: $option,
+            new_value: $new_value
+        };
+
+        $.post(ajaxurl, data, function (response) {
+            alert('Код Google счетсчика успешно изменен!');
             window.location.reload();
         });
     }
