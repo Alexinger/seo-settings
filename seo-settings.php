@@ -15,7 +15,7 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
-include_once 'vars.php';
+// include_once 'vars.php';
 
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
@@ -436,7 +436,7 @@ add_action('init', 'mayak_button');
 
 function mayak_plugin($plugin_array)
 {
-    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js');
+    $plugin_array['mayak'] = plugins_url('seo-settings/assets/js/added-button.js', time());
     return $plugin_array;
 }
 
