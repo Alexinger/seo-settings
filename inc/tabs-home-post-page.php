@@ -12,13 +12,21 @@ $myposts = get_posts( $args );
 	<?php
 		foreach( $myposts as $post ){
 		setup_postdata($post);
+		$post_status_check = '';
+
+		if ($post->post_status === 'publish') { $post_status_check = 'Опубликован'; }
+		if ($post->post_status === 'inherit') { $post_status_check = 'Редакция записи'; }
+		if ($post->post_status === 'trash') { $post_status_check = 'В корзине'; }
+		if ($post->post_status === 'pending') { $post_status_check = 'Для администратора'; }
+		if ($post->post_status === 'draft') { $post_status_check = 'Черновик'; }
+		if ($post->post_status === 'future') { $post_status_check = 'Отложенная публикация'; }
 	?>
-            <div><span>Дата записи: </span><?php print the_date(); ?></div>
-            <div><span>ID записи: </span><?php print $post->ID; ?></div>
-            <div><span>Post excerpt: </span><?php print $post->post_excerpt; ?></div>
-            <div><span>Статус публикации: </span><?php print $post->post_status; ?></div>
-            <div><span>Название поста: </span><?php print $post->post_name; ?></div>
-            <div><span>Guid: </span><?php print $post->guid; ?></div>
+            <div><span class="font-weight-bolder">Дата записи: </span><?php print the_date(); ?></div>
+            <div><span class="font-weight-bolder">ID записи: </span><?php print $post->ID; ?></div>
+            <div><span class="font-weight-bolder">Цитата: </span><?php print $post->post_excerpt; ?></div>
+            <div><span class="font-weight-bolder">Статус публикации: </span><?php print $post_status_check; ?></div>
+            <div><span class="font-weight-bolder">Название поста: </span><?php print $post->post_title; ?></div>
+            <div><span class="font-weight-bolder">Guid: </span><?php print $post->guid; ?></div>
 
 			<?php echo wp_get_attachment_image($post->ID, array(20,20)); ?>
 		<li class="card-header"><a href="<?php the_permalink(); ?>" class="text-white"><?php the_title(); ?></a></li>
