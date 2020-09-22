@@ -13,12 +13,13 @@ $myposts = get_posts( $args );
 		foreach( $myposts as $post ){
 		setup_postdata($post);
 	?>
-			<?php echo "<br>Date: "; the_date(); ?>
-			<?php echo "<br>ID: " . $post->ID; ?>
-			<?php echo "<br>Post excerpt: " . $post->post_excerpt; ?>
-			<?php echo "<br>Post status: " . $post->post_status; ?>
-			<?php echo "<br>Post name: " . $post->post_name; ?>
-			<?php echo "<br>Guid: " . $post->guid; ?>
+            <div><span>Дата записи: </span><?php print the_date(); ?></div>
+            <div><span>ID записи: </span><?php print $post->ID; ?></div>
+            <div><span>Post excerpt: </span><?php print $post->post_excerpt; ?></div>
+            <div><span>Статус публикации: </span><?php print $post->post_status; ?></div>
+            <div><span>Название поста: </span><?php print $post->post_name; ?></div>
+            <div><span>Guid: </span><?php print $post->guid; ?></div>
+
 			<?php echo wp_get_attachment_image($post->ID, array(20,20)); ?>
 		<li class="card-header"><a href="<?php the_permalink(); ?>" class="text-white"><?php the_title(); ?></a></li>
 		<li class="card-body" style="max-height: 100px; overflow-y: scroll"><?php the_content(); ?></li>

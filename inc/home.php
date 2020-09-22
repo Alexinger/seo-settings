@@ -145,12 +145,6 @@
 	        <?php include_once 'tabs-tab-delivery-garant-bay.php'; ?>
 
         </div>
-        <div class="tab-pane fade" id="help" role="tabpanel">
-
-            <!-- Контент Дочерние стили текущей темы -->
-	        <?php include_once 'tabs-tab-help.php'; ?>
-
-        </div>
     </div>
 </div>
 </div>
