@@ -1,48 +1,58 @@
-<ul>
-<?php
+<div class="card-columns">
+    <?php
 
-global $post;
+    global $post;
 
-$args = array( 'post_type' => array('product', 'attachment'), 'numberposts' => -1, 'nopaging' => true, 'post_mine_type' => 'image/png', 'post_status'=>'any, post');
-$myposts = get_posts( $args );
+    $args = array('post_type' => array('product', 'attachment'), 'numberposts' => -1, 'nopaging' => true, 'post_mine_type' => 'image', 'post_status' => 'any', 'order' => 'ASC', 'orderby' => 'title');
+    $myposts = get_posts($args);
 
-?>
-	<li></li>
+    ?>
+    <?php
+    foreach ($myposts as $post) {
+        setup_postdata($post);
+        $post_status_check = '';
 
-	<?php
-		foreach( $myposts as $post ){
-		setup_postdata($post);
-		$post_status_check = '';
+        if ($post->post_status === 'publish') {
+            $post_status_check = 'Опубликован';
+        }
+        if ($post->post_status === 'inherit') {
+            $post_status_check = 'Редакция записи';
+        }
+        if ($post->post_status === 'trash') {
+            $post_status_check = 'В корзине';
+        }
+        if ($post->post_status === 'pending') {
+            $post_status_check = 'Для администратора';
+        }
+        if ($post->post_status === 'draft') {
+            $post_status_check = 'Черновик';
+        }
+        if ($post->post_status === 'future') {
+            $post_status_check = 'Отложенная публикация';
+        }
+        ?>
 
-		if ($post->post_status === 'publish') { $post_status_check = 'Опубликован'; }
-		if ($post->post_status === 'inherit') { $post_status_check = 'Редакция записи'; }
-		if ($post->post_status === 'trash') { $post_status_check = 'В корзине'; }
-		if ($post->post_status === 'pending') { $post_status_check = 'Для администратора'; }
-		if ($post->post_status === 'draft') { $post_status_check = 'Черновик'; }
-		if ($post->post_status === 'future') { $post_status_check = 'Отложенная публикация'; }
-	?>
-            <div><span class="font-weight-bolder">Дата записи: </span><?php print the_date(); ?></div>
-            <div><span class="font-weight-bolder">ID записи: </span><?php print $post->ID; ?></div>
-            <div><span class="font-weight-bolder">Цитата: </span><?php print $post->post_excerpt; ?></div>
-            <div><span class="font-weight-bolder">Статус публикации: </span><?php print $post_status_check; ?></div>
-            <div><span class="font-weight-bolder">Название поста: </span><?php print $post->post_title; ?></div>
-            <div><span class="font-weight-bolder">Guid: </span><?php print $post->guid; ?></div>
+        <div class="card p-0">
+            <h4 class="text-center mb-4 card-header text-truncate"><a href="<?php the_permalink(); ?>"
+                                                        target="_blank"><?php the_title(); ?></a></h4>
+            <div class="m-3">
+                <div><span class="font-weight-bolder">Дата записи: </span><?php print the_date(); ?></div>
+                <div><span class="font-weight-bolder">ID записи: </span><?php print $post->ID; ?></div>
+                <div><span class="font-weight-bolder">Цитата: </span><?php print $post->post_excerpt; ?></div>
+                <div><span class="font-weight-bolder">Статус публикации: </span><?php print $post_status_check; ?></div>
+                <a href="<?php print wp_get_attachment_image_url($post->ID); ?>" target="_blank">
+                    <?php echo wp_get_attachment_image($post->ID, array(100, 100), $icon = true); ?>
+                </a>
+            </div>
+            <p class="card-footer mb-0 text-right"><?php edit_post_link(); ?></p>
+        </div>
+        <?php
+    }
+    wp_reset_postdata();
 
-			<?php echo wp_get_attachment_image($post->ID, array(20,20)); ?>
-		<li class="card-header"><a href="<?php the_permalink(); ?>" class="text-white"><?php the_title(); ?></a></li>
-		<li class="card-body" style="max-height: 100px; overflow-y: scroll"><?php the_content(); ?></li>
-	<?php
-}
-wp_reset_postdata();
+    ?>
 
-?>
-</ul>
-
-
-
-
-
-
+</div>
 <?php
 //require_once __DIR__ . '/../inc/data/dbConnect.php';
 //
