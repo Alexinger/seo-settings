@@ -3,8 +3,12 @@ add_action('wp_footer', 'my_counter_yandex');
 function my_counter_yandex()
 {
     echo '<script>
-        let s = $(document).find("Yandex.Metrika");
-        console.log(s);
+        let s = $(window).find("<!-- Yandex.Metrika counter -->");
+        if(s.selector === "Yandex.Metrika") {
+            console.log("Есть скрипт");
+        } else {
+            console.log("Нет скрипта");
+        }
     </script>';
     echo '<!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
