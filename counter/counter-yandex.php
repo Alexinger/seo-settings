@@ -16,15 +16,10 @@ function my_counter_yandex()
         </script>
         <!-- /Yandex.Metrika counter -->';
 
+    echo $script;
+
     echo '<script>
-    $.fn.regex = function(pattern, fn, fn_a){
-        var fn = fn || $.fn.text;
-        return this.filter(function() {
-            return pattern.test(fn.apply($(this), fn_a));
-        });
-    };
-    
-        let a = $("script").regex(/mc.yandex.ru/);
-        console.log(a);
+        let txtFind = $("script").text().indexOf("metrika");
+        console.log(txtFind);
     </script>';
 }
