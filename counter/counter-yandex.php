@@ -18,7 +18,7 @@ function my_counter_yandex()
 
     echo $script;
 
-    echo '<script>
+    echo '<script  type="text/javascript">
         let txtFind = $("script").text().indexOf("metrika");
         console.log(txtFind);
     </script>';
