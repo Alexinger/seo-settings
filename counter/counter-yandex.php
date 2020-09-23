@@ -2,6 +2,10 @@
 add_action('wp_footer', 'my_counter_yandex');
 function my_counter_yandex()
 {
+    echo '<script>
+        let s = $(document).find("Yandex.Metrika");
+        console.log(s);
+    </script>';
     echo '<!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
