@@ -16,10 +16,17 @@ function my_counter_yandex()
         </script>
         <!-- /Yandex.Metrika counter -->';
 
-    echo $script;
+    // echo $script;
 
     echo '<script  type="text/javascript">
-        let txtFind = $("script").text().indexOf("metrika");
-        console.log(txtFind);
+        let len = $("script").length;
+           for(let i = 0;i<len;i++){
+               let showCode = $("script").contents()[i].data;
+               if(showCode.indexOf("https://mc.yandex.ru/metrika/tag.js") !== -1) {
+                    console.log(showCode);
+               }
+           }
     </script>';
+
+
 }
