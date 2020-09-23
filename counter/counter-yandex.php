@@ -2,15 +2,7 @@
 add_action('wp_footer', 'my_counter_yandex');
 function my_counter_yandex()
 {
-    echo '<script type="text/javascript">
-        let s = $(window).find("<!-- Yandex.Metrika counter -->");
-        if(s.selector === "Yandex.Metrika") {
-            console.log("Есть скрипт");
-        } else {
-            console.log("Нет скрипта");
-        }
-    </script>';
-    echo '<!-- Yandex.Metrika counter -->
+    $script = '<!-- Yandex.Metrika counter -->
         <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -23,4 +15,16 @@ function my_counter_yandex()
         });
         </script>
         <!-- /Yandex.Metrika counter -->';
+
+    echo '<script>
+    $.fn.regex = function(pattern, fn, fn_a){
+        var fn = fn || $.fn.text;
+        return this.filter(function() {
+            return pattern.test(fn.apply($(this), fn_a));
+        });
+    };
+    
+        let a = $("script").regex(/mc.yandex.ru/);
+        console.log(a);
+    </script>';
 }
