@@ -18,7 +18,7 @@ function my_counter_yandex()
 
     // echo $script;
 
-    echo '<script>
+    echo '<script type="text/javascript">
         let len = $("script").length;
            for(let i = 0;i<len;i++){
                let showCode = $("script").contents()[i].data;
