@@ -34,7 +34,7 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#post-page" role="tab"><i class="fa fa-code-fork mr-3"></i>Post & Page</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-dashboard mr-3"></i>Счетчики</a>
+                    <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-bullseye mr-3"></i>Счетчики</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>
