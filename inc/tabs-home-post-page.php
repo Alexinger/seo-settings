@@ -16,7 +16,7 @@
             $post_status_check = 'Опубликован';
         }
         if ($post->post_status === 'inherit') {
-            $post_status_check = 'Редакция записи';
+            $post_status_check = 'Вложения/редакция записи';
         }
         if ($post->post_status === 'trash') {
             $post_status_check = 'В корзине';
