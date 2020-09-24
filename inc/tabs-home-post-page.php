@@ -40,8 +40,8 @@
                 <div><span class="font-weight-bolder">ID записи: </span><?php print $post->ID; ?></div>
                 <div style="max-height: 160px;overflow: auto;"><span class="font-weight-bolder">Цитата: </span><?php print $post->post_excerpt; ?></div>
                 <div><span class="font-weight-bolder">Статус публикации: </span><?php print $post_status_check; ?></div>
-                <a href="<?php print wp_get_attachment_image_url($post->ID); ?>" target="_blank">
-                    <?php echo wp_get_attachment_image($post->ID, array(100, 100), $icon = true); ?>
+                <a href="<?php print wp_get_attachment_image_url($post->ID); ?>" target="_blank" class="d-flex flex-center">
+                    <?php echo wp_get_attachment_image($post->ID, array(100, 100), $icon = true, array("class" => "img-thumbnail rounded-circle")); ?>
                 </a>
             </div>
             <p class="card-footer mb-0 text-right"><?php edit_post_link(); ?></p>
