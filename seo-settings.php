@@ -509,3 +509,4 @@ if( 'disable_gutenberg' ){
         add_action( 'edit_form_after_title', [ 'WP_Privacy_Policy_Content', 'notice' ] );
     } );
 }
+
