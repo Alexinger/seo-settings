@@ -15,7 +15,7 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
-// include_once 'vars.php';
+//include_once 'vars.php';
 
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
