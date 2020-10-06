@@ -2,7 +2,7 @@
     tinymce.create('tinymce.plugins.mayak', {
         init : function(ed, url) {
             ed.addButton('yellow', {
-                title : 'Теги для страницы',
+                title : 'Блоки для страницы',
                 text: 'Настройки страницы',
                 icon: 'icon mce-i-fullpage',
                 type: 'menubutton',
