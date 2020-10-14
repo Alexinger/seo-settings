@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; image/jpg; charset=utf-8');
 /*
-Plugin Name: Settings SEO
+Plugin Name: Settings SEO plugin
 Plugin URI: https://github.com/Alexinger/seo-settings
 Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и оптимизация).
 Version: 1.0.5
