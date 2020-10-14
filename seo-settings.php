@@ -4,7 +4,7 @@ header('Content-Type: text/html; image/jpg; charset=utf-8');
 Plugin Name: Settings SEO
 Plugin URI: https://github.com/Alexinger/seo-settings
 Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и оптимизация).
-Version: 1.0.4
+Version: 1.0.5
 Author: Alexinger
 Author URI: https://x-ali.ru
 License: A "Slug" license name e.g. GPL2
@@ -130,8 +130,6 @@ add_action('admin_menu', 'settings_header');
 function settings_header()
 {
     add_menu_page('Настройка оптимизации для сайта', 'Расширение WC', 'edit_pages', 'settings_header', 'options_page_header', 'dashicons-forms');
-//	add_options_page('Настройка плагина Woocommerce', '<div><i class="fa fa-gears mr-2 text-info"></i>Расширение Woo</div>', 8, 'settings_header', 'options_page_header');
-    // add_submenu_page( 'options_page_header', 'Управление содержимом', 'О плагине', 'settings_header', 'options_page_last');
 }
 
 add_action('wp_ajax_pluginajax', 'pluginajax_callback');
