@@ -36,9 +36,9 @@
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-bullseye mr-3"></i>Счетчики</a>
                 </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>
-                </li>
+<!--                <li class="nav-item mx-1">-->
+<!--                    <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>-->
+<!--                </li>-->
             </ul>
 
             <div class="tab-content py-3 border-top-0">
@@ -66,12 +66,9 @@
 		            <?php include_once 'tabs-home-counter.php'; ?>
 
                 </div>
-                <div class="tab-pane fade" id="templates" role="tabpanel">
-
-                    <!-- Контент Шаблон страниц -->
-		            <?php include_once 'tabs-home-template.php'; ?>
-
-                </div>
+<!--                <div class="tab-pane fade" id="templates" role="tabpanel">-->
+<!--		            --><?php //include_once 'tabs-home-template.php'; ?>
+<!--                </div>-->
             </div>
         </div>
 
