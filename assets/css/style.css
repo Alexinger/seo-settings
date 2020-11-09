@@ -176,3 +176,24 @@ marquee br {
     display: none;
 }
 
+/*Width scrollbar in iframe and page plugins*/
+/* SCROLLBAR */
+/* Let's get this party started */
+
+#iframes::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+#iframes::-webkit-scrollbar-track {
+    background: rgb(0,0,0);
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+/* Handle */
+#iframes::-webkit-scrollbar-thumb {
+    background: blue;
+    border: 1px solid rgb(0,0,0);
+}
+

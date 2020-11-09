@@ -19,7 +19,11 @@
         <li class="nav-item">
             <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О Сайте</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#seo" role="tab"><i class="fa fa-briefcase mr-3"></i>SEO</a>
+        </li>
     </ul>
+
     <!-- Tab panes -->
     <div class="tab-content py-1">
         <div class="tab-pane active in" id="home" role="tabpanel">
@@ -36,9 +40,6 @@
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-bullseye mr-3"></i>Счетчики</a>
                 </li>
-<!--                <li class="nav-item mx-1">-->
-<!--                    <a class="nav-link text-dark" data-toggle="tab" href="#templates" role="tab"><i class="fa fa-columns mr-3"></i>Шаблоны страниц</a>-->
-<!--                </li>-->
             </ul>
 
             <div class="tab-content py-3 border-top-0">
@@ -66,9 +67,6 @@
 		            <?php include_once 'tabs-home-counter.php'; ?>
 
                 </div>
-<!--                <div class="tab-pane fade" id="templates" role="tabpanel">-->
-<!--		            --><?php //include_once 'tabs-home-template.php'; ?>
-<!--                </div>-->
             </div>
         </div>
 
@@ -141,6 +139,33 @@
             <!-- Контент Дочерние стили текущей темы -->
 	        <?php include_once 'tabs-tab-delivery-garant-bay.php'; ?>
 
+        </div>
+
+        <!-- Контент Данные о сайте -->
+        <div class="tab-pane fade" id="seo" role="tabpanel">
+            <ul class="nav nav-tabs nav-fill" role="tablist">
+                <li class="nav-item mx-1">
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#pagespeed" role="tab"><i class="fa fa-bolt mr-3"></i>PageSpeed</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link text-dark" data-toggle="tab" href="#prcy" role="tab"><i class="fa fa-code-fork mr-3"></i>PR-CY</a>
+                </li>
+            </ul>
+
+            <div class="tab-content py-3 border-top-0">
+                <div class="tab-pane active" id="pagespeed" role="tabpanel">
+
+                    <!-- Контент Изображения WP -->
+                    <?php include_once 'tabs-home-seo.php'; ?>
+
+                </div>
+                <div class="tab-pane fade" id="prcy" role="tabpanel">
+
+                    <!-- Контент Изображения WP -->
+                    <?php include_once 'tabs-home-prcy.php'; ?>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
