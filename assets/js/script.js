@@ -145,4 +145,17 @@ jQuery(document).ready(function ($) {
             window.location.reload();
         });
     }
+
+    /*Event click button check page and post*/
+    $(document).on('click', '.btnSaveCheck', function (event) {
+        event.preventDefault();
+        let checkButton = 'checkbox-result_' + event.target.id;
+        let checkTrue = document.getElementsByClassName(checkButton)[0];
+
+        checkTrue.classList.toggle('fa-check');
+        checkTrue.classList.toggle('text-success');
+
+        checkTrue.classList.toggle('fa-close');
+        checkTrue.classList.toggle('text-danger');
+    })
 });

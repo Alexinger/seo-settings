@@ -145,24 +145,33 @@
         <div class="tab-pane fade" id="seo" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item mx-1">
-                    <a class="nav-link active text-dark" data-toggle="tab" href="#pagespeed" role="tab"><i class="fa fa-bolt mr-3"></i>PageSpeed</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#pagespeed" role="tab"><i class="fa fa-bolt mr-3"></i>PageSpeed</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#prcy" role="tab"><i class="fa fa-code-fork mr-3"></i>PR-CY</a>
                 </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#pageseo" role="tab"><i class="fa fa-window-restore mr-3"></i>Page check</a>
+                </li>
             </ul>
 
             <div class="tab-content py-3 border-top-0">
-                <div class="tab-pane active" id="pagespeed" role="tabpanel">
+                <div class="tab-pane fade" id="pagespeed" role="tabpanel">
 
-                    <!-- Контент Изображения WP -->
+                    <!-- Страница seo проверки сайта на скорость pagespeed insights -->
                     <?php include_once 'tabs-home-seo.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="prcy" role="tabpanel">
 
-                    <!-- Контент Изображения WP -->
+                    <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
                     <?php include_once 'tabs-home-prcy.php'; ?>
+
+                </div>
+                <div class="tab-pane active" id="pageseo" role="tabpanel">
+
+                    <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
+                    <?php include_once 'tabs-home-page-seo.php'; ?>
 
                 </div>
             </div>
