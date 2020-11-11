@@ -151,28 +151,36 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#prcy" role="tab"><i class="fa fa-code-fork mr-3"></i>PR-CY</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link active text-dark" data-toggle="tab" href="#pageseo" role="tab"><i class="fa fa-window-restore mr-3"></i>Page check</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#postseo" role="tab"><i class="fa fa-window-restore mr-3"></i>Post check</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link text-dark" data-toggle="tab" href="#pageseo" role="tab"><i class="fa fa-window-restore mr-3"></i>Page check</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link active text-dark" data-toggle="tab" href="#productseo" role="tab"><i class="fa fa-window-restore mr-3"></i>Product check</a>
                 </li>
             </ul>
 
             <div class="tab-content py-3 border-top-0">
                 <div class="tab-pane fade" id="pagespeed" role="tabpanel">
-
                     <!-- Страница seo проверки сайта на скорость pagespeed insights -->
                     <?php include_once 'tabs-home-seo.php'; ?>
-
                 </div>
                 <div class="tab-pane fade" id="prcy" role="tabpanel">
-
                     <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
                     <?php include_once 'tabs-home-prcy.php'; ?>
-
                 </div>
-                <div class="tab-pane active" id="pageseo" role="tabpanel">
-
+                <div class="tab-pane fade" id="pageseo" role="tabpanel">
                     <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
                     <?php include_once 'tabs-home-page-seo.php'; ?>
-
+                </div>
+                <div class="tab-pane fade" id="postseo" role="tabpanel">
+                    <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
+                    <?php include_once 'tabs-home-post-seo.php'; ?>
+                </div>
+                <div class="tab-pane active" id="productseo" role="tabpanel">
+                    <!-- Страница seo проверки сайта на скорость pr-cy.ru -->
+                    <?php include_once 'tabs-home-product-seo.php'; ?>
                 </div>
             </div>
         </div>

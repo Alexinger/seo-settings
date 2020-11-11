@@ -33,7 +33,7 @@
         ?>
 
         <div class="card p-0">
-            <h4 class="text-center mb-4 card-header text-truncate"><a href="<?php the_permalink(); ?>"
+            <h4 class="text-center mb-4 card-header text-truncate bg-active-font"><a href="<?php the_permalink(); ?>"
                                                         target="_blank"><?php the_title(); ?></a></h4>
             <div class="m-3">
                 <div><span class="font-weight-bolder">Дата записи: </span><?php print the_date(); ?></div>
