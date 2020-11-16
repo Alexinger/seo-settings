@@ -147,15 +147,37 @@ jQuery(document).ready(function ($) {
     }
 
     /*Event click button check page and post*/
-    $(document).on('click', '.btnSaveCheck', function (event) {
-        event.preventDefault();
-        let checkButton = 'checkbox-result_' + event.target.id;
+    $(document).on('keyup paste input', '.contenteditable', function (event) {
+
+        // let x = document.getElementsByClassName('editFieldsTasks')[0];
+        // let idProduct = document.getElementsByClassName("idProduct")[0];
+
+        let checkButton = 'checkbox-result_' + this.id;
+        let set = document.getElementById(this.id);
+        // console.log(set);
         let checkTrue = document.getElementsByClassName(checkButton)[0];
 
-        checkTrue.classList.toggle('fa-check');
-        checkTrue.classList.toggle('text-success');
+        if(set.textContent.length > 0){
+            checkTrue.classList.add('fa-close');
+            checkTrue.classList.add('fa-danger');
+            checkTrue.classList.remove('fa-check');
+            checkTrue.classList.remove('text-success');
+        }else{
+            checkTrue.classList.remove('fa-close');
+            checkTrue.classList.remove('fa-danger');
+            checkTrue.classList.add('fa-check');
+            checkTrue.classList.add('text-success');
+        }
+    });
 
-        checkTrue.classList.toggle('fa-close');
-        checkTrue.classList.toggle('text-danger');
-    })
+    // $('body').on('focus', '[contenteditable]', function() {
+    //     const $this = $(this);
+    //     $this.data('before', $this.html());
+    // }).on('blur keyup paste input', '[contenteditable]', function() {
+    //     const $this = $(this);
+    //     if ($this.data('before') !== $this.html()) {
+    //         $this.data('before', $this.html());
+    //         $this.trigger('change');
+    //     }
+    // });
 });
