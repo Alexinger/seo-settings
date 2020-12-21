@@ -20,9 +20,9 @@ License: A "Slug" license name e.g. GPL2
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
 {
-    wp_deregister_script('jquery-core');
-    wp_register_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', time());
-    wp_enqueue_script('jquery');
+//    wp_deregister_script('jquery-core');
+//    wp_register_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', time());
+//    wp_enqueue_script('jquery');
 
     wp_register_script('my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
