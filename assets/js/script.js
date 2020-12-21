@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 
     $('[data-toggle="tooltip"]').tooltip();
+    $('.x-row').addClass('row');
 
     var text = "Данные успешно сохраненны!";
 
