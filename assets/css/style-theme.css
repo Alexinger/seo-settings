@@ -1,4 +1,4 @@
-/*@import "stripped-down-bootstrap.css";*/
+@import "stripped-down-bootstrap.css";
 .sidebar-section-right{
     border: 5px dotted red !important;
 }
