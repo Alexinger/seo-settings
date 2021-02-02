@@ -1,103 +1,83 @@
-<h2 class="text-center">Проверка доступности сайтов</h2>
-
-<button class="btn btn-dark-green rounded">Проверить</button>
-
-<form enctype="multipart/form-data" action="" method="POST">
-    <?php wp_nonce_field( 'my_file_upload', 'fileup_nonce' ); ?>
-    <input name="my_file_upload" type="file" />
-    <input type="submit" value="Загрузить файл" />
-</form>
-
 <?php
-
-if( wp_verify_nonce( $_POST['fileup_nonce'], 'my_file_upload' ) ){
-
-    if ( ! function_exists( 'wp_handle_upload' ) )
-        require_once( ABSPATH . 'wp-admin/includes/file.php' );
-
-    $file = & $_FILES['my_file_upload'];
-
-    $overrides = [ 'test_form' => false ];
-
-    $movefile = wp_handle_upload( $file, $overrides );
-
-    if ( $movefile && empty($movefile['error']) ) {
-        echo "Файл был успешно загружен.\n";
-        print_r( $movefile );
-    } else {
-        echo "Возможны атаки при загрузке файла!\n";
-    }
-}
-
 mb_internal_encoding("UTF-8");
 define('TELEGRAM_TOKEN', '1384324426:AAHIMNA_wPUBEfabuTbBDjHWODyH9AqshGs');
 define('TELEGRAM_CHATID', '344920426'); // @name_chat
-// define('API_URL', 'https://api.telegram.org/bot' . TOKEN . '/');
+?>
 
-//isDomainAvailible('https://google.com');
-//isDomainAvailible('https://ibank.biz.ua');
-//isDomainAvailible('http://goog32434235254636leasd.com');
+    <h2 class="text-center">Проверка доступности сайтов</h2>
 
-//isDomainAvailible("https://2969.ru");
-//isDomainAvailible("https://ig-na.ru");
-//isDomainAvailible("https://stosuper.ru");
-//isDomainAvailible("https://2307.ru");
-//isDomainAvailible("https://2284.ru/chat-widget");
+<?php
 
-// почта
-//isDomainAvailible("https://2301.ru");
-//isDomainAvailible("https://mailpo.ru");
-//isDomainAvailible("http://2218.ru");
+if (wp_verify_nonce($_POST['fileup_nonce'], 'my_file_upload')) {
 
-// незамерзайка
-//isDomainAvailible("https://nezamerzaev.ru");
-//isDomainAvailible("https://nezamerzajka-optom.ru");
-//isDomainAvailible("https://avto-voda.ru");
-//isDomainAvailible("http://voda-avto.ru");
-//isDomainAvailible("https://nezamerzaev-30.ru");
-//isDomainAvailible("https://nezamerzajka-moskva.ru");
-//isDomainAvailible("https://nezamerzaika24.ru");
-//isDomainAvailible("https://nezamerzajka-spb.ru");
-//isDomainAvailible("https://nezamerzaika-optom-spb.ru");
-//isDomainAvailible("https://nezamerzaika-samara.ru");
-//isDomainAvailible("https://nezamerzajka-samara.ru");
-//isDomainAvailible("https://nezamerzaika-nsk.ru");
-//isDomainAvailible("https://nezamerzajka-novosibirsk.ru");
-//isDomainAvailible("https://nezamerzaika-ekb.ru");
-//isDomainAvailible("https://nezamerzajka-ekaterinburg.ru");
-//isDomainAvailible("https://nezamerzaika-kazan.ru");
-//isDomainAvailible("https://nezamerzajka-optom-kazan.ru");
-//isDomainAvailible("https://nezamerzajka-ufa.ru");
-//isDomainAvailible("https://nezamerzajka-optom-ufa.ru");
-//isDomainAvailible("https://nezamerzaika-perm.ru");
-//isDomainAvailible("https://nezamerzajka-optom-perm.ru");
+    if (!function_exists('wp_handle_upload'))
+        require_once(ABSPATH . 'wp-admin/includes/file.php');
 
-// двигатели
-//isDomainAvailible("https://dvigatelev.ru");
-//isDomainAvailible("https://remont-dvigatelej.ru");
-//isDomainAvailible("https://remont-motora.ru");
-//isDomainAvailible("https://vazdvigatel.ru");
-//isDomainAvailible("https://vaz-dvigatel.ru");
-//isDomainAvailible("https://dvigatelgaz.ru");
-//isDomainAvailible("https://gazdvigatel.ru");
-//isDomainAvailible("https://avtoservis-yuvao.ru");
+    $file = &$_FILES['my_file_upload'];
 
-// дезсредства
-//isDomainAvailible("https://botun.ru");
-//isDomainAvailible("https://dezsredstva-optom.ru");
+    $overrides = ['test_form' => false];
 
-// автосервисы
-//isDomainAvailible("https://sto-chita.ru");
-//isDomainAvailible("http://avtoservis-karmaks.ru");
-//isDomainAvailible("http://avtoservis-rybinsk.ru");
-//isDomainAvailible("https://zapchast-bu.ru");
+    $movefile = wp_handle_upload($file, $overrides);
 
-// автошкола
-//isDomainAvailible("https://masterclass76.ru");
+    move_uploaded_file($_FILES['user_file']['tmp_name'], plugin_dir_url(__FILE__) . $file);
 
-// ремонт
-//isDomainAvailible("https://remont-kvartir-rybinsk.ru");
+    if ($movefile && empty($movefile['error'])) {
+        echo "Файл был успешно загружен.\n";
+        print_r($movefile);
+    } else {
+        echo "Нет файла для загрузки!\n";
+    }
+}
 
+$files = "data3.json";
+$a = file_get_contents($files, true);
+$a = json_decode($a, true);
+$set = '';
+// unset($files);
+
+if ($a != false) {
+    foreach ($a as $k => $e) {
+        $set .= $e . '<br>';
+    }
+}
+
+?>
+    <h4 class="mt-3 font-weight-bold text-monospace mb-n1">Список всех сайтов:</h4>
+    <small class="text-black-50">(все сайты вводить с новой строки)</small>
+    <form action="" method="post" class="mt-3">
+        <textarea name="message" class="card m-0 p-3" rows="20"
+                  cols="80"><?php echo get_option("site_all"); ?></textarea>
+        <p class="mt-3"><input type="submit" name="submit" id="submit" class="btn btn-sm btn-success"
+                               value="сохранить изменения"></p>
+        <p class="mt-3"><input type="submit" name="submit_update" id="submit_update" class="btn btn-sm btn-danger"
+                               value="проверить все сайты"></p>
+    </form>
+
+<?php
+
+if (isset($_POST['submit_update'])) {
+    $sites = get_option("site_all");
+    startMessageTelegram($sites);
+}
+
+if (isset($_POST['submit'])) {
+    $set = get_option("site_all");
+    $txt = str_word_count($set, 1, ":./");
+    $event = $_POST['message'];
+
+    foreach ($txt as &$item) {
+        isDomainAvailible($item);
+    }
+
+    update_option("site_all", $event);
+    startMessageTelegram($event);
+
+    ?>
+    <script>window.location.reload()</script>
+    <?php
+}
+
+// /home/alexing/x-ali.ru/www/wp-content/plugins/seo-settings/inc
 
 function startMessageTelegram($message_telegram)
 {
@@ -112,7 +92,7 @@ function startMessageTelegram($message_telegram)
             CURLOPT_POSTFIELDS => array(
                 'chat_id' => TELEGRAM_CHATID,
                 'text' => $message_telegram,
-                'parse_mode'=>html
+                'parse_mode' => html
             ),
         )
     );
@@ -134,10 +114,14 @@ function isDomainAvailible($domain)
     //получение ответа
     $response = curl_exec($curlInit);
     curl_close($curlInit);
-    if($response) {
+    if ($response) {
         // return "<b>Сайт работает: </b>" . $domain;
+        // startMessageTelegram(`Сайт работает: {$response}`);
+        startMessageTelegram($domain . ' - сайт работает!!!');
     } else {
-        echo "<b>Сайт НЕ работает: </b>" . $domain . "<br>";
+        // echo "<b>Сайт НЕ работает: </b>" . $domain . "<br>";
+        // startMessageTelegram(`Сайт НЕ работает: {$response}`);
+        startMessageTelegram($domain . 'Сайт НЕЕЕЕ работает!!!');
     }
 }
 

@@ -1,31 +1,51 @@
 @import "stripped-down-bootstrap.css";
-.sidebar-section-right{
+
+.sidebar-section-right {
     border: 5px dotted red !important;
 }
-#billing_billing{
-     display: none;
-}
-.woocommerce-Price-amount.amount{
-    /*display: none;*/
-}
-p.woocommerce-shipping-destination  {
+
+#billing_billing {
     display: none;
 }
+
+.woocommerce-Price-amount.amount {
+    /*display: none;*/
+}
+
+p.woocommerce-shipping-destination {
+    display: none;
+}
+
 .woocommerce-shipping-calculator {
     display: none;
 }
-.woocommerce form .form-row textarea{
+
+.woocommerce form .form-row textarea {
     height: 250px !important;
 }
-.price{
+
+.price {
     display: flex;
 }
-.price span.amount{
+
+.price span.amount {
     margin-left: 5px;
 }
-#tc-page-wrap{
+
+#tc-page-wrap {
     overflow: hidden;
 }
+
+/*Test thema margin and padding 'container'*/
+.container.widget__container .row {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.container .flex-row.row{
+    margin-left: -50px;
+    margin-right: -45px;
+}
+
 @media (max-width: 767px) {
     #main-wrapper {
         padding-left: 0 !important;

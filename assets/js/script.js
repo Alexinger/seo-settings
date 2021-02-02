@@ -181,4 +181,18 @@ jQuery(document).ready(function ($) {
     //         $this.trigger('change');
     //     }
     // });
+
+    $('form').submit(function(e){
+        // e.preventDefault();
+
+        // $.ajax({
+        //     type: "POST",
+        //     url: "post.php",
+        //     datatype: "text",
+        //     data: {enter : $("#enter").val() },
+        //     success: function(data) {
+        //         console.log(data);
+        //     }
+        // });
+    });
 });
