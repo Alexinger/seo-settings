@@ -58,17 +58,17 @@ function get_totallinks() {
                         <tr>
                             <th scope="row" class="text-center">2</th>
                             <td>Название блога</td>
-                            <td><?php bloginfo(name); ?></td>
+                            <td><?php bloginfo('name'); ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">3</th>
                             <td>Короткое описание</td>
-                            <td><?php bloginfo(description); ?></td>
+                            <td><?php bloginfo('description'); ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">4</th>
                             <td>Текущая версия WP</td>
-                            <td><?php bloginfo(version); ?></td>
+                            <td><?php bloginfo('version'); ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">5</th>
@@ -78,7 +78,7 @@ function get_totallinks() {
                         <tr>
                             <th scope="row" class="text-center">6</th>
                             <td>Email администратора</td>
-                            <td><?php bloginfo(admin_email); ?></td>
+                            <td><?php bloginfo('admin_email'); ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">7</th>
@@ -108,7 +108,7 @@ function get_totallinks() {
                         <tr>
                             <th scope="row" class="text-center">12</th>
                             <td>Валюта интернет магазина</td>
-                            <td><?php if(function_exists(get_woocommerce_currency)) { echo get_woocommerce_currency(); } else { echo "не используется!"; }  ?></td>
+                            <td><?php echo get_woocommerce_currency();  ?></td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-center">13</th>

@@ -1,7 +1,7 @@
 .ma-page-plugin .nav-tabs .nav-link.active{
-    background-color: #f1f1f1 !important;
+    background-color: #4c4c4c !important;
     border-bottom-color: #f1f1f1 !important;
-    color: #013e5a !important;
+    color: #efefef !important;
     font-weight: 500;
     text-shadow: 1px 1px 1px darkgrey;
 }

@@ -24,6 +24,7 @@ function my_scripts_method()
 //    wp_register_script('jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', time());
 //    wp_enqueue_script('jquery');
 
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
     wp_register_script('my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
 
@@ -53,8 +54,8 @@ function save_yandex_count()
 // Added counter Google in footer
 include_once 'counter/counter-google.php';
 
-add_action('wp_ajax_save_google', 'save_google_count');
-function save_google_count()
+add_action('wp_ajax_save_shortcode', 'save_option_shortcode');
+function save_option_shortcode()
 {
     $option = $_POST['option'];
     $new_value = $_POST['new_value'];
@@ -63,14 +64,14 @@ function save_google_count()
     die(
     json_encode(
         array(
-            'message' => 'Save counter google. Success!'
+            'message' => 'Данные таблицы сохранены!'
         )
     )
     );
 }
 
 function wpdocs_enqueue_custom_admin_style() {
-    wp_register_style('my_style', 'https://x-ali.ru/wp-content/plugins/seo-settings/assets/css/style.css');
+    wp_register_style('my_style', 'https://x-ali.ru/wp-content/plugins/seo-settings/assets/css/style.css', false, '1.0.0');
 //    wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
 //    wp_enqueue_style( 'custom_wp_admin_css' );
     wp_enqueue_style( 'my_style' );
@@ -514,6 +515,17 @@ if( 'disable_gutenberg' ){
         remove_action( 'admin_notices', [ 'WP_Privacy_Policy_Content', 'notice' ] );
         add_action( 'edit_form_after_title', [ 'WP_Privacy_Policy_Content', 'notice' ] );
     } );
+}
+
+add_action('wp_ajax_shortcode', 'shortcode_callback');
+function shortcode_callback()
+{
+    parse_str($_POST['data'], $data);
+
+//    add_option('tabs-shortcode-url', $data['tabs-shortcode-url']);
+//    add_option('tabs-shortcode-page', $data['tabs-shortcode-page']);
+
+    // wp_die();
 }
 
 

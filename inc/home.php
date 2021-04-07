@@ -11,7 +11,7 @@
             <a class="nav-link active text-uppercase text-dark" data-toggle="tab" href="#home" role="tab"><i class="fa fa-home mr-3"></i>Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-edit mr-3"></i>Edit</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#edit" role="tab"><i class="fa fa-edit mr-3"></i>Edit</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#tabs" role="tab"><i class="fa fa-clone mr-3"></i>Tabs</a>
@@ -29,7 +29,7 @@
         <div class="tab-pane active in" id="home" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#images" role="tab"><i class="fa fa-image mr-3"></i>Изображения</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-code-fork mr-3"></i>Тест</a>
@@ -43,16 +43,16 @@
             </ul>
 
             <div class="tab-content py-3 border-top-0">
-                <div class="tab-pane fade" id="images" role="tabpanel">
+                <div class="tab-pane fade" id="shortcode" role="tabpanel">
 
                     <!-- Контент Изображения WP -->
-	                <?php include_once 'tabs-home-image.php'; ?>
+	                <?php include_once 'tabs-home-shortcode.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="left-menu" role="tabpanel">
 
                     <!-- Контент Боковое меню -->
-		            <?php include_once 'tabs-home-left-menu.php'; ?>
+		            <?php include_once 'tabs-home-test.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="post-page" role="tabpanel">
@@ -77,7 +77,7 @@
         </div>
 
 
-        <div class="tab-pane fade" id="shortcode" role="tabpanel">
+        <div class="tab-pane fade" id="edit" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active text-dark" data-toggle="tab" href="#category-fields" role="tab"><i class="fa fa-th-list mr-3"></i>Поля формы</a>
@@ -87,9 +87,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" data-toggle="tab" href="#category-cron" role="tab"><i class="fa fa-clock-o mr-3"></i>Cron</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#category-shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" data-toggle="tab" href="#category-style" role="tab"><i class="fa fa-tag mr-3"></i>Стили темы</a>
@@ -110,10 +107,6 @@
                 <div class="tab-pane" id="category-cron" role="tabpanel">
                     <!-- Контент Cron задач -->
                     <?php include_once 'tabs-extra-cron.php'; ?>
-                </div>
-                <div class="tab-pane" id="category-shortcode" role="tabpanel">
-                    <!-- Контент Шорткоды -->
-	                <?php include_once 'tabs-extra-shortcode.php'; ?>
                 </div>
                 <div class="tab-pane" id="category-style" role="tabpanel">
 

@@ -195,4 +195,55 @@ jQuery(document).ready(function ($) {
         //     }
         // });
     });
+
+    // // Added option counter Google
+    // $(document).on( 'click','.btnSaveShortcode', function (event) {
+    //     event.preventDefault();
+    //     let input_val = document.getElementById('countPutGoogle').value;
+    //     let name_option = 'counter_code_google';
+    //     if(input_val) {
+    //         updateOptionShortcode(name_option, input_val);
+    //     }
+    // });
+    //
+    // function updateOptionShortcode($option, $new_value) {
+    //     var data = {
+    //         action: 'save_google',
+    //         option: $option,
+    //         new_value: $new_value
+    //     };
+    //
+    //     $.post(ajaxurl, data, function (response) {
+    //         alert('Код Google счетсчика успешно изменен!');
+    //         window.location.reload();
+    //     });
+    // }
+
+    function updateOptionShortcode($option, $new_value) {
+        var data = {
+            action: 'save_shortcode',
+            option: $option,
+            new_value: $new_value
+        };
+
+        $.post(ajaxurl, data, function (response) {
+            alert('Все отлично сохранилось!');
+            window.location.reload();
+        });
+    }
+
+    // Added option counter Google
+    $(document).on( 'click','.btnSaveShortcode', function (event) {
+        event.preventDefault();
+        let input_url = document.getElementById('tabs-shortcode-url').value;
+        let input_page = document.getElementById('tabs-shortcode-page').value;
+        let name_option_url = 'tabs-shortcode-url';
+        let name_option_page = 'tabs-shortcode-page';
+        console.log(input_page, input_url);
+        if(input_url && input_page) {
+            updateOptionShortcode(name_option_url, input_url);
+            updateOptionShortcode(name_option_page, input_page);
+        }
+    });
+
 });

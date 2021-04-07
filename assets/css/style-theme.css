@@ -53,16 +53,16 @@ p.woocommerce-shipping-destination {
 
     }
 }
-.row-x section[class^=post-] .row {
-    margin-top: 1.25em;
-    margin-bottom: 2.5em;
-}
-.row-x {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
+/*.row-x section[class^=post-] .row {*/
+/*    margin-top: 1.25em;*/
+/*    margin-bottom: 2.5em;*/
+/*}*/
+/*.row-x {*/
+/*    display: -webkit-box;*/
+/*    display: -ms-flexbox;*/
+/*    display: flex;*/
+/*    -ms-flex-wrap: wrap;*/
+/*    flex-wrap: wrap;*/
+/*    margin-right: -15px;*/
+/*    margin-left: -15px;*/
+/*}*/
