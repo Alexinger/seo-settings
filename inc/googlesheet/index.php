@@ -233,18 +233,18 @@ function update_get_option($array)
     echo get_option('five_row_five_header');
 
 
-    echo "<hr>";
-    var_dump($array[0][5] . ' ' . $array[1][0] . ' - ' . $array[1][1]);
-    var_dump($array[1][0 + 5]);
-    var_dump($array[0][5] . ' ' . $array[2][0] . ' - ' . $array[2][1]);
-    var_dump($array[2][0 + 5]);
-    var_dump($array[0][5] . ' ' . $array[3][0] . ' - ' . $array[3][1]);
-    var_dump($array[3][0 + 5]);
-    var_dump($array[0][5] . ' ' . $array[4][0] . ' - ' . $array[4][1]);
-    var_dump($array[4][0 + 5]);
-    var_dump($array[0][5] . ' ' . $array[5][0] . ' - ' . $array[5][1]);
-    var_dump($array[5][0 + 4]);
-    echo "</pre>";
+//    echo "<hr>";
+//    var_dump($array[0][5] . ' ' . $array[1][0] . ' - ' . $array[1][1]);
+//    var_dump($array[1][0 + 5]);
+//    var_dump($array[0][5] . ' ' . $array[2][0] . ' - ' . $array[2][1]);
+//    var_dump($array[2][0 + 5]);
+//    var_dump($array[0][5] . ' ' . $array[3][0] . ' - ' . $array[3][1]);
+//    var_dump($array[3][0 + 5]);
+//    var_dump($array[0][5] . ' ' . $array[4][0] . ' - ' . $array[4][1]);
+//    var_dump($array[4][0 + 5]);
+//    var_dump($array[0][5] . ' ' . $array[5][0] . ' - ' . $array[5][1]);
+//    var_dump($array[5][0 + 4]);
+//    echo "</pre>";
 
     // update_option();
 }
