@@ -43,9 +43,4 @@
         <img src="<?php echo plugins_url('/seo-settings/assets/img/example_table.png'); ?>" alt="Пример таблицы"
         class="d-flex w-auto justify-content-center flex-wrap shadow">
     </div>
-    <h4 class="w-100 font-weight-bold text-center border-bottom border-dark mb-3 mt-4 pb-3">Важно!</h4>
-    <span class="alert alert-danger small mb-0 text-center w-100 font-weight-bold">
-        <span>Нужно добавить этот код в файл functions.php основной темы или дочерней темы: </span>
-        <code>require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');</code>
-    </span><br>
 </div>
