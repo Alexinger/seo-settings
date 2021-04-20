@@ -266,9 +266,9 @@ function update_get_option($array)
             /*font-size: x-large;*/
         }
         table{
-            table-layout: fixed;
-            font-size: 0.7em;
-            font-family: sans-serif;
+            table-layout: fixed !important;
+            font-size: 0.7em !important;
+            font-family: sans-serif !important;
         }
     </style>
 
