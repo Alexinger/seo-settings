@@ -29,7 +29,7 @@ function get_table($array, $atts)
     echo '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>';
     echo '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>';
     echo '
-    <table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . '">
+    <table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . ';table-layout: fixed !important;font-size: 0.7em !important;font-family: sans-serif !important;">
   <thead style="color: ' . $atts['table_color_value'] . '">
     <tr>';
     for ($h = 0; $h < 10; $h++) {
