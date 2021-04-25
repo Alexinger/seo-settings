@@ -175,30 +175,30 @@ function get_google_sheet($atts = null)
     return $one . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $end;
 }
 
-function get_table1($array, $atts)
-{
-    echo '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
-        '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
-        '<table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . '">
-  <thead style="color: ' . $atts['table_color_value'] . '"><tr>';
-    for ($h = 0; $h < 10; $h++) {
-        if ($array[0][$h] !== NULL) {
-            echo '<td class="my-table">' . $array[0][$h] . '</td>';
-        }
-    }
-    echo '</tr></thead><tbody style="color: ' . $atts['table_color_value'] . '">';
-
-    for ($i = 1; $i < 15; $i++) {
-        echo '<tr>';
-        for ($t = 0; $t < 10; $t++) {
-            if ($array[$i][$t] !== NULL) {
-                echo '<td class="my-table">' . $array[$i][$t] . '</td>';
-            }
-        }
-        echo '</tr>';
-    }
-    echo '</tbody></table>';
-}
+//function get_table1($array, $atts)
+//{
+//    echo '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
+//        '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
+//        '<table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . '">
+//  <thead style="color: ' . $atts['table_color_value'] . '"><tr>';
+//    for ($h = 0; $h < 10; $h++) {
+//        if ($array[0][$h] !== NULL) {
+//            echo '<td class="my-table">' . $array[0][$h] . '</td>';
+//        }
+//    }
+//    echo '</tr></thead><tbody style="color: ' . $atts['table_color_value'] . '">';
+//
+//    for ($i = 1; $i < 15; $i++) {
+//        echo '<tr>';
+//        for ($t = 0; $t < 10; $t++) {
+//            if ($array[$i][$t] !== NULL) {
+//                echo '<td class="my-table">' . $array[$i][$t] . '</td>';
+//            }
+//        }
+//        echo '</tr>';
+//    }
+//    echo '</tbody></table>';
+//}
 
 function update_get_option($array)
 {
@@ -348,12 +348,14 @@ function update_get_option($array)
             /*font-weight: 700 !important;*/
             line-height: 2rem !important;
             text-align: center !important;
+            white-space: nowrap !important;
         }
 
         td.my-table {
             vertical-align: center !important;
             line-height: 2rem !important;
             text-align: center !important;
+            white-space: nowrap !important;
             /*font-family: cursive;*/
             /*font-size: x-large;*/
         }
