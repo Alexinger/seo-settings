@@ -12,35 +12,181 @@ function get_google_sheet($atts = null)
         'table_bg' => 'white',
         'table_color_value' => 'black',
     ], $atts);
-
-    // $id = '19Tv0hdhBAmniibBTt2TKlXRtdhki6Rr3KSRMh-AcpTc';
-    // $gid = '725782487';
     $gid = get_option("tabs-shortcode-url");
     $id = get_option("tabs-shortcode-page");
     $csv = file_get_contents('https://docs.google.com/spreadsheets/d/' . $gid . '/export?format=csv&gid=' . $id);
     $csv = explode("\r\n", $csv);
     $array = array_map('str_getcsv', $csv);
     update_get_option($array);
-    get_table($array, $atts);
+    // get_table($array, $atts);
+
+    $one = '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
+        '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
+        '<table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . '">
+           <thead style="color: ' . $atts['table_color_value'] . '">
+            <tr>
+                <td class="my-table">' . $array[0][0] . '</td>
+                <td class="my-table">' . $array[0][1] . '</td>
+                <td class="my-table">' . $array[0][2] . '</td>
+                <td class="my-table">' . $array[0][3] . '</td>
+                <td class="my-table">' . $array[0][4] . '</td>
+                <td class="my-table">' . $array[0][5] . '</td>
+                <td class="my-table">' . $array[0][6] . '</td>
+                <td class="my-table">' . $array[0][7] . '</td>
+                <td class="my-table">' . $array[0][8] . '</td>
+            </tr>
+           </thead>';
+
+    if ($array[1][0]) {
+        $tr1 = '<tr>
+                  <td class="my-table">' . $array[1][0] . '</td>
+                  <td class="my-table">' . $array[1][1] . '</td>
+                  <td class="my-table">' . $array[1][2] . '</td>
+                  <td class="my-table">' . $array[1][3] . '</td>
+                  <td class="my-table">' . $array[1][4] . '</td>
+                  <td class="my-table">' . $array[1][5] . '</td>
+                  <td class="my-table">' . $array[1][6] . '</td>
+                  <td class="my-table">' . $array[1][7] . '</td>
+                  <td class="my-table">' . $array[1][8] . '</td>
+                </tr>';
+    }
+
+    if ($array[2][0]) {
+        $tr2 = '<tr>
+                 <td class="my-table">' . $array[2][0] . '</td>
+                 <td class="my-table">' . $array[2][1] . '</td>
+                 <td class="my-table">' . $array[2][2] . '</td>
+                 <td class="my-table">' . $array[2][3] . '</td>
+                 <td class="my-table">' . $array[2][4] . '</td>
+                 <td class="my-table">' . $array[2][5] . '</td>
+                 <td class="my-table">' . $array[2][6] . '</td>
+                 <td class="my-table">' . $array[2][7] . '</td>
+                 <td class="my-table">' . $array[2][8] . '</td>
+               </tr>';
+    }
+
+    if ($array[3][0]) {
+        $tr3 = '<tr>
+                 <td class="my-table">' . $array[3][0] . '</td>
+                 <td class="my-table">' . $array[3][1] . '</td>
+                 <td class="my-table">' . $array[3][2] . '</td>
+                 <td class="my-table">' . $array[3][3] . '</td>
+                 <td class="my-table">' . $array[3][4] . '</td>
+                 <td class="my-table">' . $array[3][5] . '</td>
+                 <td class="my-table">' . $array[3][6] . '</td>
+                 <td class="my-table">' . $array[3][7] . '</td>
+                 <td class="my-table">' . $array[3][8] . '</td>
+                </tr>';
+    }
+
+    if ($array[4][0]) {
+        $tr4 = '<tr>
+                 <td class="my-table">' . $array[4][0] . '</td>
+                 <td class="my-table">' . $array[4][1] . '</td>
+                 <td class="my-table">' . $array[4][2] . '</td>
+                 <td class="my-table">' . $array[4][3] . '</td>
+                 <td class="my-table">' . $array[4][4] . '</td>
+                 <td class="my-table">' . $array[4][5] . '</td>
+                 <td class="my-table">' . $array[4][6] . '</td>
+                 <td class="my-table">' . $array[4][7] . '</td>
+                 <td class="my-table">' . $array[4][8] . '</td>
+                </tr>';
+    }
+    if ($array[5][0]) {
+        $tr5 = '<tr>
+                 <td class="my-table">' . $array[5][0] . '</td>
+                 <td class="my-table">' . $array[5][1] . '</td>
+                 <td class="my-table">' . $array[5][2] . '</td>
+                 <td class="my-table">' . $array[5][3] . '</td>
+                 <td class="my-table">' . $array[5][4] . '</td>
+                 <td class="my-table">' . $array[5][5] . '</td>
+                 <td class="my-table">' . $array[5][6] . '</td>
+                 <td class="my-table">' . $array[5][7] . '</td>
+                 <td class="my-table">' . $array[5][8] . '</td>
+                </tr>';
+    }
+    if ($array[6][0]) {
+        $tr6 = '<tr>
+                 <td class="my-table">' . $array[6][0] . '</td>
+                 <td class="my-table">' . $array[6][1] . '</td>
+                 <td class="my-table">' . $array[6][2] . '</td>
+                 <td class="my-table">' . $array[6][3] . '</td>
+                 <td class="my-table">' . $array[6][4] . '</td>
+                 <td class="my-table">' . $array[6][5] . '</td>
+                 <td class="my-table">' . $array[6][6] . '</td>
+                 <td class="my-table">' . $array[6][7] . '</td>
+                 <td class="my-table">' . $array[6][8] . '</td>
+                </tr>';
+    }
+    if ($array[7][0]) {
+        $tr7 = '<tr>
+                 <td class="my-table">' . $array[7][0] . '</td>
+                 <td class="my-table">' . $array[7][1] . '</td>
+                 <td class="my-table">' . $array[7][2] . '</td>
+                 <td class="my-table">' . $array[7][3] . '</td>
+                 <td class="my-table">' . $array[7][4] . '</td>
+                 <td class="my-table">' . $array[7][5] . '</td>
+                 <td class="my-table">' . $array[7][6] . '</td>
+                 <td class="my-table">' . $array[7][7] . '</td>
+                 <td class="my-table">' . $array[7][8] . '</td>
+                </tr>';
+    }
+    if ($array[8][0]) {
+        $tr8 = '<tr>
+                 <td class="my-table">' . $array[8][0] . '</td>
+                 <td class="my-table">' . $array[8][1] . '</td>
+                 <td class="my-table">' . $array[8][2] . '</td>
+                 <td class="my-table">' . $array[8][3] . '</td>
+                 <td class="my-table">' . $array[8][4] . '</td>
+                 <td class="my-table">' . $array[8][5] . '</td>
+                 <td class="my-table">' . $array[8][6] . '</td>
+                 <td class="my-table">' . $array[8][7] . '</td>
+                 <td class="my-table">' . $array[8][8] . '</td>
+                </tr>';
+    }
+    if ($array[9][0]) {
+        $tr9 = '<tr>
+                 <td class="my-table">' . $array[9][0] . '</td>
+                 <td class="my-table">' . $array[9][1] . '</td>
+                 <td class="my-table">' . $array[9][2] . '</td>
+                 <td class="my-table">' . $array[9][3] . '</td>
+                 <td class="my-table">' . $array[9][4] . '</td>
+                 <td class="my-table">' . $array[9][5] . '</td>
+                 <td class="my-table">' . $array[9][6] . '</td>
+                 <td class="my-table">' . $array[9][7] . '</td>
+                 <td class="my-table">' . $array[9][8] . '</td>
+                </tr>';
+    }
+    if ($array[10][0]) {
+        $tr10 = '<tr>
+                 <td class="my-table">' . $array[10][0] . '</td>
+                 <td class="my-table">' . $array[10][1] . '</td>
+                 <td class="my-table">' . $array[10][2] . '</td>
+                 <td class="my-table">' . $array[10][3] . '</td>
+                 <td class="my-table">' . $array[10][4] . '</td>
+                 <td class="my-table">' . $array[10][5] . '</td>
+                 <td class="my-table">' . $array[10][6] . '</td>
+                 <td class="my-table">' . $array[10][7] . '</td>
+                 <td class="my-table">' . $array[10][8] . '</td>
+                </tr>';
+    }
+    $end = '</table>';
+
+    return $one . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $end;
 }
 
-function get_table($array, $atts)
+function get_table1($array, $atts)
 {
-    echo '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>';
-    echo '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>';
-    echo '
-    <table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . ';table-layout: fixed !important;font-size: 0.7em !important;font-family: sans-serif !important;">
-  <thead style="color: ' . $atts['table_color_value'] . '">
-    <tr>';
+    echo '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
+        '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
+        '<table class="table table-bordered table-hover" style="background-color: ' . $atts['table_bg'] . '">
+  <thead style="color: ' . $atts['table_color_value'] . '"><tr>';
     for ($h = 0; $h < 10; $h++) {
         if ($array[0][$h] !== NULL) {
             echo '<td class="my-table">' . $array[0][$h] . '</td>';
         }
     }
-
-    echo '</tr>
-  </thead>
-  <tbody style="color: ' . $atts['table_color_value'] . '">';
+    echo '</tr></thead><tbody style="color: ' . $atts['table_color_value'] . '">';
 
     for ($i = 1; $i < 15; $i++) {
         echo '<tr>';
@@ -51,18 +197,12 @@ function get_table($array, $atts)
         }
         echo '</tr>';
     }
-
-    echo '
-  </tbody>
-</table>
-    ';
+    echo '</tbody></table>';
 }
 
 function update_get_option($array)
 {
     /* head row - name table */
-
-    echo "<pre>";
 
     /* All row item water - NEW */
     update_option('1_row_left', $array[1][0]); // 50
@@ -110,59 +250,11 @@ function update_get_option($array)
     }
 
     /* All variables volume and temperature*/
-    for ($count = 1; $count < 7;$count++) {
+    for ($count = 1; $count < 7; $count++) {
         for ($volume = 1; $volume < 11; $volume++) {
             update_option($volume . '_row_' . $count . '_header', $array[$volume][$count + 1]);
         }
     }
-
-    /* -10 */
-    /* (50-150) value (-) */
-    /* (151-750) value (-) */
-    /* (751-1200) value (-) */
-    /* (1201-2500) value (-) */
-    /* (2501-5001) value (-)*/
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-
-    /* -15 */
-    /* (50-150) value (-) */
-    /* (151-750) value (-) */
-    /* (751-1200) value (-) */
-    /* (1201-2500) value (-) */
-    /* (2501-5001) value (-)*/
-    /* (?) value (-) */
-    /* (?) value (-) */
-    /* (?) value (-) */
-    /* (?) value (-) */
-    /* (?) value (-) */
-
-    /* -20 */
-    /* (50-150) value (80) */
-    /* (151-750) value (75) */
-    /* (751-1200) value (69) */
-    /* (1201-2500) value (67)*/
-    /* (2501-5001) value (по звонку) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-
-    /* All temperature -25 NEW */
-    /* (50-150) value (85) */
-    /* (151-750) value (82) */
-    /* (751-1200) value (74) */
-    /* (1201-2500) value (72) */
-    /* (2501-5001) value (по звонку) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
-    /* (?) value (?) */
 
     /* All temperature -30 NEW */
     /* -30C (50-150) */
@@ -230,10 +322,10 @@ function update_get_option($array)
     /* -40C (?) */
     update_option('10_row_7_header', $array[10][8]); // value (?)
 
-    echo get_option('five_row_five_header');
+    //echo get_option('five_row_five_header');
 
 
-//    echo "<hr>";
+    //echo "<hr>";
 //    var_dump($array[0][5] . ' ' . $array[1][0] . ' - ' . $array[1][1]);
 //    var_dump($array[1][0 + 5]);
 //    var_dump($array[0][5] . ' ' . $array[2][0] . ' - ' . $array[2][1]);
@@ -244,7 +336,7 @@ function update_get_option($array)
 //    var_dump($array[4][0 + 5]);
 //    var_dump($array[0][5] . ' ' . $array[5][0] . ' - ' . $array[5][1]);
 //    var_dump($array[5][0 + 4]);
-//    echo "</pre>";
+    //echo "</pre>";
 
     // update_option();
 }
@@ -265,7 +357,8 @@ function update_get_option($array)
             /*font-family: cursive;*/
             /*font-size: x-large;*/
         }
-        table{
+
+        table {
             table-layout: fixed !important;
             font-size: 0.7em !important;
             font-family: sans-serif !important;
