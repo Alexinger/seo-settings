@@ -73,12 +73,86 @@ p.woocommerce-shipping-destination {
 }
 
 /* Table style */
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (max-width: 1800px) {
+    td {
+        font-size: 1rem;
+    }
+}
 
+@media screen and (max-width: 1200px) {
+    td {
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    td {
+        font-size: 0.6rem;
+        white-space: pre-wrap !important;
+        line-height: 0.6rem !important;
+    }
 }
 
 table{
     table-layout: fixed !important;
     font-size: 0.7em !important;
     font-family: sans-serif !important;
+}
+
+th.my-table {
+    line-height: 2rem;
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+td.my-table {
+    vertical-align: center !important;
+    line-height: 2rem;
+    text-align: center !important;
+    white-space: nowrap;
+}
+.table-my-style td{
+    padding: 2px 1px !important;
+}
+/*Убираем цену товара со страницы всех товаров*/
+.products li a .price{
+    display: none !important;
+}
+.woocommerce .woocommerce-error{
+    border-left: 10px solid #b81c23 !important;
+    border-top: 1px solid #b81c23 !important;
+    border-right: 1px solid #b81c23 !important;
+    border-bottom: 1px solid #b81c23 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    margin-left: 0 !important;
+    line-height: 1.1rem !important;
+}
+.woocommerce .woocommerce-message{
+    border-left: 10px solid #237b00 !important;
+    border-top: 1px solid #237b00 !important;
+    border-right: 1px solid #237b00 !important;
+    border-bottom: 1px solid #237b00 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    margin-left: 0 !important;
+    line-height: 1.1rem !important;
+}
+.woocommerce .woocommerce-info{
+    border-left: 10px solid #00b5ae !important;
+    border-top: 1px solid #00b5ae !important;
+    border-right: 1px solid #00b5ae !important;
+    border-bottom: 1px solid #00b5ae !important;
+    background: transparent !important;
+    color: #000000 !important;
+    margin-left: 0 !important;
+    line-height: 1.1rem !important;
+}
+.woocommerce-info::before{
+    color: #00b5ae !important;
+}
+.woocommerce-message::before{
+    color: #237b00 !important;
+}
+.woocommerce-error::before{
+    color: #b81c23 !important;
 }

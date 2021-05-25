@@ -39,8 +39,9 @@
         </div>
     </form>
     <div class="flex-column flex-center mb-3 w-100">
-        <div>Таблица должна выглядеть вот так.</div>
-        <img src="<?php echo plugins_url('/seo-settings/assets/img/example_table.png'); ?>" alt="Пример таблицы"
-        class="d-flex w-auto justify-content-center flex-wrap shadow">
+        <div>Текущая таблица, которую можно здесь редактировать</div>
+        <iframe src="https://docs.google.com/spreadsheets/d/<?php echo get_option('tabs-shortcode-url') ?>/edit#gid=<?php echo get_option('tabs-shortcode-page')?>" width="100%" height="450" align="left">
+            Ваш браузер не поддерживает плавающие фреймы!
+        </iframe>
     </div>
 </div>
