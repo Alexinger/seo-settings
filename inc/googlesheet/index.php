@@ -58,7 +58,7 @@ function custom_simple_product_price_html()
     global $product;
     $addp = getTemperature($product->name);
     $price = wc_price($addp) . $product->get_price_suffix();
-    echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 13px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
+    echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
 }
 
 function getTemperature($item)
