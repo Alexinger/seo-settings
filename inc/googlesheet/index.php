@@ -2,7 +2,7 @@
 
 global $shortcode_tags;
 
-// include_once 'opt-price.php';
+// include_once 'opt-price.php'; not code
 include_once 'show-table-shortcode.php';
 
 /* Для страницы товара задаем минимальную цену из таблицы*/
