@@ -157,7 +157,7 @@ td.my-table {
     color: #b81c23 !important;
 }
 .woocommerce-message{
-    padding-left: 20px;
+    padding-left: 20px !important;
 }
 th.product-remove{
     width: 50px !important;
