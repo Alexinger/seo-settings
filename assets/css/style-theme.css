@@ -160,5 +160,5 @@ td.my-table {
     padding-left: 20px;
 }
 th.product-remove{
-    width: 50px;
+    width: 50px !important;
 }
