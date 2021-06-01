@@ -156,3 +156,9 @@ td.my-table {
 .woocommerce-error::before{
     color: #b81c23 !important;
 }
+.woocommerce-message{
+    padding-left: 20px;
+}
+th.product-remove{
+    width: 50px;
+}
