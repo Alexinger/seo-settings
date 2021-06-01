@@ -155,7 +155,7 @@ function checkPriceSum($item = null)
         case '15' :
             return min($filterPrice15);
         case '20' :
-            return $filterPrice20[6];
+            return min($filterPrice20);
         case '25' :
             return min($filterPrice25);
         case '30' :
