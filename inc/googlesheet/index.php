@@ -22,7 +22,7 @@ function truemisha_min_kolvo_cart($product_quantity, $cart_item_key, $cart_item)
     $product = $cart_item['data'];
     $min = get_option('1_row_left');
 
-
+    // hi
     return woocommerce_quantity_input(
         array(
             'input_name' => "cart[{$cart_item_key}][qty]",
