@@ -84,6 +84,7 @@ p.woocommerce-shipping-destination {
         font-size: 0.8rem;
     }
 }
+
 @media screen and (max-width: 800px) {
     td {
         font-size: 0.6rem;
@@ -92,7 +93,7 @@ p.woocommerce-shipping-destination {
     }
 }
 
-table{
+table {
     table-layout: fixed !important;
     font-size: 0.7em !important;
     font-family: sans-serif !important;
@@ -110,14 +111,17 @@ td.my-table {
     text-align: center !important;
     white-space: nowrap;
 }
-.table-my-style td{
+
+.table-my-style td {
     padding: 2px 1px !important;
 }
+
 /*Убираем цену товара со страницы всех товаров*/
-.products li a .price{
+.products li a .price {
     display: none !important;
 }
-.woocommerce .woocommerce-error{
+
+.woocommerce .woocommerce-error {
     border-left: 10px solid #b81c23 !important;
     border-top: 1px solid #b81c23 !important;
     border-right: 1px solid #b81c23 !important;
@@ -127,7 +131,8 @@ td.my-table {
     margin-left: 0 !important;
     line-height: 1.1rem !important;
 }
-.woocommerce .woocommerce-message{
+
+.woocommerce .woocommerce-message {
     border-left: 10px solid #237b00 !important;
     border-top: 1px solid #237b00 !important;
     border-right: 1px solid #237b00 !important;
@@ -137,7 +142,8 @@ td.my-table {
     margin-left: 0 !important;
     line-height: 1.1rem !important;
 }
-.woocommerce .woocommerce-info{
+
+.woocommerce .woocommerce-info {
     border-left: 10px solid #00b5ae !important;
     border-top: 1px solid #00b5ae !important;
     border-right: 1px solid #00b5ae !important;
@@ -147,18 +153,51 @@ td.my-table {
     margin-left: 0 !important;
     line-height: 1.1rem !important;
 }
-.woocommerce-info::before{
+
+.woocommerce-info::before {
     color: #00b5ae !important;
 }
-.woocommerce-message::before{
+
+.woocommerce-message::before {
     color: #237b00 !important;
 }
-.woocommerce-error::before{
+
+.woocommerce-error::before {
     color: #b81c23 !important;
 }
-.woocommerce-message{
+
+.woocommerce-message {
     padding-left: 20px !important;
 }
-th.product-remove{
+
+th.product-remove {
     width: 50px !important;
+}
+
+#customer_details div {
+    /*display: none !important;*/
+}
+
+.vag-hide {
+    display: none;
+}
+
+form.recvizit {
+    flex-wrap: wrap;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button.first {
+    padding: 20px !important;
+    border-radius: 0 !important;
+    background: white !important;
+}
+
+.button.last {
+    margin: 5px 15px !important;
+    background: #237b00 !important;
+    color: white !important;
 }

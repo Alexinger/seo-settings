@@ -246,4 +246,15 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Saved fields AmoCrm email
+    $(document).on( 'click','.btnSaveAmoCrmEmail', function (event) {
+        event.preventDefault();
+        let input_email = document.getElementById('amocrm-to-email').value;
+        let name_option_email = 'amocrm-to-email';
+        console.log(input_email, 'sdfsdf');
+        if(input_email) {
+            updateOptionShortcode(name_option_email, input_email);
+        }
+    });
+
 });

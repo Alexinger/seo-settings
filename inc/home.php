@@ -17,7 +17,7 @@
             <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#tabs" role="tab"><i class="fa fa-clone mr-3"></i>Tabs</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#test" role="tab"><i class="fa fa-chart-pie mr-3"></i>О Сайте</a>
+            <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#variables" role="tab"><i class="fa fa-chart-pie mr-3"></i>О Сайте</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-uppercase text-dark" data-toggle="tab" href="#seo" role="tab"><i class="fa fa-briefcase mr-3"></i>SEO</a>
@@ -32,7 +32,7 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-code-fork mr-3"></i>Тест</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-amazon mr-3"></i>AmoCRM</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#post-page" role="tab"><i class="fa fa-code-fork mr-3"></i>Post & Page</a>
@@ -52,7 +52,7 @@
                 <div class="tab-pane fade" id="left-menu" role="tabpanel">
 
                     <!-- Контент Боковое меню -->
-		            <?php include_once 'tabs-home-test.php'; ?>
+		            <?php include_once 'tabs-home-amocrm.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="post-page" role="tabpanel">
@@ -71,7 +71,7 @@
         </div>
 
 
-        <div class="tab-pane fade" id="test" role="tabpanel">
+        <div class="tab-pane fade" id="variables" role="tabpanel">
             <!-- Контент Данные о сайте -->
             <?php include_once 'tabs-home-site.php'; ?>
         </div>

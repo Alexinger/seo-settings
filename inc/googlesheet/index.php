@@ -58,7 +58,15 @@ function custom_simple_product_price_html()
     global $product;
     $addp = getTemperature($product->name);
     $price = wc_price($addp) . $product->get_price_suffix();
-    echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
+
+    // Check is_in_stock one page products
+    if ($product->is_in_stock()) {
+        // are available
+        echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
+    } else {
+        // not stock
+        echo "<a href='/404' class='button woocommerce-store-notice' style='margin-bottom: 15px'>Перейти в контакты</a>";
+    }
 }
 
 function getTemperature($item)
@@ -73,15 +81,15 @@ function checkPriceSum($item = null)
     // UpdatePrice::update_get_option();
 
     $filterPrice10 = array_filter([is_numeric(get_option('1_row_1_header')) ? get_option('1_row_1_header') : '',
-    is_numeric(get_option('2_row_1_header')) ? get_option('2_row_1_header') : '',
-    is_numeric(get_option('3_row_1_header')) ? get_option('3_row_1_header') : '',
-    is_numeric(get_option('4_row_1_header')) ? get_option('4_row_1_header') : '',
-    is_numeric(get_option('5_row_1_header')) ? get_option('5_row_1_header') : '',
-    is_numeric(get_option('6_row_1_header')) ? get_option('6_row_1_header') : '',
-    is_numeric(get_option('7_row_1_header')) ? get_option('7_row_1_header') : '',
-    is_numeric(get_option('8_row_1_header')) ? get_option('8_row_1_header') : '',
-    is_numeric(get_option('9_row_1_header')) ? get_option('9_row_1_header') : '',
-    is_numeric(get_option('10_row_1_header')) ? get_option('10_row_1_header') : '']);
+        is_numeric(get_option('2_row_1_header')) ? get_option('2_row_1_header') : '',
+        is_numeric(get_option('3_row_1_header')) ? get_option('3_row_1_header') : '',
+        is_numeric(get_option('4_row_1_header')) ? get_option('4_row_1_header') : '',
+        is_numeric(get_option('5_row_1_header')) ? get_option('5_row_1_header') : '',
+        is_numeric(get_option('6_row_1_header')) ? get_option('6_row_1_header') : '',
+        is_numeric(get_option('7_row_1_header')) ? get_option('7_row_1_header') : '',
+        is_numeric(get_option('8_row_1_header')) ? get_option('8_row_1_header') : '',
+        is_numeric(get_option('9_row_1_header')) ? get_option('9_row_1_header') : '',
+        is_numeric(get_option('10_row_1_header')) ? get_option('10_row_1_header') : '']);
 
     $filterPrice15 = array_filter([is_numeric(get_option('1_row_2_header')) ? get_option('1_row_2_header') : '',
         is_numeric(get_option('2_row_2_header')) ? get_option('2_row_2_header') : '',

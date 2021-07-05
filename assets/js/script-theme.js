@@ -1,7 +1,5 @@
 jQuery(document).ready(function ($) {
     $("#main-wrapper").addClass("row-fluid");
-
-    // $('h1').replaceWith(function(){
-    //     return $("<h2>", {html: $(this).html()}, "</h2>");
-    // });
+    $('#customer_details div+div').remove();
+    $('#customer_details div').removeClass('col-1').addClass('container-fluid');
 });

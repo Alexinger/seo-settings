@@ -26,6 +26,7 @@ function my_scripts_method()
 
     require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
     require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/opt-price.php');
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
     wp_register_script('my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
 
@@ -528,5 +529,16 @@ function shortcode_callback()
 
     // wp_die();
 }
+
+// Отправляем на почту поле с ссылкой на файл реквизитов
+add_action('woocommerce_email_customer_details', 'send_customer_ip_adress', 10, 4);
+function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email){
+    // Just for admin new order notification
+    if( 'new_order' == $email->id ){
+        $order_id = method_exists( $order, 'get_id' ) ? $order->get_id() : $order->id;
+        echo '<br><p><strong>Ссылка на файл реквизитов:</strong> '. get_option('fileLink') .'</p>';
+    }
+}
+
 
 
