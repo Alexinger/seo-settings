@@ -59,6 +59,7 @@ function wp_modify_uploaded_file_names($file)
 
     return $file;
 }
+
 // Запрещает создаввать миниарюры загруженных фотографий
 add_filter('intermediate_image_sizes_advanced', 'no_image_resizing');
 function no_image_resizing($size)
@@ -66,6 +67,7 @@ function no_image_resizing($size)
     $ret = array();
     return $ret;
 }
+
 // Удаляем файлы из папки RECVIZIT где храняться загруженные реквизиты
 if (false) {
     $upload_info = wp_get_upload_dir();
@@ -74,10 +76,11 @@ if (false) {
 }
 
 /* Delete Cache Files Here */
-$dir = "recvizit/"; /** define the directory **/
+$dir = "recvizit/";
+/** define the directory **/
 
 /*** cycle through all files in the directory ***/
-foreach (glob($dir."*") as $file) {
+foreach (glob($dir . "*") as $file) {
 //foreach (glob($dir.'*.*') as $file){
 
     /*** if file is 24 hours (86400 seconds) old then delete it ***/
@@ -85,3 +88,11 @@ foreach (glob($dir."*") as $file) {
         unlink($file);
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+add_action('woocommerce_checkout_before_order_review', 'my_custom_funtion');
+function my_custom_funtion(){
+    ?>
+    <h2>Purchase Disclaimer2</h2>
+    <?php
+}
+

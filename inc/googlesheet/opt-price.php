@@ -1,7 +1,6 @@
 <?php
 include_once 'UpdatePrice.php';
-add_action('woocommerce_before_calculate_totals', 'add_custom_price', 100, 2);
-
+add_action('woocommerce_before_calculate_totals', 'add_custom_price', 1000, 1);
 function add_custom_price($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
@@ -23,147 +22,170 @@ function add_custom_price($cart)
 
     // create variables left_1-10 and right_1-10
     $left_1 = $left_2 = $left_3 = $left_4 = $left_5 = $left_6 = $left_7 = $left_8 = $left_9 = $left_10 = '';
-    $right_1 = $right_2 = $right_3 = $right_4 = $right_5 = $right_6 = $right_7 = $right_8 = $right_9 = $right_10 = '';
 
     for ($i = 1; $i < 11; $i++) {
         ${"left_$i"} = get_option($i . '_row_left');
-        ${"right_$i"} = get_option($i . '_row_right');
     }
+
+//    function getMinPrice($item){
+//        $newArray = array_diff($item, array(0, null));
+//        return '100';
+//    }
 
     foreach ($cart->get_cart() as $item) {
         $terms = get_the_terms($item['product_id'], 'product_cat');
+        // max value counter first row the table
+        $rowArray = max([$left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10]);
+
+        $columnArray_10 = [get_option('1_row_0_header'), get_option('2_row_0_header'), get_option('3_row_0_header'), get_option('4_row_0_header'), get_option('5_row_0_header'), get_option('6_row_0_header'), get_option('7_row_0_header'), get_option('8_row_0_header'), get_option('9_row_0_header'), get_option('10_row_0_header')];
+        $columnArray_15 = [get_option('1_row_1_header'), get_option('2_row_1_header'), get_option('3_row_1_header'), get_option('4_row_1_header'), get_option('5_row_1_header'), get_option('6_row_1_header'), get_option('7_row_1_header'), get_option('8_row_1_header'), get_option('9_row_1_header'), get_option('10_row_1_header')];
+        $columnArray_20 = [get_option('1_row_2_header'), get_option('2_row_2_header'), get_option('3_row_2_header'), get_option('4_row_2_header'), get_option('5_row_2_header'), get_option('6_row_2_header'), get_option('7_row_2_header'), get_option('8_row_2_header'), get_option('9_row_2_header'), get_option('10_row_2_header')];
+        $columnArray_25 = [get_option('1_row_3_header'), get_option('2_row_3_header'), get_option('3_row_3_header'), get_option('4_row_3_header'), get_option('5_row_3_header'), get_option('6_row_3_header'), get_option('7_row_3_header'), get_option('8_row_3_header'), get_option('9_row_3_header'), get_option('10_row_3_header')];
+        $columnArray_30 = [get_option('1_row_4_header'), get_option('2_row_4_header'), get_option('3_row_4_header'), get_option('4_row_4_header'), get_option('5_row_4_header'), get_option('6_row_4_header'), get_option('7_row_4_header'), get_option('8_row_4_header'), get_option('9_row_4_header'), get_option('10_row_4_header')];
+        $columnArray_35 = [get_option('1_row_5_header'), get_option('2_row_5_header'), get_option('3_row_5_header'), get_option('4_row_5_header'), get_option('5_row_5_header'), get_option('6_row_5_header'), get_option('7_row_5_header'), get_option('8_row_5_header'), get_option('9_row_5_header'), get_option('10_row_5_header')];
+        $columnArray_40 = [get_option('1_row_6_header'), get_option('2_row_6_header'), get_option('3_row_6_header'), get_option('4_row_6_header'), get_option('5_row_6_header'), get_option('6_row_6_header'), get_option('7_row_6_header'), get_option('8_row_6_header'), get_option('9_row_6_header'), get_option('10_row_6_header')];
+        $columnArray_45 = [get_option('1_row_7_header'), get_option('2_row_7_header'), get_option('3_row_7_header'), get_option('4_row_7_header'), get_option('5_row_7_header'), get_option('6_row_7_header'), get_option('7_row_7_header'), get_option('8_row_7_header'), get_option('9_row_7_header'), get_option('10_row_7_header')];
+        $columnArray_50 = [get_option('1_row_8_header'), get_option('2_row_8_header'), get_option('3_row_8_header'), get_option('4_row_8_header'), get_option('5_row_8_header'), get_option('6_row_8_header'), get_option('7_row_8_header'), get_option('8_row_8_header'), get_option('9_row_8_header'), get_option('10_row_8_header')];
+
         /* -10C */
-        // var_dump($terms[0]->name);
-        // var_dump($terms);
         if (removeSymbols($terms) === get_option('1_header')) {
-            $count = $item['quantity'] || 0;
+            $count = $item['quantity'];
+
             /* до 50 */
-            if ($left_1 && $count < $left_1) {
-                $count = $left_1;
-                $item['data']->set_price(get_option('1_row_1_header'));
-            }
-            /* 50 <-> 150 */
-            if ($left_1 && $count >= $left_1 && $count <= $right_1) {
-                $item['data']->set_price(get_option('1_row_1_header'));
-            }
-            /* 151 <-> 750 */
-            if ($left_2 && $count >= $left_2 && $count <= $right_2) {
-                getCount(get_option('2_row_1_header')) ? $item['data']->set_price(get_option('2_row_1_header')) : $item['data']->set_price(get_option('1_row_1_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($left_3 && $count >= $left_3 && $count <= $right_3) {
-                getCount(get_option('3_row_1_header')) ? $item['data']->set_price(get_option('3_row_1_header')) : $item['data']->set_price(get_option('2_row_1_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($left_4 && $count >= $left_4 && $count <= $right_4) {
-                getCount(get_option('4_row_1_header')) ? $item['data']->set_price(get_option('4_row_1_header')) : $item['data']->set_price(get_option('3_row_1_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($left_5 && $count >= $left_5 && $count <= $right_5) {
-                getCount(get_option('5_row_3_header')) ? $item['data']->set_price(get_option('5_row_1_header')) : $item['data']->set_price(get_option('4_row_1_header'));
-            }
-            /* 5001 <-> 10000 */
-            if ($left_6 && $count >= $left_6 && $count <= $right_6) {
-                getCount(get_option('6_row_1_header')) ? $item['data']->set_price(get_option('6_row_1_header')) : $item['data']->set_price(get_option('5_row_1_header'));
-            }
-            /* 10001 <-> 15000 */
-            if ($left_7 && $count >= $left_7 && $count <= $right_7) {
-                getCount(get_option('7_row_1_header')) ? $item['data']->set_price(get_option('7_row_1_header')) : $item['data']->set_price(get_option('6_row_1_header'));
-            }
-            /* 15001 <-> 20000 */
-            if ($left_8 && $count >= $left_8 && $count <= $right_8) {
-                getCount(get_option('8_row_1_header')) ? $item['data']->set_price(get_option('8_row_1_header')) : $item['data']->set_price(get_option('7_row_1_header'));
-            }
-            /* ? */
-            if ($left_9 && $count >= $left_9 && $count <= $right_9) {
-                getCount(get_option('9_row_1_header')) ? $item['data']->set_price(get_option('9_row_1_header')) : $item['data']->set_price(get_option('8_row_1_header'));
-            }
-            /* ? */
-            if ($left_10 && $count >= $left_10 && $count <= $right_10) {
-                getCount(get_option('10_row_1_header')) ? $item['data']->set_price(get_option('10_row_1_header')) : $item['data']->set_price(get_option('9_row_1_header'));
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_1_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_0_header'));
+                    }
+                }
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_0_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_0_header'));
+                    }
+                }
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_0_header') !== '-') {
+                        getCount(get_option('2_row_0_header')) ? $item['data']->set_price(get_option('2_row_0_header')) : $item['data']->set_price(get_option('1_row_0_header'));
+                    }
+                }
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_0_header') !== '-') {
+                        getCount(get_option('3_row_0_header')) ? $item['data']->set_price(get_option('3_row_0_header')) : $item['data']->set_price(get_option('2_row_0_header'));
+                    }
+                }
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_0_header') !== '-') {
+                        getCount(get_option('4_row_0_header')) ? $item['data']->set_price(get_option('4_row_0_header')) : $item['data']->set_price(get_option('3_row_0_header'));
+                    }
+                }
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_0_header') !== '-') {
+                        getCount(get_option('5_row_0_header')) ? $item['data']->set_price(get_option('5_row_0_header')) : $item['data']->set_price(get_option('4_row_0_header'));
+                    }
+                }
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_0_header') !== '-') {
+                        getCount(get_option('6_row_0_header')) ? $item['data']->set_price(get_option('6_row_0_header')) : $item['data']->set_price(get_option('5_row_0_header'));
+                    }
+                }
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_0_header') !== '-') {
+                        getCount(get_option('7_row_0_header')) ? $item['data']->set_price(get_option('7_row_0_header')) : $item['data']->set_price(get_option('6_row_0_header'));
+                    }
+                }
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_0_header') !== '-') {
+                        getCount(get_option('8_row_0_header')) ? $item['data']->set_price(get_option('8_row_0_header')) : $item['data']->set_price(get_option('7_row_0_header'));
+                    }
+                }
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_0_header') !== '-') {
+                        getCount(get_option('9_row_0_header')) ? $item['data']->set_price(get_option('9_row_0_header')) : $item['data']->set_price(get_option('8_row_0_header'));
+                    }
+                }
+            } else {
+                $newArray_10 = array_diff($columnArray_10, array(0, null));
+                $item['data']->set_price(min($newArray_10));
             }
         }
 
         /* -15C */
         if (removeSymbols($terms) === get_option('2_header')) {
             $count = $item['quantity'];
+
             /* до 50 */
-            if ($count < $left_1) {
-                $item['quantity'] = $left_1;
-                if (get_option('1_row_2_header') === '-') {
-                    return;
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_2_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_1_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_2_header'));
-            }
-            /* 50 <-> 150 */
-            if ($left_1 && $count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_2_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_1_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_1_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_2_header'));
-            }
-            /* 151 <-> 750 */
-            if ($left_2 && $count >= $left_2 && $count <= $right_2) {
-                if (get_option('1_row_2_header') === "-") {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_1_header') !== '-') {
+                        getCount(get_option('2_row_1_header')) ? $item['data']->set_price(get_option('2_row_1_header')) : $item['data']->set_price(get_option('1_row_1_header'));
+                    }
                 }
-                getCount(get_option('2_row_2_header')) ? $item['data']->set_price(get_option('2_row_2_header')) : $item['data']->set_price(get_option('1_row_2_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($left_3 && $count >= $left_3 && $count <= $right_3) {
-                if (get_option('2_row_2_header') === "-") {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_1_header') !== '-') {
+                        getCount(get_option('3_row_1_header')) ? $item['data']->set_price(get_option('3_row_1_header')) : $item['data']->set_price(get_option('2_row_1_header'));
+                    }
                 }
-                getCount(get_option('3_row_2_header')) ? $item['data']->set_price(get_option('3_row_2_header')) : $item['data']->set_price(get_option('2_row_2_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($left_4 && $count >= $left_4 && $count <= $right_4) {
-                if (get_option('3_row_2_header') === "-") {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_1_header') !== '-') {
+                        getCount(get_option('4_row_1_header')) ? $item['data']->set_price(get_option('4_row_1_header')) : $item['data']->set_price(get_option('3_row_1_header'));
+                    }
                 }
-                getCount(get_option('4_row_2_header')) ? $item['data']->set_price(get_option('4_row_2_header')) : $item['data']->set_price(get_option('3_row_2_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($left_5 && $count >= $left_5 && $count <= $right_5) {
-                if (get_option('4_row_2_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_1_header') !== '-') {
+                        getCount(get_option('5_row_1_header')) ? $item['data']->set_price(get_option('5_row_1_header')) : $item['data']->set_price(get_option('4_row_1_header'));
+                    }
                 }
-                getCount(get_option('5_row_2_header')) ? $item['data']->set_price(get_option('5_row_2_header')) : $item['data']->set_price(get_option('4_row_2_header'));
-            }
-            /* 5001 <-> 10000 */
-            if ($left_6 && $count >= $left_6 && $count <= $right_6) {
-                if (get_option('5_row_2_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_1_header') !== '-') {
+                        getCount(get_option('6_row_1_header')) ? $item['data']->set_price(get_option('6_row_1_header')) : $item['data']->set_price(get_option('5_row_1_header'));
+                    }
                 }
-                getCount(get_option('6_row_2_header')) ? $item['data']->set_price(get_option('6_row_2_header')) : $item['data']->set_price(get_option('5_row_2_header'));
-            }
-            /* 10001 <-> 15000 */
-            if ($left_7 && $count >= $left_7 && $count <= $right_7) {
-                if (get_option('6_row_2_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_1_header') !== '-') {
+                        getCount(get_option('7_row_1_header')) ? $item['data']->set_price(get_option('7_row_1_header')) : $item['data']->set_price(get_option('6_row_1_header'));
+                    }
                 }
-                getCount(get_option('7_row_2_header')) ? $item['data']->set_price(get_option('7_row_2_header')) : $item['data']->set_price(get_option('6_row_2_header'));
-            }
-            /* 15001 <-> 20000 */
-            if ($left_8 && $count >= $left_8 && $count <= $right_8) {
-                if (get_option('7_row_2_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_1_header') !== '-') {
+                        getCount(get_option('8_row_1_header')) ? $item['data']->set_price(get_option('8_row_1_header')) : $item['data']->set_price(get_option('7_row_1_header'));
+                    }
                 }
-                getCount(get_option('8_row_2_header')) ? $item['data']->set_price(get_option('8_row_2_header')) : $item['data']->set_price(get_option('7_row_2_header'));
-            }
-            /* ? */
-            if ($count >= $left_9 && $count <= $right_9) {
-                if (get_option('8_row_2_header') === '-') {
-                    return;
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_1_header') !== '-') {
+                        getCount(get_option('9_row_1_header')) ? $item['data']->set_price(get_option('9_row_1_header')) : $item['data']->set_price(get_option('8_row_1_header'));
+                    }
                 }
-                getCount(get_option('9_row_2_header')) ? $item['data']->set_price(get_option('9_row_2_header')) : $item['data']->set_price(get_option('8_row_2_header'));
-            }
-            /* ? */
-            if ($count >= $left_10 && $count <= $right_10) {
-                if (get_option('9_row_2_header') === '-') {
-                    return;
-                }
-                getCount(get_option('10_row_2_header')) ? $item['data']->set_price(get_option('10_row_2_header')) : $item['data']->set_price(get_option('9_row_2_header'));
+            } else {
+                $newArray_15 = array_diff($columnArray_15, array(0, null));
+                $item['data']->set_price(min($newArray_15));
             }
         }
 
@@ -171,412 +193,493 @@ function add_custom_price($cart)
         if (removeSymbols($terms) === get_option('3_header')) {
             $count = $item['quantity'];
             /* до 50 */
-            if ($count < $left_1) {
-                $count = $left_1;
-                if (get_option('1_row_3_header') === '-') {
-                    return;
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_3_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_2_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_3_header'));
-            }
-            /* 50 <-> 150 */
-            if ($count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_3_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_2_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_2_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_3_header'));
-            }
-            /* 151 <-> 750 */
-            if ($count >= $left_2 && $count <= $right_2) {
-                if (get_option('2_row_3_header') === '-') {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_2_header') !== '-') {
+                        getCount(get_option('2_row_2_header')) ? $item['data']->set_price(get_option('2_row_2_header')) : $item['data']->set_price(get_option('1_row_2_header'));
+                    }
                 }
-                getCount(get_option('2_row_3_header')) ? $item['data']->set_price(get_option('2_row_3_header')) : $item['data']->set_price(get_option('1_row_3_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($count >= $left_3 && $count <= $right_3) {
-                if (get_option('3_row_3_header') === '-') {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_2_header') !== '-') {
+                        getCount(get_option('3_row_2_header')) ? $item['data']->set_price(get_option('3_row_2_header')) : $item['data']->set_price(get_option('2_row_2_header'));
+                    }
                 }
-                getCount(get_option('3_row_3_header')) ? $item['data']->set_price(get_option('3_row_3_header')) : $item['data']->set_price(get_option('2_row_3_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($count >= $left_4 && $count <= $right_4) {
-                if (get_option('4_row_3_header') === '-') {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_2_header') !== '-') {
+                        getCount(get_option('4_row_2_header')) ? $item['data']->set_price(get_option('4_row_2_header')) : $item['data']->set_price(get_option('3_row_2_header'));
+                    }
                 }
-                getCount(get_option('4_row_3_header')) ? $item['data']->set_price(get_option('4_row_3_header')) : $item['data']->set_price(get_option('3_row_3_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($count >= $left_5 && $count <= $right_5) {
-                if (get_option('5_row_3_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_2_header') !== '-') {
+                        getCount(get_option('5_row_2_header')) ? $item['data']->set_price(get_option('5_row_2_header')) : $item['data']->set_price(get_option('4_row_2_header'));
+                    }
                 }
-                getCount(get_option('5_row_3_header')) ? $item['data']->set_price(get_option('5_row_3_header')) : $item['data']->set_price(get_option('4_row_3_header'));
-            }
-            /* 5001 <-> 10000 */
-            if ($left_6 && $count >= $left_6 && $count <= $right_6) {
-                if (get_option('6_row_3_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_2_header') !== '-') {
+                        getCount(get_option('6_row_2_header')) ? $item['data']->set_price(get_option('6_row_2_header')) : $item['data']->set_price(get_option('5_row_2_header'));
+                    }
                 }
-                getCount(get_option('6_row_3_header')) ? $item['data']->set_price(get_option('6_row_3_header')) : $item['data']->set_price(get_option('5_row_3_header'));
-            }
-            /* 10001 <-> 15000 */
-            if ($left_7 && $count >= $left_7 && $count <= $right_7) {
-                if (get_option('7_row_3_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_2_header') !== '-') {
+                        getCount(get_option('7_row_2_header')) ? $item['data']->set_price(get_option('7_row_2_header')) : $item['data']->set_price(get_option('6_row_2_header'));
+                    }
                 }
-                getCount(get_option('7_row_3_header')) ? $item['data']->set_price(get_option('7_row_3_header')) : $item['data']->set_price(get_option('6_row_3_header'));
-            }
-            /* 15001 <-> 20000 */
-            if ($left_8 && $count >= $left_8 && $count <= $right_8) {
-                if (get_option('8_row_3_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_2_header') !== '-') {
+                        getCount(get_option('8_row_2_header')) ? $item['data']->set_price(get_option('8_row_2_header')) : $item['data']->set_price(get_option('7_row_2_header'));
+                    }
                 }
-                getCount(get_option('8_row_3_header')) ? $item['data']->set_price(get_option('8_row_3_header')) : $item['data']->set_price(get_option('7_row_3_header'));
-            }
-            /* ? */
-            if ($left_9 && $count >= $left_9 && $count <= $right_9) {
-                if (get_option('9_row_3_header') === '-') {
-                    return;
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_2_header') !== '-') {
+                        getCount(get_option('9_row_2_header')) ? $item['data']->set_price(get_option('9_row_2_header')) : $item['data']->set_price(get_option('8_row_2_header'));
+                    }
                 }
-                getCount(get_option('9_row_3_header')) ? $item['data']->set_price(get_option('9_row_3_header')) : $item['data']->set_price(get_option('8_row_3_header'));
-            }
-            /* ? */
-            if ($left_10 && $count >= $left_10 && $count <= $right_10) {
-                if (get_option('10_row_3_header') === '-') {
-                    return;
-                }
-                getCount(get_option('10_row_3_header')) ? $item['data']->set_price(get_option('10_row_3_header')) : $item['data']->set_price(get_option('9_row_3_header'));
+            } else {
+                $newArray_20 = array_diff($columnArray_20, array(0, null));
+                $item['data']->set_price(min($newArray_20));
             }
         }
 
         /* -25C */
         if (removeSymbols($terms) == get_option('4_header')) {
             $count = $item['quantity'];
+
             /* до 50 */
-            if ($count < $left_1) {
-                $count = $left_1;
-                if (get_option('1_row_4_header') === '-') {
-                    return;
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_4_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_3_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_4_header'));
-            }
-            /* 50 <-> 150 */
-            if ($left_1 && $count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_4_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_3_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_3_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_4_header'));
-            }
-            /* 151 <-> 750 */
-            if ($left_2 && $count >= $left_2 && $count <= $right_2) {
-                if (get_option('2_row_4_header') === '-') {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_3_header') !== '-') {
+                        getCount(get_option('2_row_3_header')) ? $item['data']->set_price(get_option('2_row_3_header')) : $item['data']->set_price(get_option('1_row_3_header'));
+                    }
                 }
-                getCount(get_option('2_row_4_header')) ? $item['data']->set_price(get_option('2_row_4_header')) : $item['data']->set_price(get_option('1_row_4_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($left_3 && $count >= $left_3 && $count <= $right_3) {
-                if (get_option('3_row_4_header') === '-') {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_3_header') !== '-') {
+                        getCount(get_option('3_row_3_header')) ? $item['data']->set_price(get_option('3_row_3_header')) : $item['data']->set_price(get_option('2_row_3_header'));
+                    }
                 }
-                getCount(get_option('3_row_4_header')) ? $item['data']->set_price(get_option('3_row_4_header')) : $item['data']->set_price(get_option('2_row_4_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($left_4 && $count >= $left_4 && $count <= $right_4) {
-                if (get_option('4_row_4_header') === '-') {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_3_header') !== '-') {
+                        getCount(get_option('4_row_3_header')) ? $item['data']->set_price(get_option('4_row_3_header')) : $item['data']->set_price(get_option('3_row_3_header'));
+                    }
                 }
-                getCount(get_option('4_row_4_header')) ? $item['data']->set_price(get_option('4_row_4_header')) : $item['data']->set_price(get_option('3_row_4_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($left_5 && $count >= $left_5 && $count <= $right_5) {
-                if (get_option('5_row_4_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_3_header') !== '-') {
+                        getCount(get_option('5_row_3_header')) ? $item['data']->set_price(get_option('5_row_3_header')) : $item['data']->set_price(get_option('4_row_3_header'));
+                    }
                 }
-                getCount(get_option('5_row_4_header')) ? $item['data']->set_price(get_option('5_row_4_header')) : $item['data']->set_price(get_option('4_row_4_header'));
-            }
-            /* null */
-            if ($left_6 && $count >= $left_6 && $count <= $right_6) {
-                if (get_option('6_row_4_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_3_header') !== '-') {
+                        getCount(get_option('6_row_3_header')) ? $item['data']->set_price(get_option('6_row_3_header')) : $item['data']->set_price(get_option('5_row_3_header'));
+                    }
                 }
-                getCount(get_option('6_row_4_header')) ? $item['data']->set_price(get_option('6_row_4_header')) : $item['data']->set_price(get_option('5_row_4_header'));
-            }
-            /* null */
-            if ($left_7 && $count >= $left_7 && $count <= $right_7) {
-                if (get_option('7_row_4_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_3_header') !== '-') {
+                        getCount(get_option('7_row_3_header')) ? $item['data']->set_price(get_option('7_row_3_header')) : $item['data']->set_price(get_option('6_row_3_header'));
+                    }
                 }
-                getCount(get_option('7_row_4_header')) ? $item['data']->set_price(get_option('7_row_4_header')) : $item['data']->set_price(get_option('6_row_4_header'));
-            }
-            /* null */
-            if ($left_8 && $count >= $left_8 && $count <= $right_8) {
-                if (get_option('8_row_4_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_3_header') !== '-') {
+                        getCount(get_option('8_row_3_header')) ? $item['data']->set_price(get_option('8_row_3_header')) : $item['data']->set_price(get_option('7_row_3_header'));
+                    }
                 }
-                getCount(get_option('8_row_4_header')) ? $item['data']->set_price(get_option('8_row_4_header')) : $item['data']->set_price(get_option('7_row_4_header'));
-            }
-            /* null */
-            if ($left_9 && $count >= $left_9 && $count <= $right_9) {
-                if (get_option('9_row_4_header') === '-') {
-                    return;
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_3_header') !== '-') {
+                        getCount(get_option('9_row_3_header')) ? $item['data']->set_price(get_option('9_row_3_header')) : $item['data']->set_price(get_option('8_row_3_header'));
+                    }
                 }
-                getCount(get_option('9_row_4_header')) ? $item['data']->set_price(get_option('9_row_4_header')) : $item['data']->set_price(get_option('8_row_4_header'));
-            }
-            /* null */
-            if ($left_10 && $count >= $left_10 && $count <= $right_10) {
-                if (get_option('10_row_4_header') === '-') {
-                    return;
-                }
-                getCount(get_option('10_row_4_header')) ? $item['data']->set_price(get_option('10_row_4_header')) : $item['data']->set_price(get_option('9_row_4_header'));
+            } else {
+                $newArray_25 = array_diff($columnArray_25, array(0, null));
+                $item['data']->set_price(min($newArray_25));
             }
         }
+
         /* -30C */
         if (removeSymbols($terms) === get_option('5_header')) {
             $count = $item['quantity'];
+
             /* до 50 */
-            if ($count < $left_1) {
-                $count = $left_1;
-                if (get_option('1_row_5_header') === '-') {
-                    return;
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_5_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_4_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_5_header'));
-            }
-            /* 50 <-> 150 */
-            if ($count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_5_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_4_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_4_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_5_header'));
-            }
-            /* 151 <-> 750 */
-            if ($count >= $left_2 && $count <= $right_2) {
-                if (get_option('2_row_5_header') === '-') {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_4_header') !== '-') {
+                        getCount(get_option('2_row_4_header')) ? $item['data']->set_price(get_option('2_row_4_header')) : $item['data']->set_price(get_option('1_row_4_header'));
+                    }
                 }
-                getCount(get_option('2_row_5_header')) ? $item['data']->set_price(get_option('2_row_5_header')) : $item['data']->set_price(get_option('1_row_5_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($count >= $left_3 && $count <= $right_3) {
-                if (get_option('3_row_5_header') === '-') {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_4_header') !== '-') {
+                        getCount(get_option('3_row_4_header')) ? $item['data']->set_price(get_option('3_row_4_header')) : $item['data']->set_price(get_option('2_row_4_header'));
+                    }
                 }
-                getCount(get_option('3_row_5_header')) ? $item['data']->set_price(get_option('3_row_5_header')) : $item['data']->set_price(get_option('2_row_5_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($count >= $left_4 && $count <= $right_4) {
-                if (get_option('4_row_5_header') === '-') {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_4_header') !== '-') {
+                        getCount(get_option('4_row_4_header')) ? $item['data']->set_price(get_option('4_row_4_header')) : $item['data']->set_price(get_option('3_row_4_header'));
+                    }
                 }
-                getCount(get_option('4_row_5_header')) ? $item['data']->set_price(get_option('4_row_5_header')) : $item['data']->set_price(get_option('3_row_5_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($count >= $left_5 && $count <= $right_5) {
-                if (get_option('5_row_5_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_4_header') !== '-') {
+                        getCount(get_option('5_row_4_header')) ? $item['data']->set_price(get_option('5_row_4_header')) : $item['data']->set_price(get_option('4_row_4_header'));
+                    }
                 }
-                getCount(get_option('5_row_5_header')) ? $item['data']->set_price(get_option('5_row_5_header')) : $item['data']->set_price(get_option('4_row_5_header'));
-            }
-            /* ? */
-            if ($count >= $left_6 && $count <= $right_6) {
-                if (get_option('6_row_5_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_4_header') !== '-') {
+                        getCount(get_option('6_row_4_header')) ? $item['data']->set_price(get_option('6_row_4_header')) : $item['data']->set_price(get_option('5_row_4_header'));
+                    }
+
                 }
-                getCount(get_option('6_row_5_header')) ? $item['data']->set_price(get_option('6_row_5_header')) : $item['data']->set_price(get_option('5_row_5_header'));
-            }
-            /* ? */
-            if ($count >= $left_7 && $count <= $right_7) {
-                if (get_option('7_row_5_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_4_header') !== '-') {
+                        getCount(get_option('7_row_4_header')) ? $item['data']->set_price(get_option('7_row_4_header')) : $item['data']->set_price(get_option('6_row_4_header'));
+                    }
                 }
-                getCount(get_option('7_row_5_header')) ? $item['data']->set_price(get_option('7_row_5_header')) : $item['data']->set_price(get_option('6_row_5_header'));
-            }
-            /* ? */
-            if ($count >= $left_8 && $count <= $right_8) {
-                if (get_option('8_row_5_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_4_header') !== '-') {
+                        getCount(get_option('8_row_4_header')) ? $item['data']->set_price(get_option('8_row_4_header')) : $item['data']->set_price(get_option('7_row_4_header'));
+                    }
                 }
-                getCount(get_option('8_row_5_header')) ? $item['data']->set_price(get_option('8_row_5_header')) : $item['data']->set_price(get_option('7_row_5_header'));
-            }
-            /* ? */
-            if ($count >= $left_9 && $count <= $right_9) {
-                if (get_option('9_row_5_header') === '-') {
-                    return;
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_4_header') !== '-') {
+                        getCount(get_option('9_row_4_header')) ? $item['data']->set_price(get_option('9_row_4_header')) : $item['data']->set_price(get_option('8_row_4_header'));
+                    }
                 }
-                getCount(get_option('9_row_5_header')) ? $item['data']->set_price(get_option('9_row_5_header')) : $item['data']->set_price(get_option('8_row_5_header'));
-            }
-            /* ? */
-            if ($count >= $left_10 && $count <= $right_10) {
-                if (get_option('10_row_5_header') === '-') {
-                    return;
-                }
-                getCount(get_option('10_row_5_header')) ? $item['data']->set_price(get_option('10_row_5_header')) : $item['data']->set_price(get_option('9_row_5_header'));
+            } else {
+                $newArray_30 = array_diff($columnArray_30, array(0, null));
+                $item['data']->set_price(min($newArray_30));
             }
         }
+
         /* -35C */
         if (removeSymbols($terms) === get_option('6_header')) {
-            /* до 50 */
             $count = $item['quantity'];
-            echo "-35 = " . $count . "<br>";
-            if ($count < $left_1) {
-                $count = $left_1;
-                if (get_option('1_row_6_header') === '-') {
-                    return;
+
+            /* до 50 */
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_6_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_5_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_6_header'));
-            }
-            /* 50 <-> 150 */
-            if ($count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_6_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_5_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_5_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_6_header'));
-            }
-            /* 151 <-> 750 */
-            if ($count >= $left_2 && $count <= $right_2) {
-                if (get_option('2_row_6_header') === '-') {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_5_header') !== '-') {
+                        getCount(get_option('2_row_5_header')) ? $item['data']->set_price(get_option('2_row_5_header')) : $item['data']->set_price(get_option('1_row_5_header'));
+                    }
                 }
-                getCount(get_option('2_row_6_header')) ? $item['data']->set_price(get_option('2_row_6_header')) : $item['data']->set_price(get_option('1_row_6_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($count >= $left_3 && $count <= $right_3) {
-                if (get_option('3_row_6_header') === '-') {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_5_header') !== '-') {
+                        getCount(get_option('3_row_5_header')) ? $item['data']->set_price(get_option('3_row_5_header')) : $item['data']->set_price(get_option('2_row_5_header'));
+                    }
                 }
-                getCount(get_option('3_row_6_header')) ? $item['data']->set_price(get_option('3_row_6_header')) : $item['data']->set_price(get_option('2_row_6_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($count >= $left_4 && $count <= $right_4) {
-                if (get_option('4_row_6_header') === '-') {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_5_header') !== '-') {
+                        getCount(get_option('4_row_5_header')) ? $item['data']->set_price(get_option('4_row_5_header')) : $item['data']->set_price(get_option('3_row_5_header'));
+                    }
                 }
-                getCount(get_option('4_row_6_header')) ? $item['data']->set_price(get_option('4_row_6_header')) : $item['data']->set_price(get_option('3_row_6_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($count >= $left_5 && $count <= $right_5) {
-                if (get_option('5_row_6_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_5_header') !== '-') {
+                        getCount(get_option('5_row_5_header')) ? $item['data']->set_price(get_option('5_row_5_header')) : $item['data']->set_price(get_option('4_row_5_header'));
+                    }
                 }
-                getCount(get_option('5_row_6_header')) ? $item['data']->set_price(get_option('5_row_6_header')) : $item['data']->set_price(get_option('4_row_6_header'));
-            }
-            /* null */
-            if ($count >= $left_6 && $count <= $right_6) {
-                if (get_option('6_row_6_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_5_header') !== '-') {
+                        getCount(get_option('6_row_5_header')) ? $item['data']->set_price(get_option('6_row_5_header')) : $item['data']->set_price(get_option('5_row_5_header'));
+                    }
                 }
-                getCount(get_option('6_row_6_header')) ? $item['data']->set_price(get_option('6_row_6_header')) : $item['data']->set_price(get_option('5_row_6_header'));
-            }
-            /* null */
-            if ($count >= $left_7 && $count <= $right_7) {
-                if (get_option('7_row_6_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_5_header') !== '-') {
+                        getCount(get_option('7_row_5_header')) ? $item['data']->set_price(get_option('7_row_5_header')) : $item['data']->set_price(get_option('6_row_5_header'));
+                    }
                 }
-                getCount(get_option('7_row_6_header')) ? $item['data']->set_price(get_option('7_row_6_header')) : $item['data']->set_price(get_option('6_row_6_header'));
-            }
-            /* null */
-            if ($count >= $left_8 && $count <= $right_8) {
-                if (get_option('8_row_6_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_5_header') !== '-') {
+                        getCount(get_option('8_row_5_header')) ? $item['data']->set_price(get_option('8_row_5_header')) : $item['data']->set_price(get_option('7_row_5_header'));
+                    }
                 }
-                getCount(get_option('8_row_6_header')) ? $item['data']->set_price(get_option('8_row_6_header')) : $item['data']->set_price(get_option('7_row_6_header'));
-            }
-            /* null */
-            if ($count >= $left_9 && $count <= $right_9) {
-                if (get_option('9_row_6_header') === '-') {
-                    return;
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_5_header') !== '-') {
+                        getCount(get_option('9_row_5_header')) ? $item['data']->set_price(get_option('9_row_5_header')) : $item['data']->set_price(get_option('8_row_5_header'));
+                    }
                 }
-                getCount(get_option('9_row_6_header')) ? $item['data']->set_price(get_option('9_row_6_header')) : $item['data']->set_price(get_option('8_row_6_header'));
-            }
-            /* null */
-            if ($count >= $left_10 && $count <= $right_10) {
-                if (get_option('10_row_6_header') === '-') {
-                    return;
-                }
-                getCount(get_option('10_row_6_header')) ? $item['data']->set_price(get_option('10_row_6_header')) : $item['data']->set_price(get_option('9_row_6_header'));
+            } else {
+                $newArray_35 = array_diff($columnArray_35, array(0, null));
+                $item['data']->set_price(min($newArray_35));
             }
         }
         /* -40C */
         if (removeSymbols($terms) === get_option('7_header')) {
             $count = $item['quantity'];
+
             /* до 50 */
-            if ($count < $left_1) {
-                $count = $left_1;
-                if (get_option('1_row_7_header') === '-') {
-                    return;
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_7_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_6_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_7_header'));
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_6_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_6_header'));
+                    }
+                }
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_6_header') !== '-') {
+                        getCount(get_option('2_row_6_header')) ? $item['data']->set_price(get_option('2_row_6_header')) : $item['data']->set_price(get_option('1_row_6_header'));
+                    }
+                }
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_6_header') !== '-') {
+                        getCount(get_option('3_row_6_header')) ? $item['data']->set_price(get_option('3_row_6_header')) : $item['data']->set_price(get_option('2_row_6_header'));
+                    }
+                }
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_6_header') !== '-') {
+                        getCount(get_option('4_row_6_header')) ? $item['data']->set_price(get_option('4_row_6_header')) : $item['data']->set_price(get_option('3_row_6_header'));
+                    }
+                }
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_6_header') !== '-') {
+                        getCount(get_option('5_row_6_header')) ? $item['data']->set_price(get_option('5_row_6_header')) : $item['data']->set_price(get_option('4_row_6_header'));
+                    }
+                }
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_6_header') !== '-') {
+                        getCount(get_option('6_row_6_header')) ? $item['data']->set_price(get_option('6_row_6_header')) : $item['data']->set_price(get_option('5_row_6_header'));
+                    }
+                }
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_6_header') !== '-') {
+                        getCount(get_option('7_row_6_header')) ? $item['data']->set_price(get_option('7_row_6_header')) : $item['data']->set_price(get_option('6_row_6_header'));
+                    }
+                }
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_6_header') !== '-') {
+                        getCount(get_option('8_row_6_header')) ? $item['data']->set_price(get_option('8_row_6_header')) : $item['data']->set_price(get_option('7_row_6_header'));
+                    }
+                }
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_6_header') !== '-') {
+                        getCount(get_option('9_row_6_header')) ? $item['data']->set_price(get_option('9_row_6_header')) : $item['data']->set_price(get_option('8_row_6_header'));
+                    }
+                }
+            } else {
+                $newArray_40 = array_diff($columnArray_40, array(0, null));
+                $item['data']->set_price(min($newArray_40));
             }
-            /* 50 <-> 150 */
-            if ($count >= $left_1 && $count <= $right_1) {
-                if (get_option('1_row_7_header') === '-') {
-                    return;
+        }
+        /* -45C */
+        if (removeSymbols($terms) === get_option('8_header')) {
+            $count = $item['quantity'];
+
+            /* до 50 */
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_8_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_7_header'));
+                    }
                 }
-                $item['data']->set_price(get_option('1_row_7_header'));
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_7_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_7_header'));
+                    }
+                }
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_7_header') !== '-') {
+                        getCount(get_option('2_row_7_header')) ? $item['data']->set_price(get_option('2_row_7_header')) : $item['data']->set_price(get_option('1_row_7_header'));
+                    }
+                }
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_7_header') !== '-') {
+                        getCount(get_option('3_row_7_header')) ? $item['data']->set_price(get_option('3_row_7_header')) : $item['data']->set_price(get_option('2_row_7_header'));
+                    }
+                }
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_7_header') !== '-') {
+                        getCount(get_option('4_row_7_header')) ? $item['data']->set_price(get_option('4_row_7_header')) : $item['data']->set_price(get_option('3_row_7_header'));
+                    }
+                }
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_7_header') !== '-') {
+                        getCount(get_option('5_row_7_header')) ? $item['data']->set_price(get_option('5_row_7_header')) : $item['data']->set_price(get_option('4_row_7_header'));
+                    }
+                }
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_7_header') !== '-') {
+                        getCount(get_option('6_row_7_header')) ? $item['data']->set_price(get_option('6_row_7_header')) : $item['data']->set_price(get_option('5_row_7_header'));
+                    }
+                }
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_7_header') !== '-') {
+                        getCount(get_option('7_row_7_header')) ? $item['data']->set_price(get_option('7_row_7_header')) : $item['data']->set_price(get_option('6_row_7_header'));
+                    }
+                }
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_7_header') !== '-') {
+                        getCount(get_option('8_row_7_header')) ? $item['data']->set_price(get_option('8_row_7_header')) : $item['data']->set_price(get_option('7_row_7_header'));
+                    }
+                }
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_7_header') !== '-') {
+                        getCount(get_option('9_row_7_header')) ? $item['data']->set_price(get_option('9_row_7_header')) : $item['data']->set_price(get_option('8_row_7_header'));
+                    }
+                }
+            } else {
+                $newArray_45 = array_diff($columnArray_45, array(0, null));
+                $item['data']->set_price(min($newArray_45));
             }
-            /* 151 <-> 750 */
-            if ($count >= $left_2 && $count <= $right_2) {
-                if (get_option('2_row_7_header') === '-') {
-                    return;
+        }
+        /* -50C */
+        if (removeSymbols($terms) === get_option('9_header')) {
+            $count = $item['quantity'];
+
+            /* до 50 */
+            if ($count < $rowArray) {
+                if ($count < $left_1) {
+                    if (get_option('1_row_9_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_8_header'));
+                    }
                 }
-                getCount(get_option('2_row_7_header')) ? $item['data']->set_price(get_option('2_row_7_header')) : $item['data']->set_price(get_option('1_row_7_header'));
-            }
-            /* 751 <-> 1200 */
-            if ($count >= $left_3 && $count <= $right_3) {
-                if (get_option('3_row_7_header') === '-') {
-                    return;
+                /* 50 <-> 150 */
+                if ($left_2) {
+                    if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_8_header') !== '-') {
+                        $item['data']->set_price(get_option('1_row_8_header'));
+                    }
                 }
-                getCount(get_option('3_row_7_header')) ? $item['data']->set_price(get_option('3_row_7_header')) : $item['data']->set_price(get_option('2_row_7_header'));
-            }
-            /* 1201 <-> 2500 */
-            if ($count >= $left_4 && $count <= $right_4) {
-                if (get_option('4_row_7_header') === '-') {
-                    return;
+                /* 151 <-> 750 */
+                if ($left_3) {
+                    if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_8_header') !== '-') {
+                        getCount(get_option('2_row_8_header')) ? $item['data']->set_price(get_option('2_row_8_header')) : $item['data']->set_price(get_option('1_row_8_header'));
+                    }
                 }
-                getCount(get_option('4_row_7_header')) ? $item['data']->set_price(get_option('4_row_7_header')) : $item['data']->set_price(get_option('3_row_7_header'));
-            }
-            /* 2501 <-> 5000 */
-            if ($count >= $left_5 && $count <= $right_5) {
-                if (get_option('5_row_7_header') === '-') {
-                    return;
+                /* 751 <-> 1200 */
+                if ($left_4) {
+                    if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_8_header') !== '-') {
+                        getCount(get_option('3_row_8_header')) ? $item['data']->set_price(get_option('3_row_8_header')) : $item['data']->set_price(get_option('2_row_8_header'));
+                    }
                 }
-                getCount(get_option('5_row_7_header')) ? $item['data']->set_price(get_option('5_row_7_header')) : $item['data']->set_price(get_option('4_row_7_header'));
-            }
-            /* ? */
-            if ($count >= $left_6 && $count <= $right_6) {
-                if (get_option('6_row_7_header') === '-') {
-                    return;
+                /* 1201 <-> 2500 */
+                if ($left_5) {
+                    if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_8_header') !== '-') {
+                        getCount(get_option('4_row_8_header')) ? $item['data']->set_price(get_option('4_row_8_header')) : $item['data']->set_price(get_option('3_row_8_header'));
+                    }
                 }
-                getCount(get_option('6_row_7_header')) ? $item['data']->set_price(get_option('6_row_7_header')) : $item['data']->set_price(get_option('5_row_7_header'));
-            }
-            /* ? */
-            if ($count >= $left_7 && $count <= $right_7) {
-                if (get_option('7_row_7_header') === '-') {
-                    return;
+                /* 2501 <-> 5000 */
+                if ($left_6) {
+                    if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_8_header') !== '-') {
+                        getCount(get_option('5_row_8_header')) ? $item['data']->set_price(get_option('5_row_8_header')) : $item['data']->set_price(get_option('4_row_8_header'));
+                    }
                 }
-                getCount(get_option('7_row_7_header')) ? $item['data']->set_price(get_option('7_row_7_header')) : $item['data']->set_price(get_option('6_row_7_header'));
-            }
-            /* ? */
-            if ($count >= $left_8 && $count <= $right_8) {
-                if (get_option('8_row_7_header') === '-') {
-                    return;
+                /* 5001 <-> 10000 */
+                if ($left_7) {
+                    if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_8_header') !== '-') {
+                        getCount(get_option('6_row_8_header')) ? $item['data']->set_price(get_option('6_row_8_header')) : $item['data']->set_price(get_option('5_row_8_header'));
+                    }
                 }
-                getCount(get_option('8_row_7_header')) ? $item['data']->set_price(get_option('8_row_7_header')) : $item['data']->set_price(get_option('7_row_7_header'));
-            }
-            /* ? */
-            if ($count >= $left_9 && $count <= $right_9) {
-                if (get_option('9_row_7_header') === '-') {
-                    return;
+                /* 10001 <-> 15000 */
+                if ($left_8) {
+                    if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_8_header') !== '-') {
+                        getCount(get_option('7_row_8_header')) ? $item['data']->set_price(get_option('7_row_8_header')) : $item['data']->set_price(get_option('6_row_8_header'));
+                    }
                 }
-                getCount(get_option('9_row_7_header')) ? $item['data']->set_price(get_option('9_row_7_header')) : $item['data']->set_price(get_option('8_row_7_header'));
-            }
-            /* ? */
-            if ($count >= $left_10 && $count <= $right_10) {
-                if (get_option('10_row_7_header') === '-') {
-                    return;
+                /* 15001 <-> 20000 */
+                if ($left_9) {
+                    if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_8_header') !== '-') {
+                        getCount(get_option('8_row_8_header')) ? $item['data']->set_price(get_option('8_row_8_header')) : $item['data']->set_price(get_option('7_row_8_header'));
+                    }
                 }
-                getCount(get_option('10_row_7_header')) ? $item['data']->set_price(get_option('10_row_7_header')) : $item['data']->set_price(get_option('9_row_7_header'));
+                /* ? */
+                if ($left_10) {
+                    if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_8_header') !== '-') {
+                        getCount(get_option('9_row_8_header')) ? $item['data']->set_price(get_option('9_row_8_header')) : $item['data']->set_price(get_option('8_row_8_header'));
+                    }
+                }
+            } else {
+                $newArray_50 = array_diff($columnArray_50, array(0, null));
+                $item['data']->set_price(min($newArray_50));
             }
         }
     }
@@ -673,3 +776,56 @@ function getNotice($item, $status, $text)
         $status
     );
 }
+
+// On single product pages Изменяем количество на странице одного товара
+add_filter('woocommerce_quantity_input_args', 'min_qty_filter_callback', 20, 2);
+function min_qty_filter_callback($args, $product)
+{
+    $args['min_value'] = get_option('1_row_left');
+    return $args;
+}
+
+// On shop and archives pages Изменяем количество при добавлении в корзину
+add_filter('woocommerce_loop_add_to_cart_args', 'min_qty_loop_add_to_cart_args', 10, 2);
+function min_qty_loop_add_to_cart_args($args, $product)
+{
+    $args['quantity'] = get_option('1_row_left');
+    return $args;
+}
+
+// Добавить поле "количество", на странице всех товарав
+//add_filter( 'woocommerce_loop_add_to_cart_link', function( $html, $product ) {
+//    if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
+//        $html = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="wcb2b-quantity" method="post" enctype="multipart/form-data">';
+//        $html .= woocommerce_quantity_input( array(), $product, false );
+//        $html .= '<button type="submit" class="button alt">' . esc_html( $product->add_to_cart_text() ) . '</button>';
+//        $html .= '</form>';
+//    }
+//    return $html;
+//}, 10, 2 );
+
+add_action('woocommerce_review_order_after_order_total', 'checkout_review_order_custom_field');
+
+function checkout_review_order_custom_field()
+{
+    echo '<tr><td>Text here</td><td>';
+
+    woocommerce_form_field('my_split_checkbox', array(
+        'type' => 'checkbox',
+        'class' => array('checkbox_field'),
+        'label' => __('', 'woocommerce'),
+        'required' => false,
+    ));
+
+    echo '</td></tr>';
+}
+
+// add_action( 'woocommerce_before_calculate_totals', 'add_custom_prices' );
+// function add_custom_prices( $cart_object ) {
+//    $custom_price = 9; // This will be your custome price
+//    foreach ( $cart_object->cart_contents as $key => $value ) {
+//        // $value['data']->price = $custom_price;
+//        // for WooCommerce version 3+ use:
+//        $value['data']->set_price($custom_price);
+//    }
+// }

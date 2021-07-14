@@ -148,7 +148,7 @@ function pluginajax_callback()
 {
     parse_str($_POST['data'], $data);
 
-    var_dump($data);
+    // var_dump($data);
     global $wpdb;
 
     $db_select_count_id = $wpdb->get_col($wpdb->prepare("SELECT id FROM wp_seo_creator_plugins"));
@@ -539,6 +539,4 @@ function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email){
         echo '<br><p><strong>Ссылка на файл реквизитов:</strong> '. get_option('fileLink') .'</p>';
     }
 }
-
-
-
+//==================================================================================================================

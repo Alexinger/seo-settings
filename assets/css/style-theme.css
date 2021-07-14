@@ -113,7 +113,7 @@ td.my-table {
 }
 
 .table-my-style td {
-    padding: 2px 1px !important;
+    padding: 5px 1px !important;
 }
 
 /*Убираем цену товара со страницы всех товаров*/
@@ -200,4 +200,11 @@ form.recvizit {
     margin: 5px 15px !important;
     background: #237b00 !important;
     color: white !important;
+}
+
+table.table-my-style tr td:first-of-type {
+    border-right: 1px solid #888888 !important;
+}
+table.table-my-style{
+    border: 2px solid #cecece;
 }

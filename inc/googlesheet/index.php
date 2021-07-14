@@ -4,13 +4,29 @@ global $shortcode_tags;
 
 // include_once 'opt-price.php'; not code
 include_once 'show-table-shortcode.php';
+// Set product quantity added to cart (handling ajax add to cart)
+add_filter( 'woocommerce_add_to_cart_quantity','woocommerce_add_to_cart_quantity_callback', 10, 2 );
+function woocommerce_add_to_cart_quantity_callback( $quantity, $product_id ) {
+    if( $quantity < get_option('1_row_left')) {
+        $quantity = get_option('1_row_left');
+    }
+    return $quantity;
+}
 
+// Set the product quantity min value
+add_filter( 'woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2 );
+function woocommerce_quantity_input_args_callback( $args, $product ) {
+    // $args['input_value'] = get_option('1_row_left');
+    $args['min_value'] = get_option('1_row_left');
+    // $args['input_value'] = is_cart() ? $args['input_value'] : get_option('1_row_left');
+    return $args;
+}
 /* Для страницы товара задаем минимальную цену из таблицы*/
 add_filter('woocommerce_quantity_input_min', 'truemisha_min_kolvo', 100, 2);
 
 function truemisha_min_kolvo($min, $product)
 {
-    return get_option('1_row_left');
+     return get_option('1_row_left');
 }
 
 /* Для товара в корзине, задаем минимальную цену из таблицы */
