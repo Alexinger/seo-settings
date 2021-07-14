@@ -27,11 +27,6 @@ function add_custom_price($cart)
         ${"left_$i"} = get_option($i . '_row_left');
     }
 
-//    function getMinPrice($item){
-//        $newArray = array_diff($item, array(0, null));
-//        return '100';
-//    }
-
     foreach ($cart->get_cart() as $item) {
         $terms = get_the_terms($item['product_id'], 'product_cat');
         // max value counter first row the table
@@ -121,6 +116,7 @@ function add_custom_price($cart)
         /* -15C */
         if (removeSymbols($terms) === get_option('2_header')) {
             $count = $item['quantity'];
+            echo get_option('1_header') . '<br>';
 
             /* до 50 */
             if ($count < $rowArray) {
