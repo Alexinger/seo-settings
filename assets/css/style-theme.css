@@ -208,3 +208,6 @@ table.table-my-style tr td:first-of-type {
 table.table-my-style{
     border: 2px solid #cecece;
 }
+table.table-my-style tr th {
+    color: bisque !important;
+}
