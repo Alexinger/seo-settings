@@ -40,6 +40,7 @@ function add_custom_price($cart)
     // create variables left_1-10
     for ($i = 1; $i < 11; $i++) {
         ${"left_$i"} = get_option($i . '_row_left');
+        echo $i;
     }
 
     foreach ($cart->get_cart() as $cart_item_key => $item) {
@@ -169,6 +170,8 @@ function getPriceProductsBack($val, $count, $rowArray, $item, $left_1, $left_2, 
     if ($count < $rowArray) {
         if ($count <= $left_1) {
             if (get_option('1_row_' . $val . '_header') !== '-') {
+                echo 'value: ' . $val . '<br>';
+                echo get_option('1_row_'.$val.'_header'). "<br>";
                 $item['data']->set_price(get_option('1_row_' . $val . '_header'));
             }
         }
