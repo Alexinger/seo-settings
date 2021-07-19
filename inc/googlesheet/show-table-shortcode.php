@@ -26,25 +26,24 @@ function get_google_sheet($atts = null)
         '<table class="table table-bordered table-hover table-my-style" style="background-color: ' . $atts['table_bg'] . '">
            <thead style="color: ' . $atts['table_color_value'] . '">
             <tr>';
-    for ($i = 0; $i < 15; $i++) {
-        if (isset($array[0][$i])) {
+    for ($i = 0; $i < 20; $i++) {
+        if (isset($array[0][$i]) && $array[0][$i] !== '' && $array[0][$i] !== null) {
             $start .= '<th class="my-table">' . $array[0][$i] . '</th>';
         }
     }
     $start .= '</tr></thead>';
 
-    for ($s = 1; $s < 10; $s++) {
-        if (isset($array[$s][0])) {
+    for ($s = 1; $s < 15; $s++) {
+        if (isset($array[$s][0]) && $array[$s][0] !== '' && $array[$s][0] !== null) {
             ${'tr' . $s} .= '<tr>';
-            for ($i = 0; $i < 9; $i++) {
-                if (isset($array[$s][$i])) {
+            for ($i = 0; $i < 15; $i++) {
+                if (isset($array[$s][$i]) && $array[$s][$i] !== '' && $array[$s][$i] !== null) {
                     ${'tr' . $s} .= '<td class="my-table">' . $array[$s][$i] . '</td>';
                 }
             }
             ${'tr' . $s} .= '</tr>';
         }
     }
-
     $end = '</table>';
 
     return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $end . '</tr>';

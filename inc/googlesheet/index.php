@@ -1,50 +1,44 @@
 <?php
 
 global $shortcode_tags;
-
-// include_once 'opt-price.php'; not code
 include_once 'show-table-shortcode.php';
 // Set product quantity added to cart (handling ajax add to cart)
-add_filter( 'woocommerce_add_to_cart_quantity','woocommerce_add_to_cart_quantity_callback', 10, 2 );
-function woocommerce_add_to_cart_quantity_callback( $quantity, $product_id ) {
-    if( $quantity < get_option('1_row_left')) {
+add_filter('woocommerce_add_to_cart_quantity', 'woocommerce_add_to_cart_quantity_callback', 10, 2);
+function woocommerce_add_to_cart_quantity_callback($quantity, $product_id)
+{
+    if ($quantity < get_option('1_row_left')) {
         $quantity = get_option('1_row_left');
     }
     return $quantity;
 }
 
 // Set the product quantity min value
-add_filter( 'woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2 );
-function woocommerce_quantity_input_args_callback( $args, $product ) {
-    // $args['input_value'] = get_option('1_row_left');
+add_filter('woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2);
+function woocommerce_quantity_input_args_callback($args, $product)
+{
     $args['min_value'] = get_option('1_row_left');
-    // $args['input_value'] = is_cart() ? $args['input_value'] : get_option('1_row_left');
     return $args;
 }
-/* Для страницы товара задаем минимальную цену из таблицы*/
-add_filter('woocommerce_quantity_input_min', 'truemisha_min_kolvo', 100, 2);
 
+/* Для страницы товара задаем минимальную цену из таблицы*/
+add_filter('woocommerce_quantity_input_min', 'truemisha_min_kolvo', 20, 2);
 function truemisha_min_kolvo($min, $product)
 {
-     return get_option('1_row_left');
+    return get_option('1_row_left');
 }
 
 /* Для товара в корзине, задаем минимальную цену из таблицы */
-add_filter('woocommerce_cart_item_quantity', 'truemisha_min_kolvo_cart', 100, 3);
-
+add_filter('woocommerce_cart_item_quantity', 'truemisha_min_kolvo_cart', 20, 3);
 function truemisha_min_kolvo_cart($product_quantity, $cart_item_key, $cart_item)
 {
 
     $product = $cart_item['data'];
-    $min = get_option('1_row_left');
-
-    // hi
     return woocommerce_quantity_input(
         array(
             'input_name' => "cart[{$cart_item_key}][qty]",
             'input_value' => $cart_item['quantity'],
             'max_value' => $product->get_max_purchase_quantity(),
-            'min_value' => $min,
+            'min_value' => get_option('1_row_left'),
             'product_name' => $product->get_name(),
         ),
         $product,
@@ -53,17 +47,13 @@ function truemisha_min_kolvo_cart($product_quantity, $cart_item_key, $cart_item)
 }
 
 // Simple, grouped and external products
-// add_filter('woocommerce_product_get_regular_price', 'custom_price', 9, 2);
-// add_filter('woocommerce_product_get_price', 'custom_price', 9, 2);
-
+//add_filter('woocommerce_product_get_regular_price', 'custom_price', 9, 2);
+add_filter('woocommerce_product_get_price', 'custom_price', 9, 2);
 function custom_price($price, $product)
 {
     $str = strpos($product->name, '-');
     $temperatures = substr($product->name, $str + 1, 2);
-
-    // return getMinPrice($temperatures, $price);
     return checkPriceSum($temperatures);
-
 }
 
 // Added a new product price from the google table
@@ -94,9 +84,8 @@ function getTemperature($item)
 
 function checkPriceSum($item = null)
 {
-    // UpdatePrice::update_get_option();
-
-    $filterPrice10 = array_filter([is_numeric(get_option('1_row_1_header')) ? get_option('1_row_1_header') : '',
+    $filterPrice10 = array_filter([
+        is_numeric(get_option('1_row_1_header')) ? get_option('1_row_1_header') : '',
         is_numeric(get_option('2_row_1_header')) ? get_option('2_row_1_header') : '',
         is_numeric(get_option('3_row_1_header')) ? get_option('3_row_1_header') : '',
         is_numeric(get_option('4_row_1_header')) ? get_option('4_row_1_header') : '',
@@ -107,7 +96,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_1_header')) ? get_option('9_row_1_header') : '',
         is_numeric(get_option('10_row_1_header')) ? get_option('10_row_1_header') : '']);
 
-    $filterPrice15 = array_filter([is_numeric(get_option('1_row_2_header')) ? get_option('1_row_2_header') : '',
+    $filterPrice15 = array_filter([
+        is_numeric(get_option('1_row_2_header')) ? get_option('1_row_2_header') : '',
         is_numeric(get_option('2_row_2_header')) ? get_option('2_row_2_header') : '',
         is_numeric(get_option('3_row_2_header')) ? get_option('3_row_2_header') : '',
         is_numeric(get_option('4_row_2_header')) ? get_option('4_row_2_header') : '',
@@ -118,7 +108,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_2_header')) ? get_option('9_row_2_header') : '',
         is_numeric(get_option('10_row_2_header')) ? get_option('10_row_2_header') : '']);
 
-    $filterPrice20 = array_filter([is_numeric(get_option('1_row_3_header')) ? get_option('1_row_3_header') : '',
+    $filterPrice20 = array_filter([
+        is_numeric(get_option('1_row_3_header')) ? get_option('1_row_3_header') : '',
         is_numeric(get_option('2_row_3_header')) ? get_option('2_row_3_header') : '',
         is_numeric(get_option('3_row_3_header')) ? get_option('3_row_3_header') : '',
         is_numeric(get_option('4_row_3_header')) ? get_option('4_row_3_header') : '',
@@ -129,7 +120,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_3_header')) ? get_option('9_row_3_header') : '',
         is_numeric(get_option('10_row_3_header')) ? get_option('10_row_3_header') : '']);
 
-    $filterPrice25 = array_filter([is_numeric(get_option('1_row_4_header')) ? get_option('1_row_4_header') : '',
+    $filterPrice25 = array_filter([
+        is_numeric(get_option('1_row_4_header')) ? get_option('1_row_4_header') : '',
         is_numeric(get_option('2_row_4_header')) ? get_option('2_row_4_header') : '',
         is_numeric(get_option('3_row_4_header')) ? get_option('3_row_4_header') : '',
         is_numeric(get_option('4_row_4_header')) ? get_option('4_row_4_header') : '',
@@ -140,7 +132,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_4_header')) ? get_option('9_row_4_header') : '',
         is_numeric(get_option('10_row_4_header')) ? get_option('10_row_4_header') : '']);
 
-    $filterPrice30 = array_filter([is_numeric(get_option('1_row_5_header')) ? get_option('1_row_5_header') : '',
+    $filterPrice30 = array_filter([
+        is_numeric(get_option('1_row_5_header')) ? get_option('1_row_5_header') : '',
         is_numeric(get_option('2_row_5_header')) ? get_option('2_row_5_header') : '',
         is_numeric(get_option('3_row_5_header')) ? get_option('3_row_5_header') : '',
         is_numeric(get_option('4_row_5_header')) ? get_option('4_row_5_header') : '',
@@ -151,7 +144,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_5_header')) ? get_option('9_row_5_header') : '',
         is_numeric(get_option('10_row_5_header')) ? get_option('10_row_5_header') : '']);
 
-    $filterPrice35 = array_filter([is_numeric(get_option('1_row_6_header')) ? get_option('1_row_6_header') : '',
+    $filterPrice35 = array_filter([
+        is_numeric(get_option('1_row_6_header')) ? get_option('1_row_6_header') : '',
         is_numeric(get_option('2_row_6_header')) ? get_option('2_row_6_header') : '',
         is_numeric(get_option('3_row_6_header')) ? get_option('3_row_6_header') : '',
         is_numeric(get_option('4_row_6_header')) ? get_option('4_row_6_header') : '',
@@ -162,7 +156,8 @@ function checkPriceSum($item = null)
         is_numeric(get_option('9_row_6_header')) ? get_option('9_row_6_header') : '',
         is_numeric(get_option('10_row_6_header')) ? get_option('10_row_6_header') : '']);
 
-    $filterPrice40 = array_filter([is_numeric(get_option('1_row_7_header')) ? get_option('1_row_7_header') : '',
+    $filterPrice40 = array_filter([
+        is_numeric(get_option('1_row_7_header')) ? get_option('1_row_7_header') : '',
         is_numeric(get_option('2_row_7_header')) ? get_option('2_row_7_header') : '',
         is_numeric(get_option('3_row_7_header')) ? get_option('3_row_7_header') : '',
         is_numeric(get_option('4_row_7_header')) ? get_option('4_row_7_header') : '',
@@ -225,3 +220,4 @@ function getNumeric($item)
 {
     return preg_replace('/[^0-9]/', '', $item);
 }
+
