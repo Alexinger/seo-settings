@@ -57,7 +57,6 @@ function custom_price($price, $product)
 }
 
 // Added a new product price from the google table
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 add_action('woocommerce_single_product_summary', 'custom_simple_product_price_html', 10);
 function custom_simple_product_price_html()
 {
