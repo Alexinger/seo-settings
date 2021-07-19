@@ -154,7 +154,7 @@ add_filter('woocommerce_loop_add_to_cart_args', 'min_qty_loop_add_to_cart_args',
 function min_qty_loop_add_to_cart_args($args, $product)
 {
     $args['quantity'] = get_option('1_row_left');
-    $product->get_regular_price();
+    // $product->get_regular_price();
     return $args;
 }
 
@@ -167,7 +167,7 @@ function getPriceProductsBack($val, $count, $rowArray, $item, $left_1, $left_2, 
 {
     $columnArray = [get_option('1_row_' . $val . '_header'), get_option('2_row_' . $val . '_header'), get_option('3_row_' . $val . '_header'), get_option('4_row_' . $val . '_header'), get_option('5_row_' . $val . '_header'), get_option('6_row_' . $val . '_header'), get_option('7_row_' . $val . '_header'), get_option('8_row_' . $val . '_header'), get_option('9_row_' . $val . '_header'), get_option('10_row_' . $val . '_header')];
     if ($count < $rowArray) {
-        if ($count < $left_1) {
+        if ($count <= $left_1) {
             if (get_option('1_row_' . $val . '_header') !== '-') {
                 $item['data']->set_price(get_option('1_row_' . $val . '_header'));
             }
