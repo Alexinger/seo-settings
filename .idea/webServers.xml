@@ -3,115 +3,17 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="105f5532-79ab-45da-84ac-d3c34c518e6e" name="x-ali" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings" username="alexing_ftp" password="df98dfdddf99dfdcdfc3df9edf9ddfd3">
+        <fileTransfer rootFolder="/x-ali.ru/www/wp-content/plugins/seo-settings" host="alexing.ftp.tools" port="21" username="alexing_ftp" password="df98dfdddf99dfdcdfc3df9edf9ddfd3">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="41ee3cee-9a42-45c0-9491-8fded281d2e0" name="klopitarakan" url="http://148.251.7.151">
-        <fileTransfer host="148.251.7.151" port="21" rootFolder="/www/klopitarakan.ru/wp-content/plugins/seo-settings">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="4a9f84f2-51f2-421f-9d9f-e60054782646" name="dezinfekciya-yaroslavl" url="http://148.251.7.151">
-        <fileTransfer host="148.251.7.151" port="21" rootFolder="/www/dezinfekciya-yaroslavl.ru/wp-content/plugins/seo-settings">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="8fa63a1c-c516-40ae-9817-7d9df22a0eef" name="avto-voda" url="http://89.108.84.195">
-        <fileTransfer host="89.108.84.195" port="21" rootFolder="/www/avto-voda.ru/wp-content/plugins/seo-settings">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="9216e674-1504-458b-b2a2-f5c4349fd803" name="my-100turov.com.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/100turov.com.ua/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="4315e71c-8dc7-4636-8726-c25268ee061f" name="my-credit365.biz.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/credit365.biz.ua/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="acb351da-427f-4601-8b07-52795c889795" name="my-dobr.com.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/dobr.com.ua/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="158207bf-bb55-4c3a-8eea-4f5e268215c2" name="my-dostavka24.biz.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/dostavka24.biz.ua/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="35d32a7a-7f2d-4794-b7b6-f93d10aa064f" name="my-ibank.biz.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/ibank.biz.ua/www/wp-content/themes/ibank-theme">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="884005ea-2c52-4d17-8a31-a49646c6d794" name="my-ibank.ru.com" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/ibank.ru.com/www">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="ceebcb63-d511-4ea4-a6c0-97039dfdd7fd" name="my-keratin.mk.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/keratin.mk.ua/www">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="a8d9c43a-5476-490e-8fc8-df40e738cb9a" name="my-kuponator.biz.ua" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/kuponator.biz.ua/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="722e34cd-a269-40ea-9d2b-21bd775f5d69" name="my-x-ali.ru" url="http://alexing.ftp.tools">
-        <fileTransfer host="alexing.ftp.tools" port="21" rootFolder="/x-ali.ru/www/wp-content/themes">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
       <webServer id="e92ef8d4-29bc-4a30-b5d2-84cb216f4fb8" name="test" url="http://147.78.65.76">
-        <fileTransfer host="147.78.65.76" port="22" accessType="SFTP">
+        <fileTransfer accessType="SFTP" host="147.78.65.76" port="22" sshConfigId="29c8676a-ae3c-4eb3-af04-3f9095879c5c" sshConfig="test">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

@@ -209,5 +209,5 @@ table.table-my-style{
     border: 2px solid #cecece;
 }
 p.price:nth-of-type(2) {
-    display:none;
+    color: transparent !important;
 }
