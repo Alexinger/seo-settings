@@ -21,6 +21,9 @@ function custom_override_checkout_fields_1($fields)
 {
     unset($fields['billing']['billing_order'], $fields['billing']['billing_last_name']);
     $fields['billing']['billing_country']['placeholder'] = 'Россия';
+    $fields['billing']['billing_first_name']['default'] = 'working';
+    // echo WC()->mailer()->get_emails()['WC_Email_New_Order']->recipient;
+
     return $fields;
 }
 
@@ -74,6 +77,8 @@ if (false) {
 
 /* Delete Cache Files Here */
 $dir = "recvizit/";
+/** define the directory **/
+
 /*** cycle through all files in the directory ***/
 foreach (glob($dir . "*") as $file) {
 //foreach (glob($dir.'*.*') as $file){
@@ -83,3 +88,5 @@ foreach (glob($dir . "*") as $file) {
         unlink($file);
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

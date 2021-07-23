@@ -15,11 +15,13 @@ License: A "Slug" license name e.g. GPL2
     published by the Free Software Foundation.
 */
 
-include_once 'inc/googlesheet/index.php';
-
+//include_once 'vars.php';
+require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/opt-price.php');
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
 {
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
     wp_register_script('my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
 
@@ -65,17 +67,20 @@ function save_option_shortcode()
     );
 }
 
-add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 function wpdocs_enqueue_custom_admin_style() {
     wp_register_style('my_style', 'https://x-ali.ru/wp-content/plugins/seo-settings/assets/css/style.css', false, '1.0.0');
+//    wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
+//    wp_enqueue_style( 'custom_wp_admin_css' );
     wp_enqueue_style( 'my_style' );
 }
+add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
 
 
 add_action('admin_menu', 'my_script_css');
 function my_script_css()
 {
     $plugins_url = plugins_url( 'assets/css/style.css', __FILE__ );
+
 
     if ($_SERVER['REQUEST_URI'] == '/wp-admin/admin.php?page=settings_header') {
         global $wpdb;
@@ -137,6 +142,8 @@ add_action('wp_ajax_pluginajax', 'pluginajax_callback');
 function pluginajax_callback()
 {
     parse_str($_POST['data'], $data);
+
+    // var_dump($data);
     global $wpdb;
 
     $db_select_count_id = $wpdb->get_col($wpdb->prepare("SELECT id FROM wp_seo_creator_plugins"));
@@ -256,6 +263,12 @@ function myajax_callback()
 // Подключаем табы в Woocommerce
 include_once 'inc/add-tabs-woo.php';
 include_once 'inc/add-field-woo.php';
+
+/*
+	TODO: Нужно сделать создание таблиц при активации плагина или его обновлении.
+	Плагин находится 'inc/data/dbConnect.php'
+*/
+
 include_once 'inc/data/dbConnect.php';
 
 add_action('wp_ajax_fieldajax', 'fieldajax_callback');
@@ -489,6 +502,9 @@ if( 'disable_gutenberg' ){
     remove_theme_support( 'core-block-patterns' ); // WP 5.5
 
     add_filter( 'use_block_editor_for_post_type', '__return_false', 100 );
+
+    // отключим подключение базовых css стилей для блоков
+    // ВАЖНО! когда выйдут виджеты на блоках или что-то еще, эту строку нужно будет комментировать
     remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
 
     // Move the Privacy Policy help notice back under the title field.
@@ -502,6 +518,11 @@ add_action('wp_ajax_shortcode', 'shortcode_callback');
 function shortcode_callback()
 {
     parse_str($_POST['data'], $data);
+
+//    add_option('tabs-shortcode-url', $data['tabs-shortcode-url']);
+//    add_option('tabs-shortcode-page', $data['tabs-shortcode-page']);
+
+    // wp_die();
 }
 
 // Отправляем на почту поле с ссылкой на файл реквизитов
