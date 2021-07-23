@@ -89,10 +89,4 @@ foreach (glob($dir . "*") as $file) {
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-add_action('woocommerce_checkout_before_order_review', 'my_custom_funtion');
-function my_custom_funtion(){
-    ?>
-    <h2>Purchase Disclaimer2</h2>
-    <?php
-}
 

@@ -5,28 +5,31 @@ global $shortcode_tags;
 // include_once 'opt-price.php'; not code
 include_once 'show-table-shortcode.php';
 // Set product quantity added to cart (handling ajax add to cart)
-add_filter( 'woocommerce_add_to_cart_quantity','woocommerce_add_to_cart_quantity_callback', 10, 2 );
-function woocommerce_add_to_cart_quantity_callback( $quantity, $product_id ) {
-    if( $quantity < get_option('1_row_left')) {
+add_filter('woocommerce_add_to_cart_quantity', 'woocommerce_add_to_cart_quantity_callback', 10, 2);
+function woocommerce_add_to_cart_quantity_callback($quantity, $product_id)
+{
+    if ($quantity < get_option('1_row_left')) {
         $quantity = get_option('1_row_left');
     }
     return $quantity;
 }
 
 // Set the product quantity min value
-add_filter( 'woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2 );
-function woocommerce_quantity_input_args_callback( $args, $product ) {
+add_filter('woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2);
+function woocommerce_quantity_input_args_callback($args, $product)
+{
     // $args['input_value'] = get_option('1_row_left');
     $args['min_value'] = get_option('1_row_left');
     // $args['input_value'] = is_cart() ? $args['input_value'] : get_option('1_row_left');
     return $args;
 }
+
 /* Для страницы товара задаем минимальную цену из таблицы*/
 add_filter('woocommerce_quantity_input_min', 'truemisha_min_kolvo', 100, 2);
 
 function truemisha_min_kolvo($min, $product)
 {
-     return get_option('1_row_left');
+    return get_option('1_row_left');
 }
 
 /* Для товара в корзине, задаем минимальную цену из таблицы */
@@ -92,103 +95,27 @@ function getTemperature($item)
     return checkPriceSum($temperature);
 }
 
+//function getCount($item)
+//{
+//    return preg_replace('/[^0-9]/', '', $item);
+//}
+
 function checkPriceSum($item = null)
 {
-    // UpdatePrice::update_get_option();
+    $temperAll = [get_option('0_row_1_header'), get_option('0_row_2_header'), get_option('0_row_3_header'), get_option('0_row_4_header'), get_option('0_row_5_header'), get_option('0_row_6_header'), get_option('0_row_7_header'), get_option('0_row_8_header'), get_option('0_row_9_header'), get_option('0_row_10_header')];
+    $index = array_search($item, getCount($temperAll)) + 1; // index number && search column price
 
-    $filterPrice10 = array_filter([is_numeric(get_option('1_row_1_header')) ? get_option('1_row_1_header') : '',
-        is_numeric(get_option('2_row_1_header')) ? get_option('2_row_1_header') : '',
-        is_numeric(get_option('3_row_1_header')) ? get_option('3_row_1_header') : '',
-        is_numeric(get_option('4_row_1_header')) ? get_option('4_row_1_header') : '',
-        is_numeric(get_option('5_row_1_header')) ? get_option('5_row_1_header') : '',
-        is_numeric(get_option('6_row_1_header')) ? get_option('6_row_1_header') : '',
-        is_numeric(get_option('7_row_1_header')) ? get_option('7_row_1_header') : '',
-        is_numeric(get_option('8_row_1_header')) ? get_option('8_row_1_header') : '',
-        is_numeric(get_option('9_row_1_header')) ? get_option('9_row_1_header') : '',
-        is_numeric(get_option('10_row_1_header')) ? get_option('10_row_1_header') : '']);
-
-    $filterPrice15 = array_filter([is_numeric(get_option('1_row_2_header')) ? get_option('1_row_2_header') : '',
-        is_numeric(get_option('2_row_2_header')) ? get_option('2_row_2_header') : '',
-        is_numeric(get_option('3_row_2_header')) ? get_option('3_row_2_header') : '',
-        is_numeric(get_option('4_row_2_header')) ? get_option('4_row_2_header') : '',
-        is_numeric(get_option('5_row_2_header')) ? get_option('5_row_2_header') : '',
-        is_numeric(get_option('6_row_2_header')) ? get_option('6_row_2_header') : '',
-        is_numeric(get_option('7_row_2_header')) ? get_option('7_row_2_header') : '',
-        is_numeric(get_option('8_row_2_header')) ? get_option('8_row_2_header') : '',
-        is_numeric(get_option('9_row_2_header')) ? get_option('9_row_2_header') : '',
-        is_numeric(get_option('10_row_2_header')) ? get_option('10_row_2_header') : '']);
-
-    $filterPrice20 = array_filter([is_numeric(get_option('1_row_3_header')) ? get_option('1_row_3_header') : '',
-        is_numeric(get_option('2_row_3_header')) ? get_option('2_row_3_header') : '',
-        is_numeric(get_option('3_row_3_header')) ? get_option('3_row_3_header') : '',
-        is_numeric(get_option('4_row_3_header')) ? get_option('4_row_3_header') : '',
-        is_numeric(get_option('5_row_3_header')) ? get_option('5_row_3_header') : '',
-        is_numeric(get_option('6_row_3_header')) ? get_option('6_row_3_header') : '',
-        is_numeric(get_option('7_row_3_header')) ? get_option('7_row_3_header') : '',
-        is_numeric(get_option('8_row_3_header')) ? get_option('8_row_3_header') : '',
-        is_numeric(get_option('9_row_3_header')) ? get_option('9_row_3_header') : '',
-        is_numeric(get_option('10_row_3_header')) ? get_option('10_row_3_header') : '']);
-
-    $filterPrice25 = array_filter([is_numeric(get_option('1_row_4_header')) ? get_option('1_row_4_header') : '',
-        is_numeric(get_option('2_row_4_header')) ? get_option('2_row_4_header') : '',
-        is_numeric(get_option('3_row_4_header')) ? get_option('3_row_4_header') : '',
-        is_numeric(get_option('4_row_4_header')) ? get_option('4_row_4_header') : '',
-        is_numeric(get_option('5_row_4_header')) ? get_option('5_row_4_header') : '',
-        is_numeric(get_option('6_row_4_header')) ? get_option('6_row_4_header') : '',
-        is_numeric(get_option('7_row_4_header')) ? get_option('7_row_4_header') : '',
-        is_numeric(get_option('8_row_4_header')) ? get_option('8_row_4_header') : '',
-        is_numeric(get_option('9_row_4_header')) ? get_option('9_row_4_header') : '',
-        is_numeric(get_option('10_row_4_header')) ? get_option('10_row_4_header') : '']);
-
-    $filterPrice30 = array_filter([is_numeric(get_option('1_row_5_header')) ? get_option('1_row_5_header') : '',
-        is_numeric(get_option('2_row_5_header')) ? get_option('2_row_5_header') : '',
-        is_numeric(get_option('3_row_5_header')) ? get_option('3_row_5_header') : '',
-        is_numeric(get_option('4_row_5_header')) ? get_option('4_row_5_header') : '',
-        is_numeric(get_option('5_row_5_header')) ? get_option('5_row_5_header') : '',
-        is_numeric(get_option('6_row_5_header')) ? get_option('6_row_5_header') : '',
-        is_numeric(get_option('7_row_5_header')) ? get_option('7_row_5_header') : '',
-        is_numeric(get_option('8_row_5_header')) ? get_option('8_row_5_header') : '',
-        is_numeric(get_option('9_row_5_header')) ? get_option('9_row_5_header') : '',
-        is_numeric(get_option('10_row_5_header')) ? get_option('10_row_5_header') : '']);
-
-    $filterPrice35 = array_filter([is_numeric(get_option('1_row_6_header')) ? get_option('1_row_6_header') : '',
-        is_numeric(get_option('2_row_6_header')) ? get_option('2_row_6_header') : '',
-        is_numeric(get_option('3_row_6_header')) ? get_option('3_row_6_header') : '',
-        is_numeric(get_option('4_row_6_header')) ? get_option('4_row_6_header') : '',
-        is_numeric(get_option('5_row_6_header')) ? get_option('5_row_6_header') : '',
-        is_numeric(get_option('6_row_6_header')) ? get_option('6_row_6_header') : '',
-        is_numeric(get_option('7_row_6_header')) ? get_option('7_row_6_header') : '',
-        is_numeric(get_option('8_row_6_header')) ? get_option('8_row_6_header') : '',
-        is_numeric(get_option('9_row_6_header')) ? get_option('9_row_6_header') : '',
-        is_numeric(get_option('10_row_6_header')) ? get_option('10_row_6_header') : '']);
-
-    $filterPrice40 = array_filter([is_numeric(get_option('1_row_7_header')) ? get_option('1_row_7_header') : '',
-        is_numeric(get_option('2_row_7_header')) ? get_option('2_row_7_header') : '',
-        is_numeric(get_option('3_row_7_header')) ? get_option('3_row_7_header') : '',
-        is_numeric(get_option('4_row_7_header')) ? get_option('4_row_7_header') : '',
-        is_numeric(get_option('5_row_7_header')) ? get_option('5_row_7_header') : '',
-        is_numeric(get_option('6_row_7_header')) ? get_option('6_row_7_header') : '',
-        is_numeric(get_option('7_row_7_header')) ? get_option('7_row_7_header') : '',
-        is_numeric(get_option('8_row_7_header')) ? get_option('8_row_7_header') : '',
-        is_numeric(get_option('9_row_7_header')) ? get_option('9_row_7_header') : '',
-        is_numeric(get_option('10_row_7_header')) ? get_option('10_row_7_header') : '']);
-
-    switch ($item) {
-        case '10' :
-            return min($filterPrice10);
-        case '15' :
-            return min($filterPrice15);
-        case '20' :
-            return min($filterPrice20);
-        case '25' :
-            return min($filterPrice25);
-        case '30' :
-            return min($filterPrice30);
-        case '35' :
-            return min($filterPrice35);
-        case '40' :
-            return min($filterPrice40);
-    }
+    $filterPrice = array_filter([is_numeric(get_option('1_row_' . $index . '_header')) ? get_option('1_row_' . $index . '_header') : '',
+        is_numeric(get_option('2_row_' . $index . '_header')) ? get_option('2_row_' . $index . '_header') : '',
+        is_numeric(get_option('3_row_' . $index . '_header')) ? get_option('3_row_' . $index . '_header') : '',
+        is_numeric(get_option('4_row_' . $index . '_header')) ? get_option('4_row_' . $index . '_header') : '',
+        is_numeric(get_option('5_row_' . $index . '_header')) ? get_option('5_row_' . $index . '_header') : '',
+        is_numeric(get_option('6_row_' . $index . '_header')) ? get_option('6_row_' . $index . '_header') : '',
+        is_numeric(get_option('7_row_' . $index . '_header')) ? get_option('7_row_' . $index . '_header') : '',
+        is_numeric(get_option('8_row_' . $index . '_header')) ? get_option('8_row_' . $index . '_header') : '',
+        is_numeric(get_option('9_row_' . $index . '_header')) ? get_option('9_row_' . $index . '_header') : '',
+        is_numeric(get_option('10_row_' . $index . '_header')) ? get_option('10_row_' . $index . '_header') : '']);
+    return min($filterPrice);
 }
 
 function getMinPrice($item, $price)
