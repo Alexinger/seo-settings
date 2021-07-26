@@ -211,3 +211,6 @@ table.table-my-style{
 p.price:nth-of-type(2) {
     color: transparent !important;
 }
+.first.button{
+    background: grey !important;
+}

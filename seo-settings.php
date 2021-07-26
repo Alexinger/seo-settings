@@ -67,19 +67,21 @@ function save_option_shortcode()
     );
 }
 
-function wpdocs_enqueue_custom_admin_style() {
+function wpdocs_enqueue_custom_admin_style()
+{
     wp_register_style('my_style', 'https://x-ali.ru/wp-content/plugins/seo-settings/assets/css/style.css', false, '1.0.0');
 //    wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
 //    wp_enqueue_style( 'custom_wp_admin_css' );
-    wp_enqueue_style( 'my_style' );
+    wp_enqueue_style('my_style');
 }
-add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style' );
+
+add_action('admin_enqueue_scripts', 'wpdocs_enqueue_custom_admin_style');
 
 
 add_action('admin_menu', 'my_script_css');
 function my_script_css()
 {
-    $plugins_url = plugins_url( 'assets/css/style.css', __FILE__ );
+    $plugins_url = plugins_url('assets/css/style.css', __FILE__);
 
 
     if ($_SERVER['REQUEST_URI'] == '/wp-admin/admin.php?page=settings_header') {
@@ -494,24 +496,25 @@ function inline_php($content)
     $content = preg_replace('/\[exeeec off\]((.|\n)*?)\[\/exeeec\]/', '$1', $content);
     return $content;
 }
+
 add_filter('the_content', 'inline_php', 0);
 
 ## Отключает Гутенберг (новый редактор блоков в WordPress).
 ## ver: 1.2
-if( 'disable_gutenberg' ){
-    remove_theme_support( 'core-block-patterns' ); // WP 5.5
+if ('disable_gutenberg') {
+    remove_theme_support('core-block-patterns'); // WP 5.5
 
-    add_filter( 'use_block_editor_for_post_type', '__return_false', 100 );
+    add_filter('use_block_editor_for_post_type', '__return_false', 100);
 
     // отключим подключение базовых css стилей для блоков
     // ВАЖНО! когда выйдут виджеты на блоках или что-то еще, эту строку нужно будет комментировать
-    remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
+    remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
 
     // Move the Privacy Policy help notice back under the title field.
-    add_action( 'admin_init', function(){
-        remove_action( 'admin_notices', [ 'WP_Privacy_Policy_Content', 'notice' ] );
-        add_action( 'edit_form_after_title', [ 'WP_Privacy_Policy_Content', 'notice' ] );
-    } );
+    add_action('admin_init', function () {
+        remove_action('admin_notices', ['WP_Privacy_Policy_Content', 'notice']);
+        add_action('edit_form_after_title', ['WP_Privacy_Policy_Content', 'notice']);
+    });
 }
 
 add_action('wp_ajax_shortcode', 'shortcode_callback');
@@ -527,11 +530,11 @@ function shortcode_callback()
 
 // Отправляем на почту поле с ссылкой на файл реквизитов
 add_action('woocommerce_email_customer_details', 'send_customer_ip_adress', 10, 4);
-function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email){
+function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email)
+{
     // Just for admin new order notification
-    if( 'new_order' == $email->id ){
-        $order_id = method_exists( $order, 'get_id' ) ? $order->get_id() : $order->id;
-        echo '<br><p><strong>Ссылка на файл реквизитов:</strong> '. get_option('fileLink') .'</p>';
+    if ('new_order' == $email->id) {
+        $order_id = method_exists($order, 'get_id') ? $order->get_id() : $order->id;
+        echo '<br><p><strong>Ссылка на файл реквизитов:</strong> ' . get_option('fileLink') . '</p>';
     }
 }
-//==================================================================================================================

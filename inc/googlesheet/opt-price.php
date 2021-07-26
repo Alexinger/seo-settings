@@ -1,5 +1,9 @@
 <?php
 include_once 'UpdatePrice.php';
+add_action( 'woocommerce_before_mini_cart_contents', 'action_function_name_4627' );
+function action_function_name_4627(){
+    // add text mini cart contents
+}
 add_action('woocommerce_before_calculate_totals', 'add_custom_price', 1000, 1);
 function add_custom_price($cart)
 {

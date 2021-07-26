@@ -68,25 +68,31 @@ function no_image_resizing($size)
     return $ret;
 }
 
-// Удаляем файлы из папки RECVIZIT где храняться загруженные реквизиты
-if (false) {
-    $upload_info = wp_get_upload_dir();
-    $file = $upload_info['basedir'] . '/recvizit/text.txt';
-    wp_delete_file($file);
-}
+add_action('woocommerce_before_thankyou', 'mycontent_before_thankyou', 25);
 
-/* Delete Cache Files Here */
-$dir = "recvizit/";
-/** define the directory **/
+function mycontent_before_thankyou($order_id)
+{
+    // echo 'Hello orders';
+    // Удаляем файлы из папки RECVIZIT где храняться загруженные реквизиты
+    if (false) {
+        $upload_info = wp_get_upload_dir();
+        $file = $upload_info['basedir'] . '/recvizit/text.txt';
+        wp_delete_file($file);
+    }
 
-/*** cycle through all files in the directory ***/
-foreach (glob($dir . "*") as $file) {
+    /* Delete Cache Files Here */
+    $dir = "recvizit/";
+    /** define the directory **/
+
+    /*** cycle through all files in the directory ***/
+    foreach (glob($dir . "*") as $file) {
 //foreach (glob($dir.'*.*') as $file){
 
-    /*** if file is 24 hours (86400 seconds) old then delete it ***/
-    if (filemtime($file) < time() - 172800) { // 2 days (172800)
-        unlink($file);
+        /*** if file is 24 hours (86400 seconds) old then delete it ***/
+        if (filemtime($file) < time() - 172800) { // 2 days (172800)
+            unlink($file);
+        }
     }
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//__________________________________________________________________________________________________________
