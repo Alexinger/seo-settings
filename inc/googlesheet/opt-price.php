@@ -1,9 +1,6 @@
 <?php
 include_once 'UpdatePrice.php';
-add_action( 'woocommerce_before_mini_cart_contents', 'action_function_name_4627' );
-function action_function_name_4627(){
-    // add text mini cart contents
-}
+
 add_action('woocommerce_before_calculate_totals', 'add_custom_price', 1000, 1);
 function add_custom_price($cart)
 {
@@ -33,6 +30,7 @@ function add_custom_price($cart)
 
     foreach ($cart->get_cart() as $item) {
         $terms = get_the_terms($item['product_id'], 'product_cat');
+        var_dump($terms);
         // max value counter first row the table
         $rowArray = max([$left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10]);
         $temperAll = [get_option('0_row_1_header'), get_option('0_row_2_header'), get_option('0_row_3_header'), get_option('0_row_4_header'), get_option('0_row_5_header'), get_option('0_row_6_header'), get_option('0_row_7_header'), get_option('0_row_8_header'), get_option('0_row_9_header'), get_option('0_row_10_header')];
