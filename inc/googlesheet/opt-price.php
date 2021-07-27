@@ -30,9 +30,6 @@ function add_custom_price($cart)
 
     foreach ($cart->get_cart() as $item) {
         $terms = get_the_terms($item['product_id'], 'product_cat');
-        var_dump($terms[0]->name);
-        echo $terms;
-
         // max value counter first row the table
         $rowArray = max([$left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10]);
         $temperAll = [get_option('0_row_1_header'), get_option('0_row_2_header'), get_option('0_row_3_header'), get_option('0_row_4_header'), get_option('0_row_5_header'), get_option('0_row_6_header'), get_option('0_row_7_header'), get_option('0_row_8_header'), get_option('0_row_9_header'), get_option('0_row_10_header')];
@@ -40,7 +37,9 @@ function add_custom_price($cart)
         // start index 0, added +1
         $index = array_search(removeSymbols($terms), getCount($temperAll)) + 1; // index number && search column price
 
-        getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10);
+        if(removeSymbols($terms)){
+            getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10);
+        }
     }
 }
 
