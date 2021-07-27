@@ -79,12 +79,17 @@ function custom_simple_product_price_html()
     $price = wc_price($addp) . $product->get_price_suffix();
 
     // Check is_in_stock one page products
-    if ($product->is_in_stock()) {
-        // are available
-        echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
-    } else {
-        // not stock
-        echo "<a href='/404' class='button woocommerce-store-notice' style='margin-bottom: 15px'>Перейти в контакты</a>";
+    if($addp){
+        if ($product->is_in_stock()) {
+            // are available
+            echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
+        } else {
+            // not stock
+            echo "<a href='/404' class='button woocommerce-store-notice' style='margin-bottom: 15px'>Перейти в контакты</a>";
+        }
+    }else{
+        $this_price = $product->get_price() . ' ₽';
+        echo $this_price;
     }
 }
 
@@ -92,7 +97,11 @@ function getTemperature($item)
 {
     $str = strpos($item, '-');
     $temperature = substr($item, $str + 1, 2);
-    return checkPriceSum($temperature);
+    if($str){
+        return checkPriceSum($temperature);
+    }else{
+        return false;
+    }
 }
 
 //function getCount($item)
