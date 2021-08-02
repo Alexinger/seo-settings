@@ -539,10 +539,11 @@ function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email)
     }
 }
 
-function my_template_redirect(){
-    if( is_404() && $_SERVER["REQUEST_URI"] != '/404' ){
-        wp_redirect( home_url( '/404' ) );
+add_action('template_redirect', 'my_template_redirect');
+function my_template_redirect()
+{
+    if (is_404() && $_SERVER["REQUEST_URI"] != '/404') {
+        wp_redirect(home_url('/404'));
         exit();
     }
 }
-add_action( 'template_redirect', 'my_template_redirect' );

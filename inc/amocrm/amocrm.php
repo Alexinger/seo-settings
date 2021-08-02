@@ -22,20 +22,24 @@ function custom_override_checkout_fields_1($fields)
     unset($fields['billing']['billing_order'], $fields['billing']['billing_last_name']);
     $fields['billing']['billing_country']['placeholder'] = 'Россия';
     $fields['billing']['billing_first_name']['default'] = 'working';
+//    $fields['billing']['billing_company']['default'] = 'sdfsfdsdf';
+    // $fields['billing']['billing_company']['placeholder'] = $_SERVER['REMOTE_ADDR'];
     // echo WC()->mailer()->get_emails()['WC_Email_New_Order']->recipient;
 
     return $fields;
 }
 
 // Отображение поля формы "Загрузить реквизиты" и функция загрузки файла с помощью media_handle_upload()
-add_action('woocommerce_before_checkout_form', 'add_file_field');
+// woocommerce_after_checkout_form
+add_action('woocommerce_checkout_order_review', 'add_file_field');
 function add_file_field()
 {
-    echo "<h3 style='margin-bottom: 5px !important;margin-left: 15px;'>Загрузить реквизиты</h3>";
-    echo '<form name="form" autocomplete="off" method="post" enctype="multipart/form-data" class="recvizit" style="margin: 10px 0 15px;">
-            <input type="file" name="imagefile" class="button first" autocomplete="off" />
-            <input type="submit" name="Submit" class="button last" value="Отправить" autocomplete="off" />
-        </form>';
+    echo '<h3 style="margin-bottom: -10px !important;">Загрузить реквизиты</h3>
+            <div style="border: 2px solid #e2e2e2;margin: 20px 0;border-radius: 10px"
+            <form name="form" autocomplete="off" method="post" enctype="multipart/form-data" class="recvizit" style="margin: 10px 0 15px;">
+            <input type="file" name="imagefile" onchange="this.form.submit();this.form.reset()" class="button first" autocomplete="off" style="border:none !important;width: 100%;background: #dfdcde"/>
+            <!--<input type="submit" name="Submit" class="button last" value="Отправить" autocomplete="off" />-->
+        </div></form>';
 
     if ($_FILES) {
         foreach ($_FILES as $file => $array) {
@@ -45,6 +49,11 @@ function add_file_field()
             echo '<div style="background: #51a06d;border-radius: 10px;text-align: center;padding: 5px;margin: 5px 0;color: white;">Файл реквизитов успешно загружен!</div>';
         }
     }
+}
+// Change button "Подтвердить заказ"
+add_filter( 'woocommerce_order_button_html', 'truemisha_order_button_html' );
+function truemisha_order_button_html( $button_html ) {
+    return str_replace( 'Подтвердить заказ', 'Заказать', $button_html );
 }
 
 // Заменяте название загруженного файла на IP клиента
