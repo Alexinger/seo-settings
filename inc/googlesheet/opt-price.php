@@ -22,7 +22,7 @@ function add_custom_price($cart)
     }
 
     // create variables left_1-10 and right_1-10
-    $left_1 = $left_2 = $left_3 = $left_4 = $left_5 = $left_6 = $left_7 = $left_8 = $left_9 = $left_10 = '';
+    $left_1 = $left_2 = $left_3 = $left_4 = $left_5 = $left_6 = $left_7 = $left_8 = $left_9 = $left_10 = $left_11 = $left_12 = $left_13 = $left_14 = $left_15 = $left_16 = '';
 
     for ($i = 1; $i < 11; $i++) {
         ${"left_$i"} = get_option($i . '_row_left');
@@ -37,8 +37,8 @@ function add_custom_price($cart)
         // start index 0, added +1
         $index = array_search(removeSymbols($terms), getCount($temperAll)) + 1; // index number && search column price
 
-        if(removeSymbols($terms)){
-            getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10);
+        if (removeSymbols($terms)) {
+            getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10, $left_11, $left_12, $left_13, $left_14, $left_15, $left_16);
         }
     }
 }
@@ -56,53 +56,92 @@ function getHookNotice()
 
 function getCount($item)
 {
-    return preg_replace('/[^0-9]/', '', $item);
+    return preg_replace('/[^0-9$]/', '', $item);
 }
 
 function removeSymbols($var)
 {
-    $str_zero = preg_replace('/[^0-9]/', '', $var[0]->name);
-    $str_one = preg_replace('/[^0-9]/', '', $var[1]->name);
-    $str_two = preg_replace('/[^0-9]/', '', $var[2]->name);
-    $str_three = preg_replace('/[^0-9]/', '', $var[3]->name);
-    $str_four = preg_replace('/[^0-9]/', '', $var[4]->name);
-    $str_five = preg_replace('/[^0-9]/', '', $var[5]->name);
-    $str_six = preg_replace('/[^0-9]/', '', $var[6]->name);
-    $str_seven = preg_replace('/[^0-9]/', '', $var[7]->name);
+    $str_0 = preg_replace('/[^0-9]/', '', $var[0]->name);
+    $str_1 = preg_replace('/[^0-9]/', '', $var[1]->name);
+    $str_2 = preg_replace('/[^0-9]/', '', $var[2]->name);
+    $str_3 = preg_replace('/[^0-9]/', '', $var[3]->name);
+    $str_4 = preg_replace('/[^0-9]/', '', $var[4]->name);
+    $str_5 = preg_replace('/[^0-9]/', '', $var[5]->name);
+    $str_6 = preg_replace('/[^0-9]/', '', $var[6]->name);
+    $str_7 = preg_replace('/[^0-9]/', '', $var[7]->name);
+    $str_8 = preg_replace('/[^0-9]/', '', $var[8]->name);
+    $str_9 = preg_replace('/[^0-9]/', '', $var[9]->name);
+    $str_10 = preg_replace('/[^0-9]/', '', $var[10]->name);
+    $str_11 = preg_replace('/[^0-9]/', '', $var[11]->name);
+    $str_12 = preg_replace('/[^0-9]/', '', $var[12]->name);
+    $str_13 = preg_replace('/[^0-9]/', '', $var[13]->name);
+    $str_14 = preg_replace('/[^0-9]/', '', $var[14]->name);
+    $str_15 = preg_replace('/[^0-9]/', '', $var[15]->name);
 
 
-    if ($str_zero) {
-        return $str_zero;
+    if ($str_0) {
+        return $str_0;
     }
 
-    if ($str_one) {
-        return $str_one;
+    if ($str_1) {
+        return $str_1;
     }
 
-    if ($str_two) {
-        return $str_two;
+    if ($str_2) {
+        return $str_2;
     }
 
-    if ($str_three) {
-        return $str_three;
+    if ($str_3) {
+        return $str_3;
     }
 
-    if ($str_four) {
-        return $str_four;
+    if ($str_4) {
+        return $str_4;
     }
 
-    if ($str_five) {
-        return $str_five;
+    if ($str_5) {
+        return $str_5;
     }
 
-    if ($str_six) {
-        return $str_six;
+    if ($str_6) {
+        return $str_6;
     }
 
-    if ($str_seven) {
-        return $str_seven;
+    if ($str_7) {
+        return $str_7;
     }
 
+    if ($str_8) {
+        return $str_8;
+    }
+
+    if ($str_9) {
+        return $str_9;
+    }
+
+    if ($str_10) {
+        return $str_10;
+    }
+
+    if ($str_11) {
+        return $str_11;
+    }
+
+    if ($str_12) {
+        return $str_12;
+    }
+
+    if ($str_13) {
+        return $str_13;
+    }
+
+    if ($str_14) {
+        return $str_14;
+    }
+
+    if ($str_15) {
+        return $str_15;
+    }
 }
 
 add_action('wp_footer', 'cart_update_qty_script');
@@ -150,7 +189,7 @@ function min_qty_loop_add_to_cart_args($args, $product)
     return $args;
 }
 
-function getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10)
+function getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10, $left_11, $left_12, $left_13, $left_14, $left_15, $left_16)
 {
     if ($count < $rowArray) {
         if ($count <= $left_1) {
@@ -183,8 +222,26 @@ function getPriceProductsBack($index, $count, $rowArray, $item, $left_1, $left_2
         if ($count > $left_9 && $count <= $left_10 && get_option('9_row_' . $index . '_header') !== '-') {
             getCount(get_option('9_row_' . $index . '_header')) ? $item['data']->set_price(get_option('9_row_' . $index . '_header')) : $item['data']->set_price(get_option('8_row_' . $index . '_header'));
         }
+        if ($count > $left_10 && $count <= $left_11 && get_option('10_row_' . $index . '_header') !== '-') {
+            getCount(get_option('10_row_' . $index . '_header')) ? $item['data']->set_price(get_option('10_row_' . $index . '_header')) : $item['data']->set_price(get_option('9_row_' . $index . '_header'));
+        }
+        if ($count > $left_11 && $count <= $left_12 && get_option('11_row_' . $index . '_header') !== '-') {
+            getCount(get_option('11_row_' . $index . '_header')) ? $item['data']->set_price(get_option('11_row_' . $index . '_header')) : $item['data']->set_price(get_option('10_row_' . $index . '_header'));
+        }
+        if ($count > $left_12 && $count <= $left_13 && get_option('12_row_' . $index . '_header') !== '-') {
+            getCount(get_option('12_row_' . $index . '_header')) ? $item['data']->set_price(get_option('12_row_' . $index . '_header')) : $item['data']->set_price(get_option('11_row_' . $index . '_header'));
+        }
+        if ($count > $left_13 && $count <= $left_14 && get_option('13_row_' . $index . '_header') !== '-') {
+            getCount(get_option('13_row_' . $index . '_header')) ? $item['data']->set_price(get_option('13_row_' . $index . '_header')) : $item['data']->set_price(get_option('12_row_' . $index . '_header'));
+        }
+        if ($count > $left_14 && $count <= $left_15 && get_option('14_row_' . $index . '_header') !== '-') {
+            getCount(get_option('14_row_' . $index . '_header')) ? $item['data']->set_price(get_option('14_row_' . $index . '_header')) : $item['data']->set_price(get_option('13_row_' . $index . '_header'));
+        }
+        if ($count > $left_15 && $count <= $left_16 && get_option('15_row_' . $index . '_header') !== '-') {
+            getCount(get_option('15_row_' . $index . '_header')) ? $item['data']->set_price(get_option('15_row_' . $index . '_header')) : $item['data']->set_price(get_option('14_row_' . $index . '_header'));
+        }
     } else {
-        $columnArray = [get_option('1_row_' . $index . '_header'), get_option('2_row_' . $index . '_header'), get_option('3_row_' . $index . '_header'), get_option('4_row_' . $index . '_header'), get_option('5_row_' . $index . '_header'), get_option('6_row_' . $index . '_header'), get_option('7_row_' . $index . '_header'), get_option('8_row_' . $index . '_header'), get_option('9_row_' . $index . '_header'), get_option('10_row_' . $index . '_header')];
+        $columnArray = [get_option('1_row_' . $index . '_header'), get_option('2_row_' . $index . '_header'), get_option('3_row_' . $index . '_header'), get_option('4_row_' . $index . '_header'), get_option('5_row_' . $index . '_header'), get_option('6_row_' . $index . '_header'), get_option('7_row_' . $index . '_header'), get_option('8_row_' . $index . '_header'), get_option('9_row_' . $index . '_header'), get_option('10_row_' . $index . '_header'), get_option('11_row_' . $index . '_header'), get_option('12_row_' . $index . '_header'), get_option('13_row_' . $index . '_header'), get_option('14_row_' . $index . '_header'), get_option('15_row_' . $index . '_header'), get_option('16_row_' . $index . '_header')];
         $newArray = array_diff($columnArray, array(0, null));
         $item['data']->set_price(min($newArray));
     }

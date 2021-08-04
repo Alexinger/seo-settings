@@ -20,6 +20,7 @@ class UpdatePrice
         for ($header = 1; $header < 15; $header++) {
             // [-10] [-15] [-20] [-25] [-35] [-35] [-40] [?] [?] [?]
             update_option($header . '_header', substr(isset($array[0][$header]), 1, 2));
+            // var_dump(substr(isset($array[0][$header]), 1, 2)) . '<br>';
         }
 
         /* -10C -15C -20C -25C -30C -35C -40C -45C -50C -55C (50-150) */

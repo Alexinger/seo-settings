@@ -19,24 +19,24 @@ function get_google_sheet($atts = null)
     $update = new UpdatePrice();
     $update->update_get_option();
 
-    $tr1 = $tr2 = $tr3 = $tr4 = $tr5 = $tr6 = $tr7 = $tr8 = $tr9 = $tr10 = null;
+    $tr1 = $tr2 = $tr3 = $tr4 = $tr5 = $tr6 = $tr7 = $tr8 = $tr9 = $tr10 = $tr11 = $tr12 = $tr13 = $tr14 = $tr15 = $tr16 = null;
 
     $start = '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
         '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
         '<table class="table table-bordered table-hover table-my-style" style="background-color: ' . $atts['table_bg'] . '">
            <thead style="color: ' . $atts['table_color_value'] . '">
             <tr>';
-    for ($i = 0; $i < 15; $i++) {
+    for ($i = 0; $i < 16; $i++) {
         if (isset($array[0][$i])) {
-            $start .= '<th class="my-table">' . $array[0][$i] . '</th>';
+            $start .= '<th class="my-table" style="white-space: pre-wrap;vertical-align: middle;padding: 1px;line-height: 0.7rem;">' . $array[0][$i] . '</th>';
         }
     }
     $start .= '</tr></thead>';
 
-    for ($s = 1; $s < 10; $s++) {
+    for ($s = 1; $s < 16; $s++) {
         if (isset($array[$s][0])) {
             ${'tr' . $s} .= '<tr>';
-            for ($i = 0; $i < 9; $i++) {
+            for ($i = 0; $i < 16; $i++) {
                 if (isset($array[$s][$i])) {
                     ${'tr' . $s} .= '<td class="my-table">' . $array[$s][$i] . '</td>';
                 }
@@ -49,5 +49,5 @@ function get_google_sheet($atts = null)
 
    // echo '<div class="widget_shopping_cart_content">' . woocommerce_mini_cart() . '</div>';
 
-    return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $end . '</tr>';
+    return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $tr11 . $tr12 . $tr13 . $tr14 . $tr15 . $end . '</tr>';
 }
