@@ -219,7 +219,7 @@ jQuery(document).ready(function ($) {
     //     });
     // }
 
-    function updateOptionShortcode($option, $new_value) {
+    function updateOptionShortcode($option, $new_value, $msg = 'Все отлично сохранилось!') {
         var data = {
             action: 'save_shortcode',
             option: $option,
@@ -227,7 +227,7 @@ jQuery(document).ready(function ($) {
         };
 
         $.post(ajaxurl, data, function (response) {
-            alert('Все отлично сохранилось!');
+            alert($msg);
             window.location.reload();
         });
     }
@@ -239,10 +239,21 @@ jQuery(document).ready(function ($) {
         let input_page = document.getElementById('tabs-shortcode-page').value;
         let name_option_url = 'tabs-shortcode-url';
         let name_option_page = 'tabs-shortcode-page';
-        console.log(input_page, input_url);
+
         if(input_url && input_page) {
             updateOptionShortcode(name_option_url, input_url);
             updateOptionShortcode(name_option_page, input_page);
+        }
+    });
+
+    // Added option On Off Google table
+    $(document).on( 'click','.btnOnOffShortcode', function (event) {
+        event.preventDefault();
+        let getStatus = document.getElementById('on-off-class').value;
+        if(!getStatus) {
+            updateOptionShortcode('statusTable', 'textUnder', 'Google таблица отключена!');
+        }else{
+            updateOptionShortcode('statusTable', '', 'Google таблица снова включена!');
         }
     });
 
@@ -251,7 +262,7 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         let input_email = document.getElementById('amocrm-to-email').value;
         let name_option_email = 'amocrm-to-email';
-        console.log(input_email, 'sdfsdf');
+
         if(input_email) {
             updateOptionShortcode(name_option_email, input_email);
         }

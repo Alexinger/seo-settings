@@ -29,7 +29,7 @@
         <div class="tab-pane active in" id="home" role="tabpanel">
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
+                    <a class="nav-link text-dark active" data-toggle="tab" href="#shortcode" role="tab"><i class="fa fa-sitemap mr-3"></i>Шорткоды</a>
                 </li>
                 <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-file mr-3"></i>Files upload</a>
@@ -38,14 +38,14 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#post-page" role="tab"><i class="fa fa-code-fork mr-3"></i>Post & Page</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link text-dark active" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-bullseye mr-3"></i>Счетчики</a>
+                    <a class="nav-link text-dark" data-toggle="tab" href="#counter" role="tab"><i class="fa fa-bullseye mr-3"></i>Счетчики</a>
                 </li>
             </ul>
 
             <div class="tab-content py-3 border-top-0">
-                <div class="tab-pane fade" id="shortcode" role="tabpanel">
+                <div class="tab-pane active" id="shortcode" role="tabpanel">
 
-                    <!-- Контент Изображения WP -->
+                    <!-- Shortcode tables google sheets -->
 	                <?php include_once 'tabs-home-shortcode.php'; ?>
 
                 </div>
@@ -61,7 +61,7 @@
                     <?php include_once 'tabs-home-post-page.php'; ?>
 
                 </div>
-                <div class="tab-pane active" id="counter" role="tabpanel">
+                <div class="tab-pane fade" id="counter" role="tabpanel">
 
                     <!-- Контент Настроек -->
 		            <?php include_once 'tabs-home-counter.php'; ?>
