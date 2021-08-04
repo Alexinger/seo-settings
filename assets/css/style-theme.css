@@ -83,6 +83,9 @@ p.woocommerce-shipping-destination {
     td {
         font-size: 0.8rem;
     }
+    th.my-table{
+        padding: 14px 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -91,8 +94,15 @@ p.woocommerce-shipping-destination {
         white-space: pre-wrap !important;
         line-height: 0.6rem !important;
     }
+    th.my-table{
+        padding: 4px 1px;
+    }
 }
-
+@media screen and (max-width: 400px) {
+    th.my-table{
+        padding: 1px;
+    }
+}
 table {
     table-layout: fixed !important;
     font-size: 0.7em !important;

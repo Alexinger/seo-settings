@@ -28,7 +28,7 @@ function get_google_sheet($atts = null)
             <tr>';
     for ($i = 0; $i < 16; $i++) {
         if (isset($array[0][$i])) {
-            $start .= '<th class="my-table" style="white-space: pre-wrap;vertical-align: middle;padding: 1px;line-height: 0.7rem;">' . $array[0][$i] . '</th>';
+            $start .= '<th class="my-table" style="white-space: pre-wrap;vertical-align: middle;line-height: 0.7rem;">' . $array[0][$i] . '</th>';
         }
     }
     $start .= '</tr></thead>';
