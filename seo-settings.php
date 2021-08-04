@@ -4,7 +4,7 @@ header('Content-Type: text/html; image/jpg; charset=utf-8');
 Plugin Name: Settings SEO plugin
 Plugin URI: https://github.com/Alexinger/seo-settings
 Description: Плагин для быстрой настройки SEO элемнтов (меток, тегов и оптимизация).
-Version: 1.0.5
+Version: 2.3.5
 Author: Alexinger
 Author URI: https://x-ali.ru
 License: A "Slug" license name e.g. GPL2
@@ -22,10 +22,10 @@ function my_scripts_method()
 {
     require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
     require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
-    wp_register_script('my_script', plugins_url('/assets/js/script-theme.js', __FILE__), array('jquery'), time());
+    wp_register_script('my_script', plugins_url('assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
 
-    wp_register_style('my_theme_style', plugins_url('/assets/css/style-theme.css', __FILE__), '', time());
+    wp_register_style('my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
     wp_enqueue_style('my_theme_style');
 }
 
