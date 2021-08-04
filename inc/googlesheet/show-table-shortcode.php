@@ -34,10 +34,10 @@ function get_google_sheet($atts = null)
     $start .= '</tr></thead>';
 
     for ($s = 1; $s < 16; $s++) {
-        if (isset($array[$s][0])) {
+        if (isset($array[$s][0]) && $array[$s][0] != '') {
             ${'tr' . $s} .= '<tr>';
             for ($i = 0; $i < 16; $i++) {
-                if (isset($array[$s][$i])) {
+                if (isset($array[$s][$i]) && $array[$s][$i] != '') {
                     ${'tr' . $s} .= '<td class="my-table">' . $array[$s][$i] . '</td>';
                 }
             }
