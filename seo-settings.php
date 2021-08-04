@@ -26,7 +26,9 @@ function my_scripts_method()
     wp_enqueue_script('my_script');
 
     wp_register_style('my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
+    wp_register_style('my_style', plugins_url('style.css', __FILE__), '', time());
     wp_enqueue_style('my_theme_style');
+    wp_enqueue_style('my_style');
 }
 
 // Added counter Yandex in footer
