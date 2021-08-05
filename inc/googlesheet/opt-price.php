@@ -196,49 +196,49 @@ if (!get_option('statusTable')) {
             if ($count <= $left_1) {
                 $item['data']->set_price(get_option('1_row_' . $index . '_header'));
             }
-            if ($count > $left_1 && $count <= $left_2 && get_option('1_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_1 && $count <= $left_2 && get_option('1_row_' . $index . '_header') !== '-') {
                 $item['data']->set_price(get_option('1_row_' . $index . '_header'));
             }
-            if ($count > $left_2 && $count <= $left_3 && get_option('2_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_2 && $count <= $left_3 && get_option('2_row_' . $index . '_header') !== '-') {
                 getCount(get_option('2_row_' . $index . '_header')) ? $item['data']->set_price(get_option('2_row_' . $index . '_header')) : $item['data']->set_price(get_option('1_row_' . $index . '_header'));
             }
-            if ($count > $left_3 && $count <= $left_4 && get_option('3_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_3 && $count <= $left_4 && get_option('3_row_' . $index . '_header') !== '-') {
                 getCount(get_option('3_row_' . $index . '_header')) ? $item['data']->set_price(get_option('3_row_' . $index . '_header')) : $item['data']->set_price(get_option('2_row_' . $index . '_header'));
             }
-            if ($count > $left_4 && $count <= $left_5 && get_option('4_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_4 && $count <= $left_5 && get_option('4_row_' . $index . '_header') !== '-') {
                 getCount(get_option('4_row_' . $index . '_header')) ? $item['data']->set_price(get_option('4_row_' . $index . '_header')) : $item['data']->set_price(get_option('3_row_' . $index . '_header'));
             }
-            if ($count > $left_5 && $count <= $left_6 && get_option('5_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_5 && $count <= $left_6 && get_option('5_row_' . $index . '_header') !== '-') {
                 getCount(get_option('5_row_' . $index . '_header')) ? $item['data']->set_price(get_option('5_row_' . $index . '_header')) : $item['data']->set_price(get_option('4_row_' . $index . '_header'));
             }
-            if ($count > $left_6 && $count <= $left_7 && get_option('6_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_6 && $count <= $left_7 && get_option('6_row_' . $index . '_header') !== '-') {
                 getCount(get_option('6_row_' . $index . '_header')) ? $item['data']->set_price(get_option('6_row_' . $index . '_header')) : $item['data']->set_price(get_option('5_row_' . $index . '_header'));
             }
-            if ($count > $left_7 && $count <= $left_8 && get_option('7_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_7 && $count <= $left_8 && get_option('7_row_' . $index . '_header') !== '-') {
                 getCount(get_option('7_row_' . $index . '_header')) ? $item['data']->set_price(get_option('7_row_' . $index . '_header')) : $item['data']->set_price(get_option('6_row_' . $index . '_header'));
             }
-            if ($count > $left_8 && $count <= $left_9 && get_option('8_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_8 && $count <= $left_9 && get_option('8_row_' . $index . '_header') !== '-') {
                 getCount(get_option('8_row_' . $index . '_header')) ? $item['data']->set_price(get_option('8_row_' . $index . '_header')) : $item['data']->set_price(get_option('7_row_' . $index . '_header'));
             }
-            if ($count > $left_9 && $count <= $left_10 && get_option('9_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_9 && $count <= $left_10 && get_option('9_row_' . $index . '_header') !== '-') {
                 getCount(get_option('9_row_' . $index . '_header')) ? $item['data']->set_price(get_option('9_row_' . $index . '_header')) : $item['data']->set_price(get_option('8_row_' . $index . '_header'));
             }
-            if ($count > $left_10 && $count <= $left_11 && get_option('10_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_10 && $count <= $left_11 && get_option('10_row_' . $index . '_header') !== '-') {
                 getCount(get_option('10_row_' . $index . '_header')) ? $item['data']->set_price(get_option('10_row_' . $index . '_header')) : $item['data']->set_price(get_option('9_row_' . $index . '_header'));
             }
-            if ($count > $left_11 && $count <= $left_12 && get_option('11_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_11 && $count <= $left_12 && get_option('11_row_' . $index . '_header') !== '-') {
                 getCount(get_option('11_row_' . $index . '_header')) ? $item['data']->set_price(get_option('11_row_' . $index . '_header')) : $item['data']->set_price(get_option('10_row_' . $index . '_header'));
             }
-            if ($count > $left_12 && $count <= $left_13 && get_option('12_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_12 && $count <= $left_13 && get_option('12_row_' . $index . '_header') !== '-') {
                 getCount(get_option('12_row_' . $index . '_header')) ? $item['data']->set_price(get_option('12_row_' . $index . '_header')) : $item['data']->set_price(get_option('11_row_' . $index . '_header'));
             }
-            if ($count > $left_13 && $count <= $left_14 && get_option('13_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_13 && $count <= $left_14 && get_option('13_row_' . $index . '_header') !== '-') {
                 getCount(get_option('13_row_' . $index . '_header')) ? $item['data']->set_price(get_option('13_row_' . $index . '_header')) : $item['data']->set_price(get_option('12_row_' . $index . '_header'));
             }
-            if ($count > $left_14 && $count <= $left_15 && get_option('14_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_14 && $count <= $left_15 && get_option('14_row_' . $index . '_header') !== '-') {
                 getCount(get_option('14_row_' . $index . '_header')) ? $item['data']->set_price(get_option('14_row_' . $index . '_header')) : $item['data']->set_price(get_option('13_row_' . $index . '_header'));
             }
-            if ($count > $left_15 && $count <= $left_16 && get_option('15_row_' . $index . '_header') !== '-') {
+            if ($count >= $left_15 && $count <= $left_16 && get_option('15_row_' . $index . '_header') !== '-') {
                 getCount(get_option('15_row_' . $index . '_header')) ? $item['data']->set_price(get_option('15_row_' . $index . '_header')) : $item['data']->set_price(get_option('14_row_' . $index . '_header'));
             }
         } else {
