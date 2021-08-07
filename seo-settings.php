@@ -33,7 +33,7 @@ function my_scripts_method()
     require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
     // var_dump(get_stylesheet_directory_uri());
 }
-add_action( 'wp_head', 'wp_print_styles', 8 );
+// add_action( 'wp_head', 'wp_print_styles', 8 );
 
 // add_action('wp_print_styles', 'theme_name_scripts'); // можно использовать этот хук он более поздний
 
