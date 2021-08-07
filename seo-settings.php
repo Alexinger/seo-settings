@@ -30,7 +30,9 @@ function my_scripts_method()
     wp_enqueue_style('my_theme_style');
     wp_enqueue_style('my_style');
 
-    var_dump(plugins_url('assets/css/style-theme.css', __FILE__));
+//    var_dump(plugins_url('assets/css/style-theme.css', __FILE__));
+//    "https://nezamerzaev.ru/wp-content/plugins/seo-settings/assets/css/style-theme.css"
+//    "https://nezamerzaika24.ru/wp-content/plugins/seo-settings/assets/css/style-theme.css"
 }
 
 // load css into the website's front-end
