@@ -29,6 +29,8 @@ function my_scripts_method()
     wp_register_style('my_style', plugins_url('style.css', __FILE__), '', time());
     wp_enqueue_style('my_theme_style');
     wp_enqueue_style('my_style');
+
+    var_dump(plugins_url('assets/css/style-theme.css', __FILE__));
 }
 
 // load css into the website's front-end
