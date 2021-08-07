@@ -20,26 +20,28 @@ require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/opt-pric
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
 {
-    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
-    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
+    wp_enqueue_style( 'my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
+    wp_enqueue_style( 'my_style', plugins_url('style.css', __FILE__), '', time());
+
     wp_register_script('my_script', plugins_url('assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
-
-    wp_register_style('my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
-    wp_register_style('my_style', plugins_url('style.css', __FILE__), '', time());
-    wp_enqueue_style('my_theme_style');
-    wp_enqueue_style('my_style');
 
 //    var_dump(plugins_url('assets/css/style-theme.css', __FILE__));
 //    "https://nezamerzaev.ru/wp-content/plugins/seo-settings/assets/css/style-theme.css"
 //    "https://nezamerzaika24.ru/wp-content/plugins/seo-settings/assets/css/style-theme.css"
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/index.php');
+    require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/amocrm/amocrm.php');
 }
 
-// load css into the website's front-end
-function mytheme_enqueue_style() {
-    wp_enqueue_style( 'mytheme-style', get_stylesheet_uri() );
-}
-add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style' );
+// add_action('wp_print_styles', 'theme_name_scripts'); // можно использовать этот хук он более поздний
+
+//// load css into the website's front-end
+//function mytheme_enqueue_style()
+//{
+//    wp_enqueue_style('mytheme-style', get_stylesheet_uri());
+//}
+//
+//add_action('wp_enqueue_scripts', 'mytheme_enqueue_style');
 
 // Added counter Yandex in footer
 include_once 'counter/counter-yandex.php';
