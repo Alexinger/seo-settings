@@ -205,6 +205,8 @@ form.recvizit {
     padding: 20px !important;
     border-radius: 0 !important;
     background: white !important;
+    border: 1px solid #c1c1c1 !important;
+    border-radius: 5px !important;
 }
 
 .button.last {
@@ -217,13 +219,8 @@ table.table-my-style tr td:first-of-type {
     border-right: 1px solid #888888 !important;
 }
 table.table-my-style{
-    border: 2px solid #cecece;
+    border: 2px solid #cecece !important;
 }
 p.price:nth-of-type(2) {
     color: transparent !important;
-}
-.first.button{
-    /* background: grey !important; */
-    border: 1px solid #c1c1c1 !important;
-    border-radius: 5px !important;
 }
