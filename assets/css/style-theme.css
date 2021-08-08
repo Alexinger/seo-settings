@@ -75,16 +75,16 @@ p.woocommerce-shipping-destination {
 /* Table style */
 @media screen and (max-width: 1800px) {
     td {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 }
 
 @media screen and (max-width: 1200px) {
     td {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
     }
     th.my-table{
-        padding: 14px 0;
+        padding: 14px 0 !important;
     }
 }
 
@@ -95,12 +95,12 @@ p.woocommerce-shipping-destination {
         line-height: 0.6rem !important;
     }
     th.my-table{
-        padding: 4px 1px;
+        padding: 4px 1px !important;
     }
 }
 @media screen and (max-width: 400px) {
     th.my-table{
-        padding: 1px;
+        padding: 1px !important;
     }
 }
 table {
@@ -110,16 +110,16 @@ table {
 }
 
 th.my-table {
-    line-height: 2rem;
+    line-height: 2rem !important;
     text-align: center !important;
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 td.my-table {
-    vertical-align: center !important;
-    line-height: 2rem;
+    /*vertical-align: center !important;*/
+    line-height: 2rem !important;
     text-align: center !important;
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 .table-my-style td {
@@ -203,10 +203,8 @@ form.recvizit {
 
 .button.first {
     padding: 20px !important;
-    border-radius: 0 !important;
     background: white !important;
     border: 1px solid #c1c1c1 !important;
-    border-radius: 5px !important;
 }
 
 .button.last {

@@ -49,5 +49,5 @@ function get_google_sheet($atts = null)
 
    // echo '<div class="widget_shopping_cart_content">' . woocommerce_mini_cart() . '</div>';
 
-    return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $tr11 . $tr12 . $tr13 . $tr14 . $tr15 . $end . '</tr>';
+    return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $tr11 . $tr12 . $tr13 . $tr14 . $tr15 . $end;
 }
