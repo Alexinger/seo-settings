@@ -148,8 +148,6 @@ if (!get_option('statusTable')) {
     add_action('wp_footer', 'cart_update_qty_script');
     function cart_update_qty_script()
     {
-        wp_enqueue_style( 'my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
-        wp_enqueue_style( 'my_style', plugins_url('style.css', __FILE__), '', time());
 
         if (is_cart()) : ?>
             <script>

@@ -21,6 +21,38 @@ function get_google_sheet($atts = null)
 
     $tr1 = $tr2 = $tr3 = $tr4 = $tr5 = $tr6 = $tr7 = $tr8 = $tr9 = $tr10 = $tr11 = $tr12 = $tr13 = $tr14 = $tr15 = $tr16 = null;
 
+    $my_style = '<style>
+@media screen and (max-width: 1800px) {
+    td {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    td {
+        font-size: 0.8rem;
+    }
+    th.my-table{
+        padding: 14px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    td {
+        font-size: 0.6rem;
+        white-space: pre-wrap !important;
+        line-height: 0.6rem !important;
+    }
+    th.my-table{
+        padding: 4px 1px;
+    }
+}
+@media screen and (max-width: 400px) {
+    th.my-table{
+        padding: 1px;
+    }
+}</style>';
+
     $start = '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
         '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
         '<table class="table table-bordered table-hover table-my-style" style="background-color: ' . $atts['table_bg'] . '">
@@ -49,5 +81,5 @@ function get_google_sheet($atts = null)
 
    // echo '<div class="widget_shopping_cart_content">' . woocommerce_mini_cart() . '</div>';
 
-    return $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $tr11 . $tr12 . $tr13 . $tr14 . $tr15 . $end . '</tr>';
+    return $my_style . $start . $tr1 . $tr2 . $tr3 . $tr4 . $tr5 . $tr6 . $tr7 . $tr8 . $tr9 . $tr10 . $tr11 . $tr12 . $tr13 . $tr14 . $tr15 . $end . '</tr>';
 }
