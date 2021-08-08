@@ -148,15 +148,16 @@ if (!get_option('statusTable')) {
     add_action('wp_footer', 'cart_update_qty_script');
     function cart_update_qty_script()
     {
-        if (is_cart()) :
-            ?>
+        wp_enqueue_style( 'my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
+        wp_enqueue_style( 'my_style', plugins_url('style.css', __FILE__), '', time());
+
+        if (is_cart()) : ?>
             <script>
                 jQuery('div.woocommerce').on('blur', '.qty', function () {
                     jQuery("[name='update_cart']").trigger("click");
                 });
             </script>
-        <?php
-        endif;
+        <?php endif;
     }
 
 //notice – обычное уведомление
