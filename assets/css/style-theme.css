@@ -77,14 +77,36 @@ p.woocommerce-shipping-destination {
     td {
         font-size: 1rem !important;
     }
+    th.my-table {
+        padding: 14px 0 !important;
+    }
+
+    th.my-table-th {
+        padding: 8px !important;
+        font-size: 13px !important;
+        white-space: pre-wrap !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        line-height: 0.8rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     td {
         font-size: 0.8rem !important;
     }
-    th.my-table{
+
+    th.my-table {
         padding: 14px 0 !important;
+    }
+
+    th.my-table-th {
+        padding: 8px !important;
+        font-size: 13px !important;
+        white-space: pre-wrap !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        line-height: 0.8rem;
     }
 }
 
@@ -94,15 +116,36 @@ p.woocommerce-shipping-destination {
         white-space: pre-wrap !important;
         line-height: 0.6rem !important;
     }
-    th.my-table{
+
+    th.my-table {
         padding: 4px 1px !important;
     }
-}
-@media screen and (max-width: 400px) {
-    th.my-table{
-        padding: 1px !important;
+
+    th.my-table-th {
+        padding: 5px !important;
+        font-size: 12px !important;
+        white-space: pre-wrap !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        line-height: 0.8rem;
     }
 }
+
+@media screen and (max-width: 400px) {
+    th.my-table {
+        padding: 1px !important;
+    }
+
+    th.my-table-th {
+        padding: 0 !important;
+        white-space: pre-wrap !important;
+        font-size: 10px !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        line-height: 0.8rem;
+    }
+}
+
 table {
     table-layout: fixed !important;
     font-size: 0.7em !important;
@@ -216,9 +259,11 @@ form.recvizit {
 table.table-my-style tr td:first-of-type {
     border-right: 1px solid #888888 !important;
 }
-table.table-my-style{
+
+table.table-my-style {
     border: 2px solid #cecece !important;
 }
+
 p.price:nth-of-type(2) {
     color: transparent !important;
 }
