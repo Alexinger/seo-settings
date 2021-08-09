@@ -21,14 +21,14 @@ function get_google_sheet($atts = null)
 
     $tr1 = $tr2 = $tr3 = $tr4 = $tr5 = $tr6 = $tr7 = $tr8 = $tr9 = $tr10 = $tr11 = $tr12 = $tr13 = $tr14 = $tr15 = $tr16 = null;
 
-    $start = '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;}</style>' .
+    $start = '<style>th.my-table { color: ' . $atts['table_color_value'] . ' !important;white-space: pre-wrap !important;vertical-align: middle;line-height: 0.7rem !important;}</style>' .
         '<h3 style="margin-bottom: 20px; text-align: center;color: ' . $atts['title_color'] . ';">' . $atts['title'] . '</h3>' .
         '<table class="table table-bordered table-hover table-my-style" style="background-color: ' . $atts['table_bg'] . '">
            <thead style="color: ' . $atts['table_color_value'] . '">
             <tr>';
     for ($i = 0; $i < 16; $i++) {
         if (isset($array[0][$i])) {
-            $start .= '<th class="my-table" style="white-space: pre-wrap !important;vertical-align: middle;line-height: 0.7rem !important;">' . $array[0][$i] . '</th>';
+            $start .= '<th class="my-table">' . $array[0][$i] . '</th>';
         }
     }
     $start .= '</tr></thead>';

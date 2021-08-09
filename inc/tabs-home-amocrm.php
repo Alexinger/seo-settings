@@ -18,6 +18,7 @@ if (get_option('day_number')) {
             <div>
                 <label>Введит кол-во дней, после которой нужно удалять сохраненные файлы</label>
                 <input id="day_number" type="number" style="width: 50px" name="day_number" value="<?php echo get_option('day_number') ?>">
+                <span>дней</span>
             </div>
             <button id="countDay" type="submit" class="btn btn-green countDay">Сохранить</button>
         </form>
