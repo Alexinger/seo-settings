@@ -257,6 +257,13 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Added count day, when remove files in folder 'recvizit'
+    $(document).on( 'click','.countDay', function (event) {
+        event.preventDefault();
+        let getStatus = document.getElementById('day_number').value;
+        updateOptionShortcode('day_number', getStatus, 'Кол-во дней сохранено!');
+    });
+
     // Saved fields AmoCrm email
     $(document).on( 'click','.btnSaveAmoCrmEmail', function (event) {
         event.preventDefault();

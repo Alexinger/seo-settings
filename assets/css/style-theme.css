@@ -110,9 +110,9 @@ table {
 }
 
 th.my-table {
-    line-height: 2rem !important;
+    /*line-height: 2rem !important;*/
     text-align: center !important;
-    white-space: nowrap !important;
+    /*white-space: nowrap !important;*/
 }
 
 td.my-table {

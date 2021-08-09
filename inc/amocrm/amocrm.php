@@ -50,10 +50,12 @@ function add_file_field()
         }
     }
 }
+
 // Change button "Подтвердить заказ"
-add_filter( 'woocommerce_order_button_html', 'truemisha_order_button_html' );
-function truemisha_order_button_html( $button_html ) {
-    return str_replace( 'Подтвердить заказ', 'Заказать', $button_html );
+add_filter('woocommerce_order_button_html', 'truemisha_order_button_html');
+function truemisha_order_button_html($button_html)
+{
+    return str_replace('Подтвердить заказ', 'Заказать', $button_html);
 }
 
 // Заменяте название загруженного файла на IP клиента
@@ -63,10 +65,50 @@ function wp_modify_uploaded_file_names($file)
     $info = pathinfo($file['name']);
     $ext = empty($info['extension']) ? '' : '.' . $info['extension'];
     $name = basename($file['name'], $ext);
+    $date = date('Y-m-d');
+    $dateL = new DateTime('2021-07-20');
+    $dataFormat = $dateL->format('Y-m-d');
 
-    $file['name'] = $_SERVER['REMOTE_ADDR'] . $ext;
+
+    $file['name'] = $_SERVER['REMOTE_ADDR'] . '_' . $dataFormat . $ext;
 
     return $file;
+}
+
+add_action('woocommerce_before_thankyou', 'mycontent_before_thankyou', 25);
+function mycontent_before_thankyou($order_id)
+{
+    $upload_dir = (object)wp_upload_dir();
+    $list = list_files($upload_dir->basedir . '/recvizit', 2);
+
+    if ($list[0]) {
+        foreach ($list as $item) {
+            // берет строку после последнеего слеша
+            $str = explode('/', $item);
+            // перебирает все файлы в папке 'recvizit
+            $filename = array_pop($str);
+            // находится символ "_" и от него берет все символы дальше
+            $searchSymbol = stripos($filename, '_');
+            // из названия файла берет только время сохранения 2021-08-09
+            $search = substr($filename, $searchSymbol + 1, 10);
+            // дата файла, берется из названия
+            $last = new DateTime($search);
+            // текущая дата
+            $target = new DateTime(date('Y-m-d'));
+
+            // сравнение даты
+            $interval = $last->diff($target);
+            if ($searchSymbol) {
+                $upload_info = wp_get_upload_dir();
+                $file = $upload_info['basedir'] . '/recvizit/' . $filename;
+                $dayLast = trim($interval->format('%R%a'), '+');
+                if ($dayLast > get_option('day_number')) {
+                    wp_delete_file($file);
+                }
+                // echo $filename . '<br>';
+            }
+        }
+    }
 }
 
 // Запрещает создаввать миниарюры загруженных фотографий
@@ -76,32 +118,4 @@ function no_image_resizing($size)
     $ret = array();
     return $ret;
 }
-
-add_action('woocommerce_before_thankyou', 'mycontent_before_thankyou', 25);
-
-function mycontent_before_thankyou($order_id)
-{
-    // echo 'Hello orders';
-    // Удаляем файлы из папки RECVIZIT где храняться загруженные реквизиты
-    if (false) {
-        $upload_info = wp_get_upload_dir();
-        $file = $upload_info['basedir'] . '/recvizit/text.txt';
-        wp_delete_file($file);
-    }
-
-    /* Delete Cache Files Here */
-    $dir = "recvizit/";
-    /** define the directory **/
-
-    /*** cycle through all files in the directory ***/
-    foreach (glob($dir . "*") as $file) {
-//foreach (glob($dir.'*.*') as $file){
-
-        /*** if file is 24 hours (86400 seconds) old then delete it ***/
-        if (filemtime($file) < time() - 172800) { // 2 days (172800)
-            unlink($file);
-        }
-    }
-}
-
 //__________________________________________________________________________________________________________
