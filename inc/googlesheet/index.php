@@ -2,9 +2,8 @@
 
 global $shortcode_tags;
 
-// include_once 'opt-price.php'; not code
 include_once 'show-table-shortcode.php';
-// Set product quantity added to cart (handling ajax add to cart)
+/*Set product quantity added to cart (handling ajax add to cart)*/
 if (!get_option('statusTable')) {
     add_filter('woocommerce_add_to_cart_quantity', 'woocommerce_add_to_cart_quantity_callback', 10, 2);
     function woocommerce_add_to_cart_quantity_callback($quantity, $product_id)
@@ -15,17 +14,16 @@ if (!get_option('statusTable')) {
         return $quantity;
     }
 
-// Set the product quantity min value
+    /*Set the product quantity min value*/
     add_filter('woocommerce_quantity_input_args', 'woocommerce_quantity_input_args_callback', 10, 2);
     function woocommerce_quantity_input_args_callback($args, $product)
     {
-        // $args['input_value'] = get_option('1_row_left');
         $args['min_value'] = get_option('1_row_left');
-        // $args['input_value'] = is_cart() ? $args['input_value'] : get_option('1_row_left');
+
         return $args;
     }
 
-    /* Для страницы товара задаем минимальную цену из таблицы*/
+    /* Для страницы товара задаем минимальную цену из таблицы */
     add_filter('woocommerce_quantity_input_min', 'truemisha_min_kolvo', 100, 2);
 
     function truemisha_min_kolvo($min, $product)
@@ -56,10 +54,6 @@ if (!get_option('statusTable')) {
         );
     }
 
-// Simple, grouped and external products
-// add_filter('woocommerce_product_get_regular_price', 'custom_price', 9, 2);
-// add_filter('woocommerce_product_get_price', 'custom_price', 9, 2);
-
     function custom_price($price, $product)
     {
         $str = strpos($product->name, '-');
@@ -70,7 +64,7 @@ if (!get_option('statusTable')) {
 
     }
 
-// Added a new product price from the google table
+    /*Added a new product price from the google table*/
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
     add_action('woocommerce_single_product_summary', 'custom_simple_product_price_html', 10);
     function custom_simple_product_price_html()
@@ -79,13 +73,13 @@ if (!get_option('statusTable')) {
         $addp = getTemperature($product->name);
         $price = wc_price($addp) . $product->get_price_suffix();
 
-        // Check is_in_stock one page products
+        /*Check is_in_stock one page products*/
         if ($addp) {
             if ($product->is_in_stock()) {
-                // are available
+                /*are available*/
                 echo '<p class="price">' . apply_filters('woocommerce_get_price_html', '<span style="font-size: 20px;font-family: \'Open Sans\';">от </span>' . $price, $product) . '</p>';
             } else {
-                // not stock
+                /*not stock*/
                 echo "<a href='/404' class='button woocommerce-store-notice' style='margin-bottom: 15px'>Перейти в контакты</a>";
             }
         } else {
@@ -105,18 +99,10 @@ if (!get_option('statusTable')) {
         }
     }
 
-//function getCount($item)
-//{
-//    return preg_replace('/[^0-9]/', '', $item);
-//}
-
     function checkPriceSum($item = null)
     {
         $temperAll = [mb_strimwidth(get_option('0_row_1_header'), 0, 3), mb_strimwidth(get_option('0_row_2_header'), 0, 3), mb_strimwidth(get_option('0_row_3_header'), 0, 3), mb_strimwidth(get_option('0_row_4_header'), 0, 3), mb_strimwidth(get_option('0_row_5_header'), 0, 3), mb_strimwidth(get_option('0_row_6_header'), 0, 3), mb_strimwidth(get_option('0_row_7_header'), 0, 3), mb_strimwidth(get_option('0_row_8_header'), 0, 3), mb_strimwidth(get_option('0_row_9_header'), 0, 3), mb_strimwidth(get_option('0_row_10_header'), 0, 3)];
-
         $index = array_search($item, getCount($temperAll)) + 1; // index number && search column price
-
-        // var_dump(getCount($temperAll));
 
         $filterPrice = array_filter([is_numeric(get_option('1_row_' . $index . '_header')) ? get_option('1_row_' . $index . '_header') : '',
             is_numeric(get_option('2_row_' . $index . '_header')) ? get_option('2_row_' . $index . '_header') : '',

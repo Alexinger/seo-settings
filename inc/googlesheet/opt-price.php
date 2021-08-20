@@ -22,7 +22,7 @@ if (!get_option('statusTable')) {
             $update->update_get_option();
         }
 
-        // create variables left_1-10 and right_1-10
+        /*create variables left_1-10 and right_1-10*/
         $left_1 = $left_2 = $left_3 = $left_4 = $left_5 = $left_6 = $left_7 = $left_8 = $left_9 = $left_10 = $left_11 = $left_12 = $left_13 = $left_14 = $left_15 = $left_16 = '';
 
         for ($i = 1; $i < 11; $i++) {
@@ -31,11 +31,12 @@ if (!get_option('statusTable')) {
 
         foreach ($cart->get_cart() as $item) {
             $terms = get_the_terms($item['product_id'], 'product_cat');
-            // max value counter first row the table
+            /*max value counter first row the table*/
             $rowArray = max([$left_1, $left_2, $left_3, $left_4, $left_5, $left_6, $left_7, $left_8, $left_9, $left_10]);
             $temperAll = [get_option('0_row_1_header'), get_option('0_row_2_header'), get_option('0_row_3_header'), get_option('0_row_4_header'), get_option('0_row_5_header'), get_option('0_row_6_header'), get_option('0_row_7_header'), get_option('0_row_8_header'), get_option('0_row_9_header'), get_option('0_row_10_header')];
-            $count = $item['quantity']; // this count products
-            // start index 0, added +1
+            /*this count products*/
+            $count = $item['quantity'];
+            /*start index 0, added +1*/
             $index = array_search(removeSymbols($terms), getCount($temperAll)) + 1; // index number && search column price
 
             if (removeSymbols($terms)) {
@@ -57,7 +58,13 @@ if (!get_option('statusTable')) {
 
     function getCount($item)
     {
-        return preg_replace('/[^0-9$]/', '', $item);
+        $msg = array();
+        $x = preg_replace('/[^0-9$]/', '', $item);
+        foreach ($x as $i) {
+            $msg[] = substr($i, 0, 2);
+        }
+        $set = $msg;;
+        return $set;
     }
 
     function removeSymbols($var)
@@ -79,67 +86,51 @@ if (!get_option('statusTable')) {
         $str_14 = preg_replace('/[^0-9]/', '', $var[14]->name);
         $str_15 = preg_replace('/[^0-9]/', '', $var[15]->name);
 
-
         if ($str_0) {
             return $str_0;
         }
-
         if ($str_1) {
             return $str_1;
         }
-
         if ($str_2) {
             return $str_2;
         }
-
         if ($str_3) {
             return $str_3;
         }
-
         if ($str_4) {
             return $str_4;
         }
-
         if ($str_5) {
             return $str_5;
         }
-
         if ($str_6) {
             return $str_6;
         }
-
         if ($str_7) {
             return $str_7;
         }
-
         if ($str_8) {
             return $str_8;
         }
-
         if ($str_9) {
             return $str_9;
         }
-
         if ($str_10) {
             return $str_10;
         }
-
         if ($str_11) {
             return $str_11;
         }
-
         if ($str_12) {
             return $str_12;
         }
-
         if ($str_13) {
             return $str_13;
         }
-
         if ($str_14) {
             return $str_14;
         }
-
         if ($str_15) {
             return $str_15;
         }
@@ -148,7 +139,6 @@ if (!get_option('statusTable')) {
     add_action('wp_footer', 'cart_update_qty_script');
     function cart_update_qty_script()
     {
-
         if (is_cart()) : ?>
             <script>
                 jQuery('div.woocommerce').on('blur', '.qty', function () {
@@ -158,10 +148,10 @@ if (!get_option('statusTable')) {
         <?php endif;
     }
 
-//notice – обычное уведомление
-//success – уведомление об успехе
-//error – уведомление об ошибке
-// getNotice($item, 'error', 'При вашем заказе в количестве %s, вы можете получить другие цены по контактам на этой <a href="/404">странице</a>');
+    /*notice – обычное уведомление
+    success – уведомление об успехе
+    error – уведомление об ошибке
+    getNotice($item, 'error', 'При вашем заказе в количестве %s, вы можете получить другие цены по контактам на этой <a href="/404">странице</a>');*/
     function getNotice($item, $status, $text)
     {
         wc_print_notice(
@@ -173,7 +163,7 @@ if (!get_option('statusTable')) {
         );
     }
 
-// On single product pages Изменяем количество на странице одного товара
+    /*On single product pages Изменяем количество на странице одного товара*/
     add_filter('woocommerce_quantity_input_args', 'min_qty_filter_callback', 20, 2);
     function min_qty_filter_callback($args, $product)
     {
@@ -181,7 +171,7 @@ if (!get_option('statusTable')) {
         return $args;
     }
 
-// On shop and archives pages Изменяем количество при добавлении в корзину
+    /*On shop and archives pages Изменяем количество при добавлении в корзину*/
     add_filter('woocommerce_loop_add_to_cart_args', 'min_qty_loop_add_to_cart_args', 10, 2);
     function min_qty_loop_add_to_cart_args($args, $product)
     {

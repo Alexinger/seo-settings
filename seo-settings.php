@@ -20,8 +20,8 @@ require_once(ABSPATH . 'wp-content/plugins/seo-settings/inc/googlesheet/opt-pric
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 function my_scripts_method()
 {
-    wp_enqueue_style( 'my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
-    wp_enqueue_style( 'my_style', plugins_url('style.css', __FILE__), '', time());
+    wp_enqueue_style('my_theme_style', plugins_url('assets/css/style-theme.css', __FILE__), '', time());
+    wp_enqueue_style('my_style', plugins_url('style.css', __FILE__), '', time());
 
     wp_register_script('my_script', plugins_url('assets/js/script-theme.js', __FILE__), array('jquery'), time());
     wp_enqueue_script('my_script');
@@ -529,7 +529,7 @@ function shortcode_callback()
 //    add_option('tabs-shortcode-url', $data['tabs-shortcode-url']);
 //    add_option('tabs-shortcode-page', $data['tabs-shortcode-page']);
 
-    // wp_die();
+    wp_die();
 }
 
 // Отправляем на почту поле с ссылкой на файл реквизитов

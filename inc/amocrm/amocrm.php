@@ -8,29 +8,25 @@ require_once(ABSPATH . 'wp-admin/includes/image.php');
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 require_once(ABSPATH . 'wp-admin/includes/media.php');
 
-// Скрываем скрытые поля, которые мешали отправке формы
+/*Скрываем скрытые поля, которые мешали отправке формы*/
 add_filter('woocommerce_cart_needs_shipping', 'filter_function_disable_shipping');
 function filter_function_disable_shipping($needs_shipping)
 {
     return false;
 }
 
-// Удаляем поля Страна и добавляет дополнительное скрытое поле названия файла
+/*Удаляем поля Страна и добавляет дополнительное скрытое поле названия файла*/
 add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields_1');
 function custom_override_checkout_fields_1($fields)
 {
     unset($fields['billing']['billing_order'], $fields['billing']['billing_last_name']);
     $fields['billing']['billing_country']['placeholder'] = 'Россия';
     $fields['billing']['billing_first_name']['default'] = 'working';
-//    $fields['billing']['billing_company']['default'] = 'sdfsfdsdf';
-    // $fields['billing']['billing_company']['placeholder'] = $_SERVER['REMOTE_ADDR'];
-    // echo WC()->mailer()->get_emails()['WC_Email_New_Order']->recipient;
 
     return $fields;
 }
 
-// Отображение поля формы "Загрузить реквизиты" и функция загрузки файла с помощью media_handle_upload()
-// woocommerce_after_checkout_form
+/*Отображение поля формы "Загрузить реквизиты" и функция загрузки файла с помощью media_handle_upload()*/
 add_action('woocommerce_checkout_order_review', 'add_file_field');
 function add_file_field()
 {
@@ -51,14 +47,7 @@ function add_file_field()
     }
 }
 
-// Change button "Подтвердить заказ"
-add_filter('woocommerce_order_button_html', 'truemisha_order_button_html');
-function truemisha_order_button_html($button_html)
-{
-    return str_replace('Подтвердить заказ', 'Заказать', $button_html);
-}
-
-// Заменяте название загруженного файла на IP клиента
+/*Заменяте название загруженного файла на IP клиента*/
 add_filter('wp_handle_upload_prefilter', 'wp_modify_uploaded_file_names', 1, 1);
 function wp_modify_uploaded_file_names($file)
 {
@@ -68,8 +57,6 @@ function wp_modify_uploaded_file_names($file)
     $date = date('Y-m-d');
     $dateL = new DateTime('2021-07-20');
     $dataFormat = $dateL->format('Y-m-d');
-
-
     $file['name'] = $_SERVER['REMOTE_ADDR'] . '_' . $dataFormat . $ext;
 
     return $file;
@@ -83,20 +70,20 @@ function mycontent_before_thankyou($order_id)
 
     if ($list[0]) {
         foreach ($list as $item) {
-            // берет строку после последнеего слеша
+            /*берет строку после последнеего слеша*/
             $str = explode('/', $item);
-            // перебирает все файлы в папке 'recvizit
+            /*перебирает все файлы в папке 'recvizit'*/
             $filename = array_pop($str);
-            // находится символ "_" и от него берет все символы дальше
+            /*находится символ "_" и от него берет все символы дальше*/
             $searchSymbol = stripos($filename, '_');
-            // из названия файла берет только время сохранения 2021-08-09
+            /*из названия файла берет только время сохранения 2021-08-09*/
             $search = substr($filename, $searchSymbol + 1, 10);
-            // дата файла, берется из названия
+            /*дата файла, берется из названия*/
             $last = new DateTime($search);
-            // текущая дата
+            /*текущая дата*/
             $target = new DateTime(date('Y-m-d'));
 
-            // сравнение даты
+            /*сравнение даты*/
             $interval = $last->diff($target);
             if ($searchSymbol) {
                 $upload_info = wp_get_upload_dir();
@@ -105,13 +92,12 @@ function mycontent_before_thankyou($order_id)
                 if ($dayLast > get_option('day_number')) {
                     wp_delete_file($file);
                 }
-                // echo $filename . '<br>';
             }
         }
     }
 }
 
-// Запрещает создаввать миниарюры загруженных фотографий
+/*Запрещает создаввать миниарюры загруженных фотографий*/
 add_filter('intermediate_image_sizes_advanced', 'no_image_resizing');
 function no_image_resizing($size)
 {
