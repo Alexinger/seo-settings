@@ -68,33 +68,35 @@ function mycontent_before_thankyou($order_id)
     $upload_dir = (object)wp_upload_dir();
     $list = list_files($upload_dir->basedir . '/recvizit', 2);
 
-//    if ($list[0]) {
-//        foreach ($list as $item) {
-//            /*берет строку после последнеего слеша*/
-//            $str = explode('/', $item);
-//            /*перебирает все файлы в папке 'recvizit'*/
-//            $filename = array_pop($str);
-//            /*находится символ "_" и от него берет все символы дальше*/
-//            $searchSymbol = stripos($filename, '_');
-//            /*из названия файла берет только время сохранения 2021-08-09*/
-//            $search = substr($filename, $searchSymbol + 1, 10);
-//            /*дата файла, берется из названия*/
-//            $last = new DateTime($search);
-//            /*текущая дата*/
-//            $target = new DateTime(date('Y-m-d'));
-//
-//            /*сравнение даты*/
-//            $interval = $last->diff($target);
-//            if ($searchSymbol) {
-//                $upload_info = wp_get_upload_dir();
-//                $file = $upload_info['basedir'] . '/recvizit/' . $filename;
-//                $dayLast = trim($interval->format('%R%a'), '+');
-//                if ($dayLast > get_option('day_number')) {
-//                    wp_delete_file($file);
-//                }
-//            }
-//        }
-//    }
+    if ($list[0]) {
+        foreach ($list as $item) {
+            /*берет строку после последнеего слеша*/
+            $str = explode('/', $item);
+            /*перебирает все файлы в папке 'recvizit'*/
+            $filename = array_pop($str);
+            /*находится символ "_" и от него берет все символы дальше*/
+            $searchSymbol = stripos($filename, '_');
+            /*из названия файла берет только время сохранения 2021-08-09*/
+            $search = substr($filename, $searchSymbol + 1, 10);
+            /*дата файла, берется из названия*/
+            var_dump("Search: " . $search);
+            $last = new DateTime($search);
+            var_dump("Last: " . $last);
+            /*текущая дата*/
+            $target = new DateTime(date('Y-m-d'));
+
+            /*сравнение даты*/
+            $interval = $last->diff($target);
+            if ($searchSymbol) {
+                $upload_info = wp_get_upload_dir();
+                $file = $upload_info['basedir'] . '/recvizit/' . $filename;
+                $dayLast = trim($interval->format('%R%a'), '+');
+                if ($dayLast > get_option('day_number')) {
+                    wp_delete_file($file);
+                }
+            }
+        }
+    }
 }
 
 /*Запрещает создаввать миниарюры загруженных фотографий*/
