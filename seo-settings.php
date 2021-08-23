@@ -551,3 +551,36 @@ function my_template_redirect()
         exit();
     }
 }
+function flush_rules(){
+    flush_rewrite_rules();
+}
+add_action('init','flush_rules');
+//add_action( 'template_redirect', 'truemisha_redirect_to_thank_you' );
+//function truemisha_redirect_to_thank_you() {
+//
+//    // если не страница "Заказ принят", то ничего не делаем
+//    if( ! is_order_received_page() ) {
+//        return;
+//    }
+//    // неплохо бы проверить статус заказа, не редиректим зафейленные заказы
+//    if( isset( $_GET[ 'key' ] ) ) {
+//        $order_id = wc_get_order_id_by_order_key( $_GET[ 'key' ] );
+//        $order = wc_get_order( $order_id );
+//        if( $order->has_status( 'failed' ) ) {
+//            return;
+//        }
+//    }
+//    wp_redirect( site_url( 'new-thank-you' ) );
+//    exit;
+//}
+
+//add_action( 'woocommerce_get_return_url', 'truemisha_redirect_to_thank_you_2', 90, 2 );
+//function truemisha_redirect_to_thank_you_2( $thank_you_url, $order ) {
+//
+//    // неплохо бы проверить статус заказа, не редиректим зафейленные заказы
+//    if( $order->has_status( 'failed' ) ) {
+//        return $thank_you_url;
+//    }
+//
+//    return site_url( 'new-thank-you' );
+//}
