@@ -67,8 +67,9 @@ function mycontent_before_thankyou($order_id)
 {
     $upload_dir = (object)wp_upload_dir();
     $list = list_files($upload_dir->basedir . '/recvizit', 2);
-
+    var_dump($list[0]);
     if ($list[0]) {
+
         foreach ($list as $item) {
             /*берет строку после последнеего слеша*/
             $str = explode('/', $item);
@@ -79,9 +80,7 @@ function mycontent_before_thankyou($order_id)
             /*из названия файла берет только время сохранения 2021-08-09*/
             $search = substr($filename, $searchSymbol + 1, 10);
             /*дата файла, берется из названия*/
-            var_dump("Search: " . $search);
             $last = new DateTime($search);
-            var_dump("Last: " . $last);
             /*текущая дата*/
             $target = new DateTime(date('Y-m-d'));
 
