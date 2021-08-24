@@ -78,21 +78,23 @@ function mycontent_before_thankyou($order_id)
             $filename = array_pop($str);
             /*находится символ "_" и от него берет все символы дальше*/
             $searchSymbol = stripos($filename, '_');
-            /*из названия файла берет только время сохранения 2021-08-09*/
-            $search = substr($filename, $searchSymbol + 1, 10);
-            /*дата файла, берется из названия*/
-            $last = new DateTime($search);
-            /*текущая дата*/
-            $target = new DateTime(date('Y-m-d'));
-
-            /*сравнение даты*/
-            $interval = $last->diff($target);
             if ($searchSymbol) {
-                $upload_info = wp_get_upload_dir();
-                $file = $upload_info['basedir'] . '/recvizit/' . $filename;
-                $dayLast = trim($interval->format('%R%a'), '+');
-                if ($dayLast > get_option('day_number')) {
-                    wp_delete_file($file);
+                /*из названия файла берет только время сохранения 2021-08-09*/
+                $search = substr($filename, $searchSymbol + 1, 10);
+                /*дата файла, берется из названия*/
+                $last = new DateTime($search);
+                /*текущая дата*/
+                $target = new DateTime(date('Y-m-d'));
+
+                /*сравнение даты*/
+                $interval = $last->diff($target);
+                if ($searchSymbol) {
+                    $upload_info = wp_get_upload_dir();
+                    $file = $upload_info['basedir'] . '/recvizit/' . $filename;
+                    $dayLast = trim($interval->format('%R%a'), '+');
+                    if ($dayLast > get_option('day_number')) {
+                        wp_delete_file($file);
+                    }
                 }
             }
         }
