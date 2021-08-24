@@ -69,70 +69,69 @@ if (!get_option('statusTable')) {
 
     function removeSymbols($var)
     {
-        $str_0 = preg_replace('/[^0-9]/', '', $var[0]->name);
-        $str_1 = preg_replace('/[^0-9]/', '', $var[1]->name);
-        $str_2 = preg_replace('/[^0-9]/', '', $var[2]->name);
-        $str_3 = preg_replace('/[^0-9]/', '', $var[3]->name);
-        $str_4 = preg_replace('/[^0-9]/', '', $var[4]->name);
-        $str_5 = preg_replace('/[^0-9]/', '', $var[5]->name);
-        $str_6 = preg_replace('/[^0-9]/', '', $var[6]->name);
-        $str_7 = preg_replace('/[^0-9]/', '', $var[7]->name);
-        $str_8 = preg_replace('/[^0-9]/', '', $var[8]->name);
-        $str_9 = preg_replace('/[^0-9]/', '', $var[9]->name);
-        $str_10 = preg_replace('/[^0-9]/', '', $var[10]->name);
-        $str_11 = preg_replace('/[^0-9]/', '', $var[11]->name);
-        $str_12 = preg_replace('/[^0-9]/', '', $var[12]->name);
-        $str_13 = preg_replace('/[^0-9]/', '', $var[13]->name);
-        $str_14 = preg_replace('/[^0-9]/', '', $var[14]->name);
-        $str_15 = preg_replace('/[^0-9]/', '', $var[15]->name);
-
-        if ($str_0) {
-            return $str_0;
+        if(isset($var[0]->name)){
+            $str_0 = preg_replace('/[^0-9]/', '', $var[0]->name);
+            if($str_0) return $str_0;
         }
-        if ($str_1) {
-            return $str_1;
+        if(isset($var[1]->name)){
+            $str_1 = preg_replace('/[^0-9]/', '', $var[1]->name);
+            if($str_1) return $str_1;
         }
-        if ($str_2) {
-            return $str_2;
+        if(isset($var[2]->name)){
+            $str_2 = preg_replace('/[^0-9]/', '', $var[2]->name);
+            if($str_2) return $str_2;
         }
-        if ($str_3) {
-            return $str_3;
+        if(isset($var[3]->name)){
+            $str_3 = preg_replace('/[^0-9]/', '', $var[3]->name);
+            if($str_3) return $str_3;
         }
-        if ($str_4) {
-            return $str_4;
+        if(isset($var[4]->name)){
+            $str_4 = preg_replace('/[^0-9]/', '', $var[4]->name);
+            if($str_4) return $str_4;
         }
-        if ($str_5) {
-            return $str_5;
+        if(isset($var[5]->name)){
+            $str_5 = preg_replace('/[^0-9]/', '', $var[5]->name);
+            if($str_5) return $str_5;
         }
-        if ($str_6) {
-            return $str_6;
+        if(isset($var[6]->name)){
+            $str_6 = preg_replace('/[^0-9]/', '', $var[6]->name);
+            if($str_6) return $str_6;
         }
-        if ($str_7) {
-            return $str_7;
+        if(isset($var[7]->name)){
+            $str_7 = preg_replace('/[^0-9]/', '', $var[7]->name);
+            if($str_7) return $str_7;
         }
-        if ($str_8) {
-            return $str_8;
+        if(isset($var[8]->name)){
+            $str_8 = preg_replace('/[^0-9]/', '', $var[8]->name);
+            if($str_8) return $str_8;
         }
-        if ($str_9) {
-            return $str_9;
+        if(isset($var[9]->name)){
+            $str_9 = preg_replace('/[^0-9]/', '', $var[9]->name);
+            if($str_9) return $str_9;
         }
-        if ($str_10) {
-            return $str_10;
+        if(isset($var[10]->name)){
+            $str_10 = preg_replace('/[^0-9]/', '', $var[10]->name);
+            if($str_10) return $str_10;
         }
-        if ($str_11) {
-            return $str_11;
+        if(isset($var[11]->name)){
+            $str_11 = preg_replace('/[^0-9]/', '', $var[11]->name);
+            if($str_11) return $str_11;
         }
-        if ($str_12) {
-            return $str_12;
+        if(isset($var[12]->name)){
+            $str_12 = preg_replace('/[^0-9]/', '', $var[12]->name);
+            if($str_12) return $str_12;
         }
-        if ($str_13) {
-            return $str_13;
+        if(isset($var[13]->name)){
+            $str_13 = preg_replace('/[^0-9]/', '', $var[13]->name);
+            if($str_13) return $str_13;
         }
-        if ($str_14) {
-            return $str_14;
+        if(isset($var[14]->name)){
+            $str_14 = preg_replace('/[^0-9]/', '', $var[14]->name);
+            if($str_14) return $str_14;
         }
-        if ($str_15) {
-            return $str_15;
+        if(isset($var[15]->name)){
+            $str_15 = preg_replace('/[^0-9]/', '', $var[2]->name);
+            if($str_15) return $str_15;
         }
     }
 

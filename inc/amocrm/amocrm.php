@@ -31,10 +31,11 @@ add_action('woocommerce_checkout_order_review', 'add_file_field');
 function add_file_field()
 {
     echo '<h3 style="margin-bottom: -10px !important;">Загрузить реквизиты</h3>
-            <div style="border: 2px solid #e2e2e2;margin: 20px 0;border-radius: 10px"
+            <div style="border: 1px solid #e2e2e2;margin: 20px 0;border-radius: 5px">
             <form name="form" autocomplete="off" method="post" enctype="multipart/form-data" class="recvizit" style="margin: 10px 0 15px;">
-            <input id="image_uploads" type="file" name="imagefile" onchange="this.form.submit();this.form.reset()" class="button first" autocomplete="off" style="border:none !important;width: 100%;background: #dfdcde"/>
+            <input id="image_uploads" type="file" name="imagefile" onchange="this.form.submit();this.form.reset()" class="button first" autocomplete="off" style="border:none !important;width: 100%;background: #ebe9eb !important;color: #ff5757 !important;border-radius: 0;"/>
             <!--<input type="submit" name="Submit" class="button last" value="Отправить" autocomplete="off" />-->
+            <span style="margin-left: 10px;color: red;">*</span><span style="font-size: 12px;color: #9a9a9a;">После добавления файла реквизитов он загрузится автоматически!</span>
         </div></form>';
 
     if ($_FILES) {
