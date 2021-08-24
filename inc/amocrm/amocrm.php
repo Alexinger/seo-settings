@@ -68,8 +68,8 @@ function mycontent_before_thankyou($order_id)
 {
     $upload_dir = (object)wp_upload_dir();
     $list = list_files($upload_dir->basedir . '/recvizit', 2);
-    var_dump($list[0]);
-    if ($list[0]) {
+
+    if (isset($list[0])) {
 
         foreach ($list as $item) {
             /*берет строку после последнеего слеша*/
