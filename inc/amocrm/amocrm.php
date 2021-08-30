@@ -52,13 +52,14 @@ function add_file_field()
 add_filter('wp_handle_upload_prefilter', 'wp_modify_uploaded_file_names', 1, 1);
 function wp_modify_uploaded_file_names($file)
 {
+    date_default_timezone_set('UTC');
     $info = pathinfo($file['name']);
     $ext = empty($info['extension']) ? '' : '.' . $info['extension'];
     $name = basename($file['name'], $ext);
     $date = date('Y-m-d');
-    $dateL = new DateTime('2021-07-20');
-    $dataFormat = $dateL->format('Y-m-d');
-    $file['name'] = $_SERVER['REMOTE_ADDR'] . '_' . $dataFormat . $ext;
+    /*$dateL = new DateTime('2021-07-20');*/
+    /*$dataFormat = $date->format('Y-m-d');*/
+    $file['name'] = $_SERVER['REMOTE_ADDR'] . '_' . $date . $ext;
 
     return $file;
 }
