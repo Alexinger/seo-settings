@@ -43,6 +43,8 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    document.getElementsByClassName('class-button')
+
     clickChangeOn('garant');
     clickChangeOn('bay');
     clickChangeOn('delivery');

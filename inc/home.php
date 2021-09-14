@@ -35,6 +35,9 @@
                     <a class="nav-link text-dark" data-toggle="tab" href="#left-menu" role="tab"><i class="fa fa-file mr-3"></i>Files upload</a>
                 </li>
                 <li class="nav-item mx-1">
+                    <a class="nav-link text-dark" data-toggle="tab" href="#left-cache" role="tab"><i class="fa fa-trash mr-3"></i>File cache</a>
+                </li>
+                <li class="nav-item mx-1">
                     <a class="nav-link text-dark" data-toggle="tab" href="#post-page" role="tab"><i class="fa fa-code-fork mr-3"></i>Post & Page</a>
                 </li>
                 <li class="nav-item mx-1">
@@ -51,8 +54,14 @@
                 </div>
                 <div class="tab-pane fade" id="left-menu" role="tabpanel">
 
-                    <!-- Контент Боковое меню -->
+                    <!-- Папка для загрузки реквизитов -->
 		            <?php include_once 'tabs-home-amocrm.php'; ?>
+
+                </div>
+                <div class="tab-pane fade" id="left-cache" role="tabpanel">
+
+                    <!-- Папка cache из которой нужно периодически удалять файлы -->
+                    <?php include_once 'tabs-home-cache.php'; ?>
 
                 </div>
                 <div class="tab-pane fade" id="post-page" role="tabpanel">

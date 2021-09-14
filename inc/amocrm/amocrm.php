@@ -93,6 +93,7 @@ function mycontent_before_thankyou($order_id)
                     $upload_info = wp_get_upload_dir();
                     $file = $upload_info['basedir'] . '/recvizit/' . $filename;
                     $dayLast = trim($interval->format('%R%a'), '+');
+                   /*echo $file;*/
                     if ($dayLast > get_option('day_number')) {
                         wp_delete_file($file);
                     }

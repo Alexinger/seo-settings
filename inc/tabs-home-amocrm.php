@@ -14,10 +14,10 @@ if (get_option('day_number')) {
     <div class="border-bottom border-dark text-center w-100 pb-2">
         <h4 class="w-100 font-weight-bold text-center mt-4">Загруженные реквизиты на сайт в папке (recvizit)</h4>
         <code><?php echo $upload_dir->baseurl ?>/recvizit</code>
-        <form id="formDay" style="display: flex;justify-content: space-between;align-items: center;margin: 1rem 0;background: beige;padding: 1.5rem;border-radius: 5px;box-shadow: 1px 1px 5px #bbbbbb;border: 1px solid grey;">
-            <div>
-                <label>Введит кол-во дней, после которой нужно удалять сохраненные файлы</label>
-                <input id="day_number" type="number" style="width: 50px" name="day_number" value="<?php echo get_option('day_number') ?>">
+        <form id="formDay" style="display: flex;justify-content: space-between;align-items: center;margin: 1rem 0;background: beige;padding: .2rem .5rem;border-radius: 5px;box-shadow: 1px 1px 5px #bbbbbb;border: 1px solid grey;">
+            <div style="display: flex;align-items: baseline;">
+                <label>Введите кол-во дней, после которой нужно удалять сохраненные файлы</label>
+                <input id="day_number" type="number" style="width: 50px;margin: 0 10px;height: 28px" name="day_number" value="<?php echo get_option('day_number') ?>">
                 <span>дней</span>
             </div>
             <button id="countDay" type="submit" class="btn btn-green countDay">Сохранить</button>
