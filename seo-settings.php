@@ -536,10 +536,17 @@ function shortcode_callback()
 add_action('woocommerce_email_customer_details', 'send_customer_ip_adress', 10, 4);
 function send_customer_ip_adress($order, $sent_to_admin, $plain_text, $email)
 {
+
     // Just for admin new order notification
     if ('new_order' == $email->id) {
         $order_id = method_exists($order, 'get_id') ? $order->get_id() : $order->id;
-        echo '<br><p><strong>Ссылка на файл реквизитов:</strong> ' . get_option('fileLink') . '</p>';
+        if(get_option('fileLink') !== null && get_option('fileLink') !== ''){
+            echo '<br><p><strong>Ссылка на файл реквизитов:</strong> ' . get_option('fileLink') . '</p>';
+        }
+        add_post_meta( $order_id, '_delivery_date', sanitize_text_field( $_POST ['add_delivery_date'] ) );
+        /*echo '<pre>';
+        var_dump($order);
+        echo '</pre>';*/
     }
 }
 
@@ -568,4 +575,33 @@ function pending_new_order_notification( $order_id ) {
 
     // Send "New Email" notification (to admin)
     WC()->mailer()->get_emails()['WC_Email_New_Order']->trigger( $order_id );
+}
+
+// Edit order items table template defaults
+add_filter( 'woocommerce_email_order_items_table', 'sww_add_wc_order_email_images', 10, 2 );
+function sww_add_wc_order_email_images( $table, $order ) {
+
+    ob_start();
+
+    $template = $plain_text ? 'emails/plain/email-order-items.php' : 'emails/email-order-items.php';
+    wc_get_template( $template, array(
+        'order'                 => $order,
+        'items'                 => $order->get_items(),
+        'show_download_links'   => $show_download_links,
+        'show_sku'              => $show_sku,
+        'show_purchase_note'    => $show_purchase_note,
+        'show_image'            => true,
+        'image_size'            => array(32,32)
+    ) );
+
+    return ob_get_clean();
+}
+
+add_filter( 'woocommerce_order_item_name', 'so_29985124_order_item_title', 10, 2 );
+function so_29985124_order_item_title( $title, $order_item ) {
+
+
+    $title = $title . ' (или аналогичная)';
+
+    return $title;
 }

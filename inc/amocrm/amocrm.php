@@ -23,6 +23,8 @@ function custom_override_checkout_fields_1($fields)
     $fields['billing']['billing_country']['placeholder'] = 'Россия';
     $fields['billing']['billing_first_name']['default'] = 'working';
 
+    update_option('fileLink', null);
+
     return $fields;
 }
 
@@ -103,7 +105,7 @@ function mycontent_before_thankyou($order_id)
     }
 }
 
-/*Запрещает создаввать миниарюры загруженных фотографий*/
+/*Запрещает создавать миниарюры загруженных фотографий*/
 add_filter('intermediate_image_sizes_advanced', 'no_image_resizing');
 function no_image_resizing($size)
 {
