@@ -71,7 +71,9 @@ p.woocommerce-shipping-destination {
 .woocommerce .quantity .qty {
     width: 5em !important;
 }
-
+th.my-table-th{
+    text-align: center !important;
+}
 /* Table style */
 @media screen and (max-width: 1800px) {
     td {
@@ -81,8 +83,12 @@ p.woocommerce-shipping-destination {
         padding: 14px 0 !important;
     }
 
+    td.my-table {
+        padding: 5px !important;
+    }
+
     th.my-table-th {
-        padding: 8px !important;
+        padding: 10px !important;
         font-size: 13px !important;
         white-space: pre-wrap !important;
         text-align: center !important;
@@ -101,7 +107,7 @@ p.woocommerce-shipping-destination {
     }
 
     th.my-table-th {
-        padding: 8px !important;
+        padding: 10px !important;
         font-size: 13px !important;
         white-space: pre-wrap !important;
         text-align: center !important;
@@ -120,9 +126,11 @@ p.woocommerce-shipping-destination {
     th.my-table {
         padding: 4px 1px !important;
     }
-
+    .table-my-style td {
+        padding: 0 1px !important;
+    }
     th.my-table-th {
-        padding: 5px !important;
+        padding: 8px !important;
         font-size: 12px !important;
         white-space: pre-wrap !important;
         text-align: center !important;
@@ -165,9 +173,9 @@ td.my-table {
     white-space: nowrap !important;
 }
 
-.table-my-style td {
-    padding: 5px 1px !important;
-}
+/*.table-my-style td {*/
+/*    padding: 5px 1px !important;*/
+/*}*/
 
 /*Убираем цену товара со страницы всех товаров*/
 .products li a .price {
