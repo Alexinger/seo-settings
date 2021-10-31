@@ -105,7 +105,7 @@ function mycontent_before_thankyou($order_id)
     }
 }
 
-/*Запрещает создавать миниарюры загруженных фотографий*/
+/*Запрещает создавать миниатюры загруженных фотографий*/
 add_filter('intermediate_image_sizes_advanced', 'no_image_resizing');
 function no_image_resizing($size)
 {
