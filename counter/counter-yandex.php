@@ -2,7 +2,7 @@
 add_action('wp_footer', 'my_counter_yandex');
 function my_counter_yandex()
 {
-    if(get_option('counter_code_yandex_show') == 1 || get_option('counter_code_yandex_show') == ''){
+    if(get_option('counter_code_yandex_show') == 1 || get_option('counter_code_yandex_show') == '' && get_option("counter_code_yandex") !== '' ){
         echo '<!-- Yandex.Metrika counter -->
         <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
