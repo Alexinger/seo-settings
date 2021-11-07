@@ -54,8 +54,8 @@ function get_google_sheet_canister($atts = null)
     $atts = shortcode_atts([
         'title' => 'Прайс лист канистр',
         'title_color' => '#a5bf8f',
-        'table_bg' => '#c9c9c9',
-        'table_color_value' => 'white',
+        'table_bg' => 'white',
+        'table_color_value' => 'black',
     ], $atts);
 
     $gid = get_option("tabs-shortcode-url");
