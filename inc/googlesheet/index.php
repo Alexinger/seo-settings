@@ -4,6 +4,7 @@ global $shortcode_tags;
 
 include_once 'show-table-shortcode.php';
 /*Set product quantity added to cart (handling ajax add to cart)*/
+
 if (!get_option('statusTable')) {
     add_filter('woocommerce_add_to_cart_quantity', 'woocommerce_add_to_cart_quantity_callback', 10, 2);
     function woocommerce_add_to_cart_quantity_callback($quantity, $product_id)
@@ -33,7 +34,6 @@ if (!get_option('statusTable')) {
 
     /* Для товара в корзине, задаем минимальную цену из таблицы */
     add_filter('woocommerce_cart_item_quantity', 'truemisha_min_kolvo_cart', 100, 3);
-
     function truemisha_min_kolvo_cart($product_quantity, $cart_item_key, $cart_item)
     {
 
@@ -58,7 +58,6 @@ if (!get_option('statusTable')) {
     {
         $str = strpos($product->name, '-');
         $temperatures = substr($product->name, $str + 1, 2);
-
         // return getMinPrice($temperatures, $price);
         return checkPriceSum($temperatures);
 
@@ -90,15 +89,26 @@ if (!get_option('statusTable')) {
 
     function getTemperature($item)
     {
-        $str = strpos($item, '-');
-        $temperature = substr($item, $str + 1, 2);
-        if ($str) {
-            return checkPriceSum($temperature);
-        } else {
-            return false;
+        if(strpos($item, '-')){
+            $str = strpos($item, '-');
+            $temperature = substr($item, $str + 1, 2);
+            if ($str) {
+                return checkPriceSum($temperature);
+            } else {
+                return false;
+            }
+        }elseif (strpos($item, '(')){
+            $str_c = strpos($item, '(');
+            $temperature = substr($item, $str_c + 1, 4);
+            if ($str_c) {
+                return checkPriceSumCanister($temperature);
+            } else {
+                return false;
+            }
         }
     }
 
+    /* Для незамерзайки */
     function checkPriceSum($item = null)
     {
         $temperAll = [mb_strimwidth(get_option('0_row_1_header'), 0, 3), mb_strimwidth(get_option('0_row_2_header'), 0, 3), mb_strimwidth(get_option('0_row_3_header'), 0, 3), mb_strimwidth(get_option('0_row_4_header'), 0, 3), mb_strimwidth(get_option('0_row_5_header'), 0, 3), mb_strimwidth(get_option('0_row_6_header'), 0, 3), mb_strimwidth(get_option('0_row_7_header'), 0, 3), mb_strimwidth(get_option('0_row_8_header'), 0, 3), mb_strimwidth(get_option('0_row_9_header'), 0, 3), mb_strimwidth(get_option('0_row_10_header'), 0, 3)];
@@ -120,6 +130,32 @@ if (!get_option('statusTable')) {
             is_numeric(get_option('14_row_' . $index . '_header')) ? get_option('14_row_' . $index . '_header') : '',
             is_numeric(get_option('15_row_' . $index . '_header')) ? get_option('15_row_' . $index . '_header') : '']);
         return min($filterPrice);
+    }
+
+    /* Для канистр */
+    function checkPriceSumCanister($item = null)
+    {
+        $temperAllCanister = [getCountCanisterCode(get_option('20_rows_1_headers')), getCountCanisterCode(get_option('20_rows_2_headers')), getCountCanisterCode(get_option('20_rows_3_headers')), getCountCanisterCode(get_option('20_rows_4_headers')), getCountCanisterCode(get_option('20_rows_5_headers')), getCountCanisterCode(get_option('20_rows_6_headers')), getCountCanisterCode(get_option('20_rows_7_headers')), getCountCanisterCode(get_option('20_rows_8_headers')), getCountCanisterCode(get_option('20_rows_9_headers')), getCountCanisterCode(get_option('20_rows_10_headers'))];
+        $indexCanister = array_search($item, $temperAllCanister) + 1; // index number && search column price
+
+        $filterPriceCanister = array_filter([is_numeric(get_option('21_rows_' . $indexCanister . '_headers')) ? get_option('21_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('22_rows_' . $indexCanister . '_headers')) ? get_option('22_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('23_rows_' . $indexCanister . '_headers')) ? get_option('23_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('24_rows_' . $indexCanister . '_headers')) ? get_option('24_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('25_rows_' . $indexCanister . '_headers')) ? get_option('25_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('26_rows_' . $indexCanister . '_headers')) ? get_option('26_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('27_rows_' . $indexCanister . '_headers')) ? get_option('27_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('28_rows_' . $indexCanister . '_headers')) ? get_option('28_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('29_rows_' . $indexCanister . '_headers')) ? get_option('29_rows_' . $indexCanister . '_headers') : '',
+            is_numeric(get_option('30_rows_' . $indexCanister . '_headers')) ? get_option('29_rows_' . $indexCanister . '_headers') : '']);
+        return min($filterPriceCanister);
+    }
+
+    function getCountCanisterCode($item)
+    {
+        $str_c = strpos($item, '(');
+        $codeCanister = substr($item, $str_c + 1, 4);
+        return $codeCanister;
     }
 
     function getMinPrice($item, $price)

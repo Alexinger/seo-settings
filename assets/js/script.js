@@ -107,6 +107,34 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Включение/Отключение показ счетчика Yandex
+    $(document).on( 'click','.btnSaveYandexShow', function (event) {
+        event.preventDefault();
+        let getYandexStatus = document.getElementById('yandexShow').value;
+        let name_option = 'counter_code_yandex_show';
+        if(getYandexStatus == 1){
+            document.getElementById('yandexShow').value = 0;
+            updateOptionYandexShow(name_option, 0);
+        }else{
+            document.getElementById('yandexShow').value = 1;
+            updateOptionYandexShow(name_option, 1);
+        }
+
+    });
+
+    function updateOptionYandexShow($option, $new_value){
+        var data = {
+            action: 'save_yandex_show',
+            option: $option,
+            new_value: $new_value
+        };
+
+        $.post(ajaxurl, data, function (response) {
+            alert('Отображение счетчика изменено!');
+            window.location.reload();
+        });
+    }
+
     function updateOptionYandex($option, $new_value) {
         var data = {
             action: 'save_yandex',
@@ -115,7 +143,7 @@ jQuery(document).ready(function ($) {
         };
 
         $.post(ajaxurl, data, function (response) {
-            alert('Код счетсчика успешно изменен!');
+            alert('Код счетчика успешно изменен!');
             window.location.reload();
         });
     }

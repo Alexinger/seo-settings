@@ -9,7 +9,7 @@
 }
 
 .woocommerce-Price-amount.amount {
-    /*display: none;*/
+    display: block !important;
 }
 
 p.woocommerce-shipping-destination {

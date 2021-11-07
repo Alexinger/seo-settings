@@ -30,6 +30,21 @@
                 <div class="fieldCounterYandex <?php echo $disableButtonYandex ?>">
                     <input id="countPutYandex" type="number" placeholder="Введите код счетчика" class="w-50" required/>
                     <button class="btnSaveYandex btn btn-success btn-sm" type="button">Сохранить</button>
+
+                    <div class="border mt-2 d-flex align-items-center justify-content-around">
+                        <div class="justify-content-around align-items-center d-flex">
+                            <input id="yandexShow" type="hidden" value="<?=get_option('counter_code_yandex_show') ?>">
+                            <?php
+                            if(get_option('counter_code_yandex_show') == 1){
+                                echo '<span class="text-success">показывается</span>';
+                            }else{
+                                echo '<span class="text-danger">скрыт</span>';
+                            }
+                            ?>
+
+                        </div>
+                        <button class="btnSaveYandexShow btn btn-grey btn-sm" type="button"><?= get_option('counter_code_yandex_show') == 1 ? 'скрыть ' : 'показать ' ?> счетчик</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,6 +80,13 @@
                 <div class="fieldCounterGoogle">
                     <input id="countPutGoogle" type="text" placeholder="Введите код счетчика" class="w-50" required/>
                     <button class="btnSaveGoogle btn btn-success btn-sm" type="button">Сохранить</button>
+
+                    <div class="border mt-2 d-flex align-items-center justify-content-around">
+                        <div class="justify-content-around align-items-center d-flex">
+                            <span class="text-success">показывается</span>
+                        </div>
+                        <button class="btnSaveGoogleShow btn btn-grey btn-sm" type="button">Отключить счетчик</button>
+                    </div>
                 </div>
 
             </div>

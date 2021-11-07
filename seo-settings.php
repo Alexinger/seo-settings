@@ -52,6 +52,22 @@ function save_yandex_count()
     );
 }
 
+add_action('wp_ajax_save_yandex_show', 'save_yandex_count');
+function save_yandex_count_show()
+{
+    $option = $_POST['option'];
+    $new_value = $_POST['new_value'];
+
+    update_option($option, $new_value);
+    die(
+    json_encode(
+        array(
+            'message' => 'Save show/hidden yandex counter. Success!'
+        )
+    )
+    );
+}
+
 // Added counter Google in footer
 include_once 'counter/counter-google.php';
 
