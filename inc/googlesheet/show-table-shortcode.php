@@ -86,7 +86,7 @@ function get_google_sheet_canister($atts = null)
         ${'tr' . $s} .= '<tr>';
         for ($i = 0; $i < 8; $i++) {
             if (isset($array[$s][$i]) && $array[$s][$i] != '') {
-                ${'tr' . $s} .= '<td class="my-table">' . $array[$s][$i] . '</td>';
+                ${'tr' . $s} .= '<td class="my-table" style="white-space: pre-wrap !important;line-height: 0.9rem !important;vertical-align: bottom;">' . $array[$s][$i] . '</td>';
             }
         }
         ${'tr' . $s} .= '</tr>';
