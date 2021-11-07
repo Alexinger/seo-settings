@@ -220,11 +220,12 @@ if (!get_option('statusTable')) {
     {
         if (is_cart()) : ?>
             <script>
-                JQuery(document).ready(function ($){
+                $.noConflict();
+                (function ($){
                     $('div.woocommerce').on('blur', '.qty', function () {
                         $("[name='update_cart']").trigger("click");
                     });
-                });
+                })(JQuery);
             </script>
         <?php endif;
     }
