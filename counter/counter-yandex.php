@@ -14,6 +14,7 @@ function my_counter_yandex()
             trackLinks:true,
             accurateTrackBounce:true
         });
+        <!-- test -->
         </script>
         
         <!-- /Yandex.Metrika counter -->';
