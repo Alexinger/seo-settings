@@ -1,6 +1,16 @@
 <div class="card-group bg-white border rounded p-3 my-2">
-    <h3 class="text-monospace font-weight-bold badge-primary p-1 rounded">google_sheet</h3>
-    <span class="ml-2 mt-2 text-monospace">[google_sheet params=""]</span>
+    <div>
+        <div class="d-flex align-items-baseline">
+            <h3 class="text-monospace font-weight-bold badge-primary px-2 pb-1 rounded">google_sheet</h3>
+            <span class="ml-2 mt-2 text-monospace">[google_sheet params=""]</span>
+            <span class="ml-3"><span class="text-danger">*</span> шорткод для незамерзайки</span>
+        </div>
+        <div class="d-flex align-items-baseline">
+            <h3 class="text-monospace font-weight-bold badge-primary px-2 pb-1 rounded">google_sheet_canister</h3>
+            <span class="ml-2 mt-2 text-monospace">[google_sheet_canister params=""]</span>
+            <span class="ml-3"><span class="text-danger">*</span> шорткод для канистр</span>
+        </div>
+    </div>
     <h4 class="w-100 font-weight-bold text-center border-bottom border-dark mb-3 mt-4 pb-3">Возможные вариант
         params</h4>
     <div class="w-100 mt-1 mb-3 d-flex flex-wrap">
